@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 09:18:57 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 09:55:10 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** ft_strncmp - compare two strings
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char u1;
+	unsigned char u2;
 
-	ptr = s;
 	while (n-- > 0)
 	{
-		*ptr++ = c;
+		u1 = *(unsigned char *)s1++;
+		u2 = *(unsigned char *)s2++;
+		if (u1 != u2)
+			return (u1 - u2);
+		if (u1 == '\0')
+			return (0);
 	}
-	return (s);
+	return (0);
 }

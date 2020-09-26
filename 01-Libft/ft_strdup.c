@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 12:13:28 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 12:25:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** ft_strdup - duplicate a string
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	unsigned char *ptr;
+	size_t	slen;
+	char	*result;
 
-	ptr = s;
-	while (n-- > 0)
+	slen = ft_strlen(s);
+	if (!(result = (char *)malloc(sizeof(char) * (slen + 1))))
+		return (0);
+	slen = 0;
+	while (s[slen])
 	{
-		*ptr++ = c;
+		result[slen] = s[slen];
+		slen++;
 	}
-	return (s);
+	result[slen] = '\0';
+	return (result);
 }

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/25 23:58:16 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 01:37:27 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** strchr - locate character in string
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *ptr;
-
-	ptr = s;
-	while (n-- > 0)
+	while (*s != c)
 	{
-		*ptr++ = c;
+		if (*s == '\0')
+			return (0);
+		s++;
 	}
-	return (s);
+	return (char *)s;
 }

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 01:30:33 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 02:02:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** ft_memset - fill memory with a constant byte
-*/
-
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char *ptr;
+	size_t	slen;
 
-	ptr = s;
-	while (n-- > 0)
-	{
-		*ptr++ = c;
-	}
-	return (s);
+	slen = ft_strlen(s);
+	while (slen != 0 && *(s + slen) != c)
+		slen--;
+	if (*(s + slen) == c)
+		return (char *)(s + slen);
+	return (0);
 }

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 08:59:33 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 10:43:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** ft_strnstr — locate a substring in a string
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t blen)
 {
-	unsigned char *ptr;
+	size_t llen;
 
-	ptr = s;
-	while (n-- > 0)
+	if (*little == '\0')
+		return (char *)big;
+	llen = ft_strlen(little);
+	while (blen-- >= llen)
 	{
-		*ptr++ = c;
+		if (*big == *little && ft_strncmp(big, little, llen) == 0)
+			return (char*)big;
+		big++;
 	}
-	return (s);
+	return (0);
 }

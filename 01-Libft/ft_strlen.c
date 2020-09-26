@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/25 21:30:33 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/25 21:34:55 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** ft_strlen - calculate the length of a string
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlen(const char *s)
 {
-	unsigned char *ptr;
+	size_t len;
 
-	ptr = s;
-	while (n-- > 0)
-	{
-		*ptr++ = c;
-	}
-	return (s);
+	len = 0;
+	while (*s++)
+		len++;
+	return (len);
 }

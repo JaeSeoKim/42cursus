@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/25 10:10:51 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/26 14:46:48 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,18 @@ SRCS = \
 	./ft_memmove.c	\
 	./ft_memchr.c	\
 	./ft_memcmp.c	\
-	./ft_calloc.c
-	
+	./ft_calloc.c	\
+	./ft_strlen.c	\
+	./ft_strlcpy.c	\
+	./ft_strchr.c	\
+	./ft_strrchr.c	\
+	./ft_strncmp.c	\
+	./ft_strnstr.c	\
+	./ft_strdup.c	\
+	./ft_isdigit.c	\
+	./ft_atoi.c		\
+	./ft_isalpha.c	\
+	./ft_isalnum.c
 	
 OBJS = $(SRCS:.c=.o)
 

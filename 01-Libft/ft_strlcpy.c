@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:19:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 21:30:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/25 21:35:14 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/25 23:22:28 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_memset - fill memory with a constant byte
+** ft_strlcpy — size-bounded string copying and concatenation
 */
 
-void	*ft_memset(void *s, int c, size_t n)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned char *ptr;
+	size_t srclen;
 
-	ptr = s;
-	while (n-- > 0)
+	srclen = ft_strlen(src);
+	if (srclen + 1 < size)
 	{
-		*ptr++ = c;
+		ft_memcpy(dest, src, srclen);
+		dest[srclen] = '\0';
 	}
-	return (s);
+	else if (size != 0)
+	{
+		ft_memcpy(dest, src, size - 1);
+		dest[size - 1] = '\0';
+	}
+	return (srclen);
 }
