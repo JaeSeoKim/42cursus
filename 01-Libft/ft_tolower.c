@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:40:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 13:30:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 18:03:37 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 18:04:37 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_bzero - zero a byte string
+** ft_tolower - convert lowercase
 */
 
-void	ft_bzero(void *s, size_t n)
+int		ft_tolower(int c)
 {
-	ft_memset(s, '\0', n);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

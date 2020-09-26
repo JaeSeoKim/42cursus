@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:40:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 13:30:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 17:49:14 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 17:57:38 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_bzero - zero a byte string
+** ft_isprint - checks for any printable character including space.
 */
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isprint(int c)
 {
-	ft_memset(s, '\0', n);
+	return (c >= 32 && c <= 126);
 }

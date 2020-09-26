@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:40:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 13:30:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 12:53:41 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 16:39:52 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_bzero - zero a byte string
+** ft_isdigit - checks for a digit (0 through 9)
 */
 
-void	ft_bzero(void *s, size_t n)
+int		ft_isdigit(int c)
 {
-	ft_memset(s, '\0', n);
+	return (c >= '0' && c <= '9');
 }

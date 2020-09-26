@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/26 14:46:48 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/26 18:06:26 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,10 @@ SRCS = \
 	./ft_isdigit.c	\
 	./ft_atoi.c		\
 	./ft_isalpha.c	\
-	./ft_isalnum.c
+	./ft_isalnum.c	\
+	./ft_isprint.c	\
+	./ft_toupper.c	\
+	./ft_tolower.c
 	
 OBJS = $(SRCS:.c=.o)
 

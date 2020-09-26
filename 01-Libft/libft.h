@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 14:11:57 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/26 18:05:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 /*
-**	String
+** String
 */
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
@@ -44,10 +44,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t blen);
 char	*ft_strdup(const char *s);
 int		ft_atoi(const char *nptr);
 /*
-** is~ TypeChecker
+** Type
 */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif

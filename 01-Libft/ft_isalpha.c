@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:40:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 13:30:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 13:13:41 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 17:06:32 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_bzero - zero a byte string
+** ft_isalpha - checks for an alphabetic character
 */
 
-void	ft_bzero(void *s, size_t n)
+int	ft_isalpha(int c)
 {
-	ft_memset(s, '\0', n);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

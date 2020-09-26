@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:40:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 13:30:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 18:01:20 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/26 18:04:56 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_bzero - zero a byte string
+** ft_toupper - convert uppercase
 */
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	ft_memset(s, '\0', n);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

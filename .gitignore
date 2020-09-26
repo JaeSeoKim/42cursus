@@ -129,6 +129,3 @@ $RECYCLE.BIN/
 *:Zone.Identifier
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,c
-
-# Libft test-tool
-libft-war-machine
