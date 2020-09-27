@@ -17,7 +17,7 @@
 #### Additional functions
 
 - **String** : [`ft_substr`](./ft_substr.c) [`ft_strjoin`](./ft_strjoin.c) [`ft_strtrim`](.ft_strtrim.c) [`ft_split`](./ft_split.c) [`ft_itoa`](./ft_itoa.c) [`ft_strmapi`](./ft_strmapi.c)
-- **Write** : [`ft_putchar_fd`](./ft_putchar_fd) [`ft_putstr_fd`](./ft_putstr_fd) [`ft_putendl_fd`](./ft_putendl_fd) [`ft_putnbr_fd`](./ft_putnbr_fd)
+- **Write** : [`ft_putchar_fd`](./ft_putchar_fd.c) [`ft_putstr_fd`](./ft_putstr_fd.c) [`ft_putendl_fd`](./ft_putendl_fd.c) [`ft_putnbr_fd`](./ft_putnbr_fd.c)
 
 ## 🚩 Bonus part
 
