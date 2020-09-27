@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/27 08:19:00 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/27 23:27:53 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,11 @@ SRC_PART2 = \
 	./ft_putchar_fd.c	\
 	./ft_putstr_fd.c	\
 	./ft_putendl_fd.c	\
-	./ft_putnbr_fd.c	\
+	./ft_putnbr_fd.cl
+
+SRC_BONUS = \
+	./ft_lstnew.c	\
+	
 
 SRCS = \
 	${SRC_PART1}	\
