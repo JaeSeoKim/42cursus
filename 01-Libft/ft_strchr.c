@@ -6,14 +6,14 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 23:58:16 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/26 01:37:27 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/26 20:39:46 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** strchr - locate character in string
+** ft_strchr - locate character in string
 */
 
 char	*ft_strchr(const char *s, int c)

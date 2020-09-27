@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 17:49:14 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/27 08:21:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/27 05:16:39 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/27 08:00:07 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_isprint - checks for any printable character including space.
+** ft_strmapi - Applies the function ’f’ to each character of the
+** string ’s’ to create a new string
 */
 
-int	ft_isprint(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	return (c >= 32 && c <= 126);
+	char	*result;
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(s);
+	if (!(result = (char *)malloc(sizeof(char) * (len + 1))))
+		return (0);
+	i = 0;
+	while (i < len)
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[len] = '\0';
+	return (result);
 }

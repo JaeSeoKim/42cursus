@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 17:49:14 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/27 08:21:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/27 07:37:02 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/27 08:55:09 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_isprint - checks for any printable character including space.
+** ft_putchar_fd - Outputs the character ’c’ to the given file descriptor.
 */
 
-int	ft_isprint(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	return (c >= 32 && c <= 126);
+	write(fd, &c, 1);
 }
