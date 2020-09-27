@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 18:01:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/28 00:32:25 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/28 00:10:44 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/28 00:13:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_toupper - convert uppercase
+** ft_lstclear - Deletes and frees the given element and every
+** successor of that element
 */
 
-int	ft_toupper(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	t_list *tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		*lst = tmp;
+	}
+	*lst = 0;
 }

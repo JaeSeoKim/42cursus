@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 18:01:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/28 00:32:25 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/27 23:41:09 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/27 23:56:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_toupper - convert uppercase
+** ft_lstlast - Returns the last element of the list.
 */
 
-int	ft_toupper(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

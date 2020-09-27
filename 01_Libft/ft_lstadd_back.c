@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 18:01:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/28 00:32:25 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/28 00:05:59 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/09/28 00:08:19 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_toupper - convert uppercase
+** ft_lstadd_back - Adds the element ’new’ at the end of the list.
 */
 
-int	ft_toupper(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (*lst == 0)
+		*lst = new;
+	else
+		(ft_lstlast(*lst))->next = new;
 }

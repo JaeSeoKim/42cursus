@@ -20,3 +20,5 @@
 - **Write** : [`ft_putchar_fd`](./ft_putchar_fd) [`ft_putstr_fd`](./ft_putstr_fd) [`ft_putendl_fd`](./ft_putendl_fd) [`ft_putnbr_fd`](./ft_putnbr_fd)
 
 ## 🚩 Bonus part
+
+- **Linked list** : [`ft_lstnew`](./ft_lstnew.c) [`ft_lstadd_front`](./ft_lstadd_front.c) [`ft_lstsize`](./ft_lstsize.c) [`ft_lstlast`](./ft_lstlast.c) [`ft_lstadd_back`](./ft_lstadd_back.c) [`ft_lstdelone`](./ft_lstdelone.c) [`ft_lstclear`](./ft_lstclear.c) [`ft_lstiter`](./ft_lstiter.c) [`ft_lstmap`](./ft_lstmap.c)
