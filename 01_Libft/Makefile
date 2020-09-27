@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/28 00:31:17 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/28 03:55:57 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRC_PART1 = \
 	./ft_isascii.c	\
 	./ft_isprint.c	\
 	./ft_toupper.c	\
-	./ft_tolower.c	\
+	./ft_tolower.c
 	
 SRC_PART2 = \
 	./ft_substr.c	\
@@ -76,7 +76,8 @@ SRC_BONUS = \
 
 SRCS = \
 	${SRC_PART1}	\
-	${SRC_PART2}
+	${SRC_PART2}	\
+	${SRC_BONUS}
 	
 OBJS = $(SRCS:.c=.o)
 

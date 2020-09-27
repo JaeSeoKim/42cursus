@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 01:02:02 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/27 07:05:17 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/28 03:48:43 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char		*ft_strndup(const char *s, size_t n)
 		result[i] = s[i];
 		i++;
 	}
-	result[i] = '\0';
+	result[i] = 0;
 	return (result);
 }
 
@@ -92,6 +92,6 @@ char			**ft_split(char const *s, char c)
 		s += wordlen;
 		i++;
 	}
-	result[count] = '\0';
+	result[count] = 0;
 	return (result);
 }
