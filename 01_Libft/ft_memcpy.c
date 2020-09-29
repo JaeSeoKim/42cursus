@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 21:00:42 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 05:52:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/29 15:42:55 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*dp;
 	const unsigned char	*sp;
 
+	if (!dest && !src)
+		return (0);
 	dp = dest;
 	sp = src;
 	while (n-- > 0)

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 21:49:07 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/29 15:11:41 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/29 15:38:46 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*dp;
 	const unsigned char	*sp;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (0);
 	if (dest > src)
 	{
