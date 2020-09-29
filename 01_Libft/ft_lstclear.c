@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:10:44 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/28 00:13:54 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/29 22:34:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		tmp = (*lst)->next;
 		del((*lst)->content);
+		free(*lst);
 		*lst = tmp;
 	}
 	*lst = 0;
