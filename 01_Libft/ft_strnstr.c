@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 08:59:33 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/29 15:21:55 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/29 19:33:01 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t blen)
 	if (*little == '\0')
 		return (char *)big;
 	llen = ft_strlen(little);
-	while (blen-- >= llen)
+	while (*big && blen-- >= llen)
 	{
 		if (*big == *little && ft_strncmp(big, little, llen) == 0)
 			return (char*)big;
