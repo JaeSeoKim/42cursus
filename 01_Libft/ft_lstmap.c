@@ -6,18 +6,18 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:17:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/29 22:45:25 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/30 19:46:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_lstmap - Iterates the list ’lst’ and applies the function
-** ’f’ to the content of each element.
+** ft_lstmap - Iterates the list 'lst' and applies the function
+** 'f' to the content of each element.
 ** Creates a new list resulting of the successive applications of
-** the function ’f’.
-** The ’del’ function is used to
+** the function 'f'.
+** The 'del' function is used to
 ** delete the content of an element if needed.
 */
 

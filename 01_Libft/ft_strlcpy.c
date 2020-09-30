@@ -6,14 +6,14 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/25 21:35:14 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/25 23:22:28 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/30 19:42:22 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_strlcpy — size-bounded string copying and concatenation
+** ft_strlcpy - size-bounded string copying and concatenation
 */
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)

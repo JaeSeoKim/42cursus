@@ -6,14 +6,14 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:14:29 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/28 00:16:41 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/30 19:45:40 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_lstiter - Iterates the list ’lst’ and applies the function
+** ft_lstiter - Iterates the list 'lst' and applies the function
 ** ’f’ to the content of each element.
 */
 

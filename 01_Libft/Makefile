@@ -6,14 +6,14 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/28 04:32:12 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/30 19:34:26 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-TARGET = libft.a
+NAME = libft.a
 
 AR = ar
-ARFLAGS = cr
+ARFLAGS = crs
 
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
@@ -61,6 +61,12 @@ SRC_PART2 = \
 	./ft_putendl_fd.c	\
 	./ft_putnbr_fd.c
 
+SRCS = \
+	$(SRC_PART1)	\
+	$(SRC_PART2)
+	
+OBJS = $(SRCS:.c=.o)
+
 SRC_BONUS = \
 	./ft_lstnew.c	\
 	./ft_lstadd_front.c	\
@@ -72,29 +78,25 @@ SRC_BONUS = \
 	./ft_lstiter.c	\
 	./ft_lstmap.c
 
-	
+OBJS_BONUS = $(SRC_BONUS:.c:.o)
 
-SRCS = \
-	${SRC_PART1}	\
-	${SRC_PART2}	\
-	${SRC_BONUS}
-	
-OBJS = $(SRCS:.c=.o)
-
-all : $(TARGET)
+all : $(NAME)
 
 clean :
 	$(RM) $(RMFLAG) $(OBJS)
 
 fclean : clean
-	$(RM) $(RMFLAG) $(TARGET)
+	$(RM) $(RMFLAG) $(NAME)
 
 re : fclean all
 
-.c.o : $(SRCS)
+.c.o : $(SRCS) $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-$(TARGET) : $(OBJS)
+$(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
+
+bouns : $(OBJS) $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 .PHONY: all clean fclean re

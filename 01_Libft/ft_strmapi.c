@@ -6,15 +6,15 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 05:16:39 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/27 08:00:07 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/09/30 19:43:08 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** ft_strmapi - Applies the function ’f’ to each character of the
-** string ’s’ to create a new string
+** ft_strmapi - Applies the function 'f' to each character of the
+** string 's' to create a new string
 */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
