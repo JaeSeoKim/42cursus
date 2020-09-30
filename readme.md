@@ -18,5 +18,5 @@
 
 | CIRCLE | PROJECT             | LANGUAGE | TOPICS                             | EXPERIENCE | STATUS            |
 | ------ | ------------------- | -------- | ---------------------------------- | ---------- | ----------------- |
-| 01     | [Libft](./01_Libft) | C        | `Library` `Makefile` `Linked list` | ?          | Work in process 🚧 |
+| 01     | [Libft](./00_Libft) | C        | `Library` `Makefile` `Linked list` | ?          | Work in process 🚧 |
 

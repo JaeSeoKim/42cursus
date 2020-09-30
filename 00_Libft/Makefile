@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/30 22:24:08 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/30 23:28:24 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ OBJS_BONUS = $(SRC_BONUS:.c=.o)
 all : $(NAME)
 
 clean :
-	$(RM) $(RMFLAG) $(OBJS)
+	$(RM) $(RMFLAG) $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
 	$(RM) $(RMFLAG) $(NAME)
