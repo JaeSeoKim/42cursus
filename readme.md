@@ -16,7 +16,7 @@
 
 ### Common Circle
 
-| CIRCLE | PROJECT             | LANGUAGE | TOPICS                             | EXPERIENCE | STATUS            |
-| ------ | ------------------- | -------- | ---------------------------------- | ---------- | ----------------- |
-| 01     | [Libft](./00_Libft) | C        | `Library` `Makefile` `Linked list` | ?          | Work in process 🚧 |
+| CIRCLE | PROJECT             | LANGUAGE | TOPICS                             | EXPERIENCE | STATUS       |
+| ------ | ------------------- | -------- | ---------------------------------- | ---------- | ------------ |
+| 00     | [Libft](./00_Libft) | C        | `Library` `Makefile` `Linked list` | 462 XP     | ❌fail 50/100 |
 
