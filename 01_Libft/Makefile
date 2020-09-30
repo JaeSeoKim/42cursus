@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/09/30 19:34:26 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/09/30 22:24:08 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,7 @@ SRC_BONUS = \
 	./ft_lstiter.c	\
 	./ft_lstmap.c
 
-OBJS_BONUS = $(SRC_BONUS:.c:.o)
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
@@ -96,7 +96,7 @@ re : fclean all
 $(NAME) : $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-bouns : $(OBJS) $(OBJS_BONUS)
+bonus : $(OBJS) $(OBJS_BONUS)
 	$(AR) $(ARFLAGS) $(NAME) $^
 
 .PHONY: all clean fclean re
