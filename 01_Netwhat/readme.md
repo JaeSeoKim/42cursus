@@ -137,11 +137,42 @@ Broadcast address: 192.1.68.16.255
 
 #### What are the different ways to represent an ip address with the Netmask
 
+Netmask를 표현 하는 방법은 2가지가 존재한다.
 
+첫번째는 Netmask bit를 표현한 방법이다. 예를 들어 설명을 하자면 A Class의 경우 `255.0.0.0`이 된다.
+두번째는 Netmask의 bit 갯수를 표현한 방법이다. 예를 들어 A class의 경우 `/8`로 표현한다.
+
+이때 IP주소뒤에 붙여서 간결하게 사용한다. ex) 192.168.16.1/24
 
 #### What are the differences between public and private IPs
 
+Public IP와 Private IP는 기존 Public IP으로만 구성되었을 때의 IP 부족과 보안을 위해 만들어 졌다.
+
+Public IP는 말 그대로 공개된 IP 주소이다. ICANN에서 발급되는 IP주소를 이야기 하며 이 주소를 통하여 인터넷이 사용이 가능하다.
+
+Private IP는 특수범위 IP중 사설망에 해당된 범위를 사용한다. 
+
+![image-20201001202448174](image/readme/image-20201001202448174.png)
+
+Private Network는 Public Network와 달리 외부에서 접근이 불가능 하다.
+
+외부에서 내부로 접근을 하기위해서는 Public IP와 Port Forwarding이 필요하다.
+
+Private Network에서 Public Network로 요청을 보내게 되면 사설네트워크와 연결된 라우터에서 Public IP로 요청이 보내지고 라우터는 이때 공인 IP로 들어온 응답값과 전송값을 전달해주는 역할을 하게 된다.
+
+이러한 Private Network를 사용하게 되면 무분별하게 기기당 배정되는 IP를 낭비 하지 않을 수 있으며 Port가 Forwarding 되지 않는 이상 내부로 접근 할 수 힘들고 내부의 네트워크 구조를 모르기 때문에 보안에 강력해진다. 
+
 #### What is TCP
+
+TCP(Transmission Control Protocol)는 전송 프로토콜중 하나로 `3-Way-Handshake` 방식을 사용하여 신뢰도가 높은 점이 특징이다.
+
+##### 3-Way-Handshake 
+
+![image-20201001212248245](image/readme/image-20201001212248245.png)
+
+위와 같이 전송 후 제대로 받았는지에 대해 체크를 하기 때문에 문제가 발생하면 다시 재전송하여 신뢰도가 높은 연결을 보장할 수 있습니다.
+
+단점은 UDP에 비해 전송후 확인하는 절차가 있어서 속도가 느립니다.
 
 #### What is UDP
 
