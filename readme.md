@@ -16,7 +16,8 @@
 
 ### Common Circle
 
-| CIRCLE | PROJECT             | LANGUAGE | TOPICS                             | EXPERIENCE | STATUS       |
-| ------ | ------------------- | -------- | ---------------------------------- | ---------- | ------------ |
-| 00     | [Libft](./00_Libft) | C        | `Library` `Makefile` `Linked list` | 462 XP     | ❌fail 50/100 |
+| CIRCLE | PROJECT                 | LANGUAGE | TOPICS                                 | EXPERIENCE | STATUS       |
+| ------ | ----------------------- | -------- | -------------------------------------- | ---------- | ------------ |
+| 00     | [Libft](./00_Libft)     | C        | `Library` `Makefile` `Linked list`     | 462 XP     | ❌fail 50/100 |
+| 01     | [Netwhat](./01_Netwhat) | Network  | `network` `IP` `network layers` `DHCP` | 462 XP     |              |
 
