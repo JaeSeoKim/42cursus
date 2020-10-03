@@ -7,13 +7,18 @@
             "args": [
                 "-g",
                 "${file}",
+                "${fileDirname}/get_next_line.c",
+                "${fileDirname}/get_next_line_utils.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out",
+                "-Wall",
+                "-Werror",
+                "-Wextra"
                 // for Libft
-                "-L",
-                "${fileDirname}/",
-                "-l",
-                "ft"
+                // "-L",
+                // "${fileDirname}/",
+                // "-l",
+                // "ft"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
