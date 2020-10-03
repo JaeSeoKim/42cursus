@@ -170,19 +170,60 @@ TCP(Transmission Control Protocol)는 전송 프로토콜중 하나로 `3-Way-Ha
 
 ![image-20201001212248245](image/readme/image-20201001212248245.png)
 
-위와 같이 전송 후 제대로 받았는지에 대해 체크를 하기 때문에 문제가 발생하면 다시 재전송하여 신뢰도가 높은 연결을 보장할 수 있습니다.
+위와 같이 전송 후 제대로 받았는지에 대해 체크를 하기 때문에 문제가 발생하면 다시 재전송하여 신뢰도가 높은 연결을 보장할 수 있다.
 
-단점은 UDP에 비해 전송후 확인하는 절차가 있어서 속도가 느립니다.
+단점은 UDP에 비해 전송후 확인하는 절차가 있어서 속도가 느리다.
 
 #### What is UDP
 
+UDP(User Datagram Protocol)은 TCP와 달리 매우간단한 request를 보내면 response로 응답이 오는 매우 간단한 구조로 이루어져 있다.
+
+이로 인해 TCP는 신뢰가 있는 연결을 보장하는 반면 UDP는 전달에 실패했는지에 대해 알 수가 없으므로 비신뢰성 연결이다.
+
+하지만 이러한 점 덕분에 TCP보다 빠른 속도를 낼 수 있다.
+
+![image-20201002214740425](image/readme/image-20201002214740425.png)
+
 #### What are the network layers
+
+Network layer는 컴퓨터 네트워크 프로토콜 디자인과 통신을 계층으로 나누어 설명한 것 이다.
+
+대표적으로 `OSI 7 layer`와 `TCP/IP 4 layer` 가 존재 한다.
 
 #### What is the OSI model
 
+OSI model은 국제표준화기국(ISO)에서 만든 모델로 컴퓨터 네트워크 프로토콜 디자인과 통신을 계층으로 나누어 설명한 것이다.
+
+각 계층의 명칭, 프로토콜 등등에 대해서는 아래의 표에서 알 수 있다.
+
+|            계층            |                             기타                             |    [TCP/IP](https://ko.wikipedia.org/wiki/TCP/IP) 스위트     | [SS7](https://ko.wikipedia.org/w/index.php?title=SS7&action=edit&redlink=1) | [AppleTalk](https://ko.wikipedia.org/wiki/AppleTalk) 스위트  |                          OSI 스위트                          |       [IPX](https://ko.wikipedia.org/wiki/IPX) 스위트        | [SNA](https://ko.wikipedia.org/wiki/시스템_네트워크_아키텍처) |          [UMTS](https://ko.wikipedia.org/wiki/UMTS)          |
+| :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|   7 - 응용(Application)    | [HL7](https://ko.wikipedia.org/w/index.php?title=HL7&action=edit&redlink=1), [Modbus](https://ko.wikipedia.org/wiki/Modbus), [SIP](https://ko.wikipedia.org/wiki/SIP) | [HTTP](https://ko.wikipedia.org/wiki/HTTP), [SMTP](https://ko.wikipedia.org/wiki/SMTP), [SNMP](https://ko.wikipedia.org/wiki/SNMP), [FTP](https://ko.wikipedia.org/wiki/FTP), [텔넷](https://ko.wikipedia.org/wiki/텔넷), [NFS](https://ko.wikipedia.org/wiki/NFS), [NTP](https://ko.wikipedia.org/wiki/NTP) | [ISUP](https://ko.wikipedia.org/w/index.php?title=ISUP&action=edit&redlink=1), [INAP](https://ko.wikipedia.org/w/index.php?title=INAP&action=edit&redlink=1), [MAP](https://ko.wikipedia.org/wiki/MAP), [TUP](https://ko.wikipedia.org/w/index.php?title=TUP&action=edit&redlink=1), [TCAP](https://ko.wikipedia.org/w/index.php?title=TCAP&action=edit&redlink=1) | [AFP](https://ko.wikipedia.org/wiki/애플_파일링_프로토콜), PAP | [FTAM](https://ko.wikipedia.org/w/index.php?title=FTAM&action=edit&redlink=1), [X.400](https://ko.wikipedia.org/wiki/X.400), [X.500](https://ko.wikipedia.org/wiki/X.500), [DAP](https://ko.wikipedia.org/w/index.php?title=직접_접근_프로토콜&action=edit&redlink=1) |                                                              |          [APPC](https://ko.wikipedia.org/wiki/APPC)          |                                                              |
+|   6 - 표현(Presentation)   | [TDI](https://ko.wikipedia.org/wiki/TDI), [ASCII](https://ko.wikipedia.org/wiki/ASCII), [EBCDIC](https://ko.wikipedia.org/wiki/EBCDIC), [MIDI](https://ko.wikipedia.org/wiki/MIDI), [MPEG](https://ko.wikipedia.org/wiki/MPEG) |           [XDR](https://ko.wikipedia.org/wiki/XDR)           |                                                              | [AFP](https://ko.wikipedia.org/wiki/애플_파일링_프로토콜), [PAP](https://ko.wikipedia.org/wiki/PAP) |                                                              |                                                              |                                                              |                                                              |
+|     5 - 세션(Session)      | [FIFO](https://ko.wikipedia.org/wiki/FIFO)(파이프), [넷바이오스](https://ko.wikipedia.org/wiki/넷바이오스), [SAP](https://ko.wikipedia.org/wiki/서비스_광고_프로토콜), [SDP](https://ko.wikipedia.org/w/index.php?title=세션_데스크립션_프로토콜&action=edit&redlink=1), [SSL](https://ko.wikipedia.org/wiki/SSL), [TLS](https://ko.wikipedia.org/wiki/전송_계층_보안) | [TCP](https://ko.wikipedia.org/wiki/전송_제어_프로토콜)의 세션 관리 부분, |                                                              | [ASP](https://ko.wikipedia.org/wiki/AppleTalk), [ADSP](https://ko.wikipedia.org/w/index.php?title=ADSP&action=edit&redlink=1), [ZIP](https://ko.wikipedia.org/wiki/ZIP) |                                                              | [NWLink](https://ko.wikipedia.org/w/index.php?title=NWLink&action=edit&redlink=1) |          [DLC](https://ko.wikipedia.org/wiki/DLC)?           |                                                              |
+|    4 - 전송(Transport)     |       [NetBEUI](https://ko.wikipedia.org/wiki/NetBEUI)       | [TCP](https://ko.wikipedia.org/wiki/전송_제어_프로토콜), [UDP](https://ko.wikipedia.org/wiki/사용자_데이터그램_프로토콜), [RTP](https://ko.wikipedia.org/wiki/RTP), [SCTP](https://ko.wikipedia.org/wiki/SCTP) |                                                              | [ATP](https://ko.wikipedia.org/wiki/애플토크), [NBP](https://ko.wikipedia.org/wiki/NBP), [AEP](https://ko.wikipedia.org/wiki/AEP), [RTMP](https://ko.wikipedia.org/wiki/RTMP) | TP0, TP1, TP2, TP3, TP4, [OSPF](https://ko.wikipedia.org/wiki/OSPF) | [SPX](https://ko.wikipedia.org/w/index.php?title=SPX&action=edit&redlink=1), [RIP](https://ko.wikipedia.org/wiki/라우팅_인포메이션_프로토콜) |                                                              |                                                              |
+|   3 - 네트워크(Network)    |   [NetBEUI](https://ko.wikipedia.org/wiki/NetBEUI), Q.931    | [IP](https://ko.wikipedia.org/wiki/IP), [ICMP](https://ko.wikipedia.org/wiki/ICMP), [IPsec](https://ko.wikipedia.org/wiki/IPsec), [ARP](https://ko.wikipedia.org/wiki/ARP), [RIP](https://ko.wikipedia.org/wiki/라우팅_인포메이션_프로토콜), [BGP](https://ko.wikipedia.org/wiki/BGP) | [MTP-3](https://ko.wikipedia.org/w/index.php?title=MTP-3&action=edit&redlink=1), [SCCP](https://ko.wikipedia.org/w/index.php?title=SCCP&action=edit&redlink=1) |           [DDP](https://ko.wikipedia.org/wiki/DDP)           | [X.25](https://ko.wikipedia.org/wiki/X.25) ([PLP](https://ko.wikipedia.org/wiki/PLP)), CLNP |           [IPX](https://ko.wikipedia.org/wiki/IPX)           |                                                              |                   RRC (라디오 리소스 제어)                   |
+| 2 - 데이터 링크(Data Link) | [이더넷](https://ko.wikipedia.org/wiki/이더넷), [토큰링](https://ko.wikipedia.org/wiki/토큰링), [FDDI](https://ko.wikipedia.org/wiki/FDDI), [PPP](https://ko.wikipedia.org/w/index.php?title=포인트_투_포인트_프로토콜&action=edit&redlink=1), [HDLC](https://ko.wikipedia.org/w/index.php?title=HDLC&action=edit&redlink=1), Q.921, [프레임 릴레이](https://ko.wikipedia.org/wiki/프레임_릴레이), [ATM](https://ko.wikipedia.org/wiki/비동기_전송_모드), [Fibre Channel](https://ko.wikipedia.org/w/index.php?title=Fibre_Channel&action=edit&redlink=1) |                                                              | [MTP-2](https://ko.wikipedia.org/w/index.php?title=메시지_전송_파트&action=edit&redlink=1) | [로컬토크](https://ko.wikipedia.org/w/index.php?title=로컬토크&action=edit&redlink=1), [토큰토크](https://ko.wikipedia.org/w/index.php?title=토큰토크&action=edit&redlink=1), [이더토크](https://ko.wikipedia.org/w/index.php?title=이더토크&action=edit&redlink=1), [애플 리모트 액세스](https://ko.wikipedia.org/w/index.php?title=애플_리모트_액세스&action=edit&redlink=1), [PPP](https://ko.wikipedia.org/wiki/점대점_프로토콜) | [X.25](https://ko.wikipedia.org/wiki/X.25) ([LAPB](https://ko.wikipedia.org/w/index.php?title=LAPB&action=edit&redlink=1)), 토큰 버스 | [802.3](https://ko.wikipedia.org/wiki/802.3) 프레이밍, 이더넷 II 프레이밍 | [SDLC](https://ko.wikipedia.org/w/index.php?title=SDLC_프로토콜&action=edit&redlink=1) | [미디어 접근 제어](https://ko.wikipedia.org/wiki/미디어_접근_제어)(MAC) |
+|     1 - 물리(Physical)     | [RS-232](https://ko.wikipedia.org/wiki/RS-232), [V.35](https://ko.wikipedia.org/w/index.php?title=V.35&action=edit&redlink=1), [V.34](https://ko.wikipedia.org/w/index.php?title=V.34&action=edit&redlink=1), Q.911, [T1](https://ko.wikipedia.org/w/index.php?title=T-carrier&action=edit&redlink=1), [E1](https://ko.wikipedia.org/w/index.php?title=E-carrier&action=edit&redlink=1), [10BASE-T](https://ko.wikipedia.org/w/index.php?title=10BASE-T&action=edit&redlink=1), [100BASE-TX](https://ko.wikipedia.org/w/index.php?title=100BASE-TX&action=edit&redlink=1), [ISDN](https://ko.wikipedia.org/wiki/ISDN), [SONET](https://ko.wikipedia.org/w/index.php?title=SONET&action=edit&redlink=1), [DSL](https://ko.wikipedia.org/wiki/DSL) |                                                              | [MTP-1](https://ko.wikipedia.org/w/index.php?title=Message_Transfer_Part&action=edit&redlink=1) |  Localtalk on shielded, Localtalk on unshielded (PhoneNet)   | [X.25](https://ko.wikipedia.org/wiki/X.25) ([X.21bis](https://ko.wikipedia.org/w/index.php?title=X.21bis&action=edit&redlink=1), [EIA/TIA-232](https://ko.wikipedia.org/wiki/EIA/TIA-232), [EIA-422](https://ko.wikipedia.org/wiki/EIA-422), [EIA/TIA-449](https://ko.wikipedia.org/w/index.php?title=EIA/TIA-449&action=edit&redlink=1), [EIA-485](https://ko.wikipedia.org/wiki/EIA-485), [EIA-530](https://ko.wikipedia.org/w/index.php?title=EIA-530&action=edit&redlink=1), [G.703](https://ko.wikipedia.org/w/index.php?title=G.703&action=edit&redlink=1)) |                                                              |                            Twinax                            |                PHY (물리 계층: Physical Layer                |
+
 #### What is a DHCP server and the DHCP protocol
 
+DHCP(Dynamic Host Configuration Protocol)는 동적으로 IP를 할당시켜 관리 할때 사용하는 프로토콜이다.
+
+조직에서 네트워크를 관리할때 직접 PC별 IP를 설정 하여서 할당을 해야 하는데 이러한 불편함을 해결하기 위해 만들어진 프로토콜 이다.
+
+사용자가 네트워크에 접근하게 되면 DHCP Server로 부터 IP 할당 요청을 보내게 되고 그 다음 IP를 일정 기간 동안 임대를 받아서 사용을 하게 된다.
+
 #### What is a DNS server and the DNS protocol
+
+DNS(Domain Name System)은 IP와 Domain를 매칭 시켜주는 프로토콜이라고 생각 하면 된다.
+
+기존 IP로 웹사이트를 운영한다고 하면 숫자로 이루어진 주소를 외우고 접근을 해야 하는데 domain은 영어철자로 서비스 하고 있는 이름이나 관련 단어로 구성되어 있어 사용자가 외우기도 쉽고 간편하게 사용이 가능하다는 장점이 있다.
+
+```
+Name:   server.devjs.cf
+Address: 27.96.135.144
+```
 
 #### What are the rules to make 2 devices communicate using IP addresses
 
@@ -190,4 +231,5 @@ TCP(Transmission Control Protocol)는 전송 프로토콜중 하나로 `3-Way-Ha
 
 #### What is a default gateway for routing
 
-#### What is a port from an IP point of view and what is it used for when connecting to another device
+#### What is a port from an IP point of view and what is it used for when connecting to another device)
+
