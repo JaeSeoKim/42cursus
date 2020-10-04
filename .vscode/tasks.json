@@ -13,7 +13,10 @@
                 "${fileDirname}/${fileBasenameNoExtension}.out",
                 "-Wall",
                 "-Werror",
-                "-Wextra"
+                "-Wextra",
+                // for GNL
+                // "-D",
+                // "BUFFER_SIZE=2",
                 // for Libft
                 // "-L",
                 // "${fileDirname}/",

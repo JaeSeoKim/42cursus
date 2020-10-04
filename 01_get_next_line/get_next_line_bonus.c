@@ -6,11 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:48:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/04 00:16:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/04 14:21:31 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 static int	storejoin(char **store, char *buf, ssize_t read_size)
 {
@@ -61,9 +61,9 @@ int			get_next_line(int fd, char **line)
 		return (-1);
 	if (!(buf = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 		return (-1);
-	while ((read_size = read(fd, buf, BUFFER_SIZE)) && read_size > 0)
+	while ((read_size = read(fd, buf, BUFFER_SIZE)) != -1)
 	{
-		if (storejoin(&store[fd], buf, read_size))
+		if (storejoin(&store[fd], buf, read_size) || read_size <= 0)
 			break ;
 	}
 	free(buf);
