@@ -15,8 +15,8 @@
                 "-Werror",
                 "-Wextra",
                 // for GNL
-                // "-D",
-                // "BUFFER_SIZE=2",
+                "-D",
+                "BUFFER_SIZE=3",
                 // for Libft
                 // "-L",
                 // "${fileDirname}/",
