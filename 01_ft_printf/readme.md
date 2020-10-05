@@ -38,21 +38,44 @@
 
 ### ✅ ToDo List
 
-- [ ] #### Format specifiers 정리!
+- [ ] Format specifiers 정리!
 
   - [ ] **Mandatory part**
-    - [ ] `%c`
-    - [ ] `%s`
-    - [ ] `%p`
-    - [ ] `%d`
-    - [ ] `%i`
-    - [ ] `%u`
-    - [ ] `%x`
-    - [ ] `%X`
+
+    - [x] **Format Specifier**
+    
+      - `%c` : char - 하나의 문자
+      - `%s` : *char - 문자열
+      - `%p` : *void - pointer 주소
+      - `%d` : int - 부호가 있는 10진수 정수
+      - `%i` : int - 부호가 있는 10진수 정수
+      - `%u` : unsinged int : 부호 없는 10진 정수
+      - `%x` : hexadecimal(int) : 부호 없는 16진 정수 (소문자 사용)
+      - `%X` : hexadecimal(int) : 부호 없는 16진 정수 (대문자 사용)
+    
+    - [ ] ****
+    
   - [ ] **Bonus part**
+
+    | *length* | `d i`           | `u o x X`                | `f F e E g G a A` | `c`      | `s`        | `p`     | `n`              |
+    | -------- | --------------- | ------------------------ | ----------------- | -------- | ---------- | ------- | ---------------- |
+    | *(none)* | `int`           | `unsigned int`           | `double`          | `int`    | `char*`    | `void*` | `int*`           |
+    | `hh`     | `signed char`   | `unsigned char`          |                   |          |            |         | `signed char*`   |
+    | `h`      | `short int`     | `unsigned short int`     |                   |          |            |         | `short int*`     |
+    | `l`      | `long int`      | `unsigned long int`      |                   | `wint_t` | `wchar_t*` |         | `long int*`      |
+    | `ll`     | `long long int` | `unsigned long long int` |                   |          |            |         | `long long int*` |
+
   - [ ] **Additional part**
 
-- [ ] #### Format Parsing 방법 구상!
+    | *length* | `d i`       | `u o x X`      | `f F e E g G a A` | `c`   | `s`     | `p`     | `n`          |
+    | -------- | ----------- | -------------- | ----------------- | ----- | ------- | ------- | ------------ |
+    | *(none)* | `int`       | `unsigned int` | `double`          | `int` | `char*` | `void*` | `int*`       |
+    | `j`      | `intmax_t`  | `uintmax_t`    |                   |       |         |         | `intmax_t*`  |
+    | `z`      | `size_t`    | `size_t`       |                   |       |         |         | `size_t*`    |
+    | `t`      | `ptrdiff_t` | `ptrdiff_t`    |                   |       |         |         | `ptrdiff_t*` |
+    | `L`      |             |                | `long double`     |       |         |         |              |
 
-- [ ] #### ...
+- [ ] Format Parsing 방법 구상!
+
+- [ ] ...
 
