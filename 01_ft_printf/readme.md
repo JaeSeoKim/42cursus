@@ -40,10 +40,12 @@
 
 - [ ] Format specifiers 정리!
 
+  [참고 링크](https://dojang.io/mod/page/view.php?id=736)
+
   - [ ] **Mandatory part**
 
-  	**Format Specifier**
-    
+    **Format Specifier**
+
       - `%c` : char - 하나의 문자
       - `%s` : *char - 문자열
       - `%p` : *void - pointer 주소
@@ -52,10 +54,22 @@
       - `%u` : unsinged int : 부호 없는 10진 정수
       - `%x` : hexadecimal(int) : 부호 없는 16진 정수 (소문자 사용)
       - `%X` : hexadecimal(int) : 부호 없는 16진 정수 (대문자 사용)
-    
+
+    **Flag**
+
+    - `-` : 왼쪽 정렬
+    - `0` : 공백 대신 0으로 padding처리
+    - `.` : 정밀도 숫자 서식에 관여
+    - `*` : 가변인자로 width, precision의 크기가 들어옴
+
   - [ ] **Bonus part**
 
     **Format Specifier**
+
+      - `%n` : int * - 인자로 들어온 포인터에 현재 까지 출력한 문자 갯수 저장
+      - `%f` : double - 1.200000: 실수를 소수점으로 표기(소문자)
+      - `%g` : double - 1.200000e+00: 실수 지수 표기법 사용(소문자)
+      - `%e` : double - 1.2: %f와 %e 중에서 짧은 것을 사용(소문자)
 
     | *length* | `d i`           | `u o x X`                | `f F e E g G a A` | `c`      | `s`        | `p`     | `n`              |
     | -------- | --------------- | ------------------------ | ----------------- | -------- | ---------- | ------- | ---------------- |
@@ -65,9 +79,15 @@
     | `l`      | `long int`      | `unsigned long int`      |                   | `wint_t` | `wchar_t*` |         | `long int*`      |
     | `ll`     | `long long int` | `unsigned long long int` |                   |          |            |         | `long long int*` |
 
+    **flag**
+
+    - `+` : 양수 일때에는 + 음수일때에는 - 기호 출력
+    - `공백` :  양수일때에는 부호를 출력 하지 않고 음수일때에만 - 기호 출력
+    - `#` : 진법에 맞게 숫자 앞에 0, 0x, 0X를 출력
+
   - [ ] **Additional part**
 
-    
+    **Format Specifier**
 
     | *length* | `d i`       | `u o x X`      | `f F e E g G a A` | `c`   | `s`     | `p`     | `n`          |
     | -------- | ----------- | -------------- | ----------------- | ----- | ------- | ------- | ------------ |
