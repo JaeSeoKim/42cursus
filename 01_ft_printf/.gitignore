@@ -1,0 +1,3 @@
+# ignore libft
+lib/libft/.*
+lib/libft/readme.md
