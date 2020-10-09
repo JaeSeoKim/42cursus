@@ -6,11 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:48:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/04 15:36:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/09 23:13:20 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static int	storejoin(char **store, char *buf, ssize_t read_size)
 {
