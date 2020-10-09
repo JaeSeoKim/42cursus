@@ -42,7 +42,7 @@
 
   - [ ] **Mandatory part**
 
-    - [x] **Format Specifier**
+  	**Format Specifier**
     
       - `%c` : char - 하나의 문자
       - `%s` : *char - 문자열
@@ -53,9 +53,9 @@
       - `%x` : hexadecimal(int) : 부호 없는 16진 정수 (소문자 사용)
       - `%X` : hexadecimal(int) : 부호 없는 16진 정수 (대문자 사용)
     
-    - [ ] ****
-    
   - [ ] **Bonus part**
+
+    **Format Specifier**
 
     | *length* | `d i`           | `u o x X`                | `f F e E g G a A` | `c`      | `s`        | `p`     | `n`              |
     | -------- | --------------- | ------------------------ | ----------------- | -------- | ---------- | ------- | ---------------- |
@@ -66,6 +66,8 @@
     | `ll`     | `long long int` | `unsigned long long int` |                   |          |            |         | `long long int*` |
 
   - [ ] **Additional part**
+
+    **Format Specifier**
 
     | *length* | `d i`       | `u o x X`      | `f F e E g G a A` | `c`   | `s`     | `p`     | `n`          |
     | -------- | ----------- | -------------- | ----------------- | ----- | ------- | ------- | ------------ |
