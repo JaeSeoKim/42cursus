@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/10 04:50:22 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/12 21:29:44 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,13 +48,13 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(LIBFT)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 
 $(NAME) : $(OBJS)
+	@cp $(LIBFT_DIR)/$(LIBFT) ./$(NAME)
 	$(AR) $(ARFLAGS) $@ $(OBJS)
 
 # Libft
 
 $(LIBFT) :
 	make -C $(LIBFT_DIR)
-	@cp $(LIBFT_DIR)/$(LIBFT) ./$(NAME)
 
 $(LIBFT)_clean :
 	make -C $(LIBFT_DIR) clean
