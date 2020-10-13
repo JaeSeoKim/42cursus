@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 01:49:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/13 20:39:55 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/13 20:57:08 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static int	ft_print_flag(char **out, char **format, va_list ap)
 static int	ft_print(char **out, const char *format, va_list ap)
 {
 	int		ctmp;
-	int		count;
+	int		cnt;
 	char	*format_ptr;
 
-	count = 0;
+	cnt = 0;
 	format_ptr = (char *)format;
 	while (*format_ptr)
 	{
@@ -36,35 +36,35 @@ static int	ft_print(char **out, const char *format, va_list ap)
 			format_ptr++;
 			if ((ctmp = ft_print_flag(out, &format_ptr, ap)) == -1)
 				return (-1);
-			count += ctmp;
+			cnt += ctmp;
 		}
 		else
 		{
 			ft_putchar_out(out, *format_ptr++);
-			count++;
+			cnt++;
 		}
 	}
-	return (count);
+	return (cnt);
 }
 
 int			ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	int		count;
+	int		cnt;
 
 	va_start(ap, format);
-	count = ft_print(0, format, ap);
+	cnt = ft_print(0, format, ap);
 	va_end(ap);
-	return (count);
+	return (cnt);
 }
 
 int			ft_sprintf(char *out, const char *format, ...)
 {
 	va_list	ap;
-	int		count;
+	int		cnt;
 
 	va_start(ap, format);
-	count = ft_print(&out, format, ap);
+	cnt = ft_print(&out, format, ap);
 	va_end(ap);
-	return (count);
+	return (cnt);
 }
