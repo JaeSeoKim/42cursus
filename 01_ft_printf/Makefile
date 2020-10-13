@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/12 21:29:44 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/13 20:19:11 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,9 +67,9 @@ $(LIBFT)_fclean :
 TEST_FILE = test.c
 
 test : $(NAME) test.c
-	$(CC) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -L. -lftprintf $(TEST_FILE) -o $(TEST_FILE:.c=.o)
+	$(CC) -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.o) -L. -lftprintf
 	@echo "[TEST RESULT]"
 	@./$(TEST_FILE:.c=.o)
 	@rm $(TEST_FILE:.c=.o)
 
-.PHONY: all clean fclean re $(LIBFT)_clean $(LIBFT)_fclean $(LIBFT)_re
+.PHONY: all clean fclean re $(LIBFT)_clean $(LIBFT)_fclean $(LIBFT)_re test
