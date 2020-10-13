@@ -2,5 +2,8 @@
   "editor.tabSize": 4,
   "editor.insertSpaces": false,
   "editor.detectIndentation": true,
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
+  "files.associations": {
+    "functional": "c"
+  }
 }
