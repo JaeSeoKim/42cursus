@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_util.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_out.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 20:19:08 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 16:00:03 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/14 18:15:21 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/14 18:46:04 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	ft_putchar_out(char **out, char c)
-{
-	if (out)
-	{
-		**out = c;
-		++(*out);
-	}
-	else
-		ft_putchar_fd(c, 1);
-}
+#include "ft_printf_util.h"
 
 void	ft_putstr_out(char **out, char *s)
 {

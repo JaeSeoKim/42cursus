@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf_util.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 20:01:55 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/14 18:45:46 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
 
+#ifndef FT_PRINTF_UTIL_H
+# define FT_PRINTF_UTIL_H
+
+# include <stdarg.h>
 # include "libft.h"
+# include "ft_printf_sturct.h"
 
-int		ft_printf(const char *format, ...);
-int		ft_sprintf(char *out, const char *format, ...);
+int					ft_print_int(char **out, char **format, va_list ap);
+int					ft_print_char(char **out, char **format, va_list ap);
+
+void				ft_putchar_out(char **out, char c);
+void				ft_putstr_out(char **out, char *s);
+
+t_format_specifier	*ft_init_format_specifier(void);
 
 #endif

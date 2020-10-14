@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putchar_out.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 20:01:55 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/14 18:14:49 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/14 18:46:13 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "ft_printf_util.h"
 
-# include "libft.h"
-
-int		ft_printf(const char *format, ...);
-int		ft_sprintf(char *out, const char *format, ...);
-
-#endif
+void	ft_putchar_out(char **out, char c)
+{
+	if (out)
+	{
+		**out = c;
+		++(*out);
+	}
+	else
+		ft_putchar_fd(c, 1);
+}

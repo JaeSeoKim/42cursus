@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/11 16:13:40 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 18:35:11 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/14 18:24:57 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/14 18:45:45 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_int(char **out, char **format, va_list ap)
+int	ft_print(char **out, const char *format, va_list ap)
 {
-	int		count;
-	char	*num;
+	int		ctmp;
+	int		cnt;
+	char	*format_ptr;
 
-	++(*format);
-	num = ft_itoa(va_arg(ap, int));
-	count = ft_strlen(num);
-	ft_putstr_out(out, num);
-	return (count);
+	cnt = 0;
+	format_ptr = (char *)format;
+	while (*format_ptr)
+	{
+		if (*format_ptr == '%')
+		{
+			format_ptr++;
+			if ((ctmp = ft_init_parsing(out, &format_ptr, ap)) == -1)
+				return (-1);
+			cnt += ctmp;
+		}
+		else
+		{
+			ft_putchar_out(out, *format_ptr++);
+			cnt++;
+		}
+	}
+	return (cnt);
 }

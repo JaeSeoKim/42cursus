@@ -6,11 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 20:10:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/13 20:23:37 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/14 19:09:40 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_char(char **out, char **format, va_list ap)
 {
