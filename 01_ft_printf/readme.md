@@ -38,6 +38,20 @@
 
 ### ✅ ToDo List
 
+>  Printf 사용법  `%[flags][width][.precision]type`
+
+- [ ] flags
+
+  - [ ] `-` : 왼쪽 정렬
+
+  - [ ] `0` : 공백 대신 0으로 padding처리
+
+  - [ ] `.` : 정밀도 숫자 서식에 관여
+
+  - [ ] `*` : 가변인자로 width, precision의 크기가 들어옴
+
+    
+
 - [ ] Format specifiers 정리!
 
   [참고 링크](https://dojang.io/mod/page/view.php?id=736)

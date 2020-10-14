@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_util.c                                   :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/12 20:19:08 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 16:00:03 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/12 20:10:24 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/13 20:23:37 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putchar_out(char **out, char c)
+int	ft_print_char(char **out, char **format, va_list ap)
 {
-	if (out)
-	{
-		**out = c;
-		++(*out);
-	}
-	else
-		ft_putchar_fd(c, 1);
-}
-
-void	ft_putstr_out(char **out, char *s)
-{
-	if (out)
-	{
-		while (*s)
-		{
-			**out = *s;
-			++(*out);
-			++s;
-		}
-	}
-	else
-		ft_putstr_fd(s, 1);
+	++(*format);
+	ft_putchar_out(out, va_arg(ap, int));
+	return (1);
 }

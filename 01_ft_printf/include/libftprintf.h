@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/12 20:47:58 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/14 15:59:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@
 # include <libft.h>
 # include <stdarg.h>
 
-# include <stdio.h>
-
-typedef struct	s_printf_flag
-{
-	
-}				t_printf_flag;
-
 int		ft_printf(const char *format, ...);
-int		ft_format_int(char **format, va_list ap, char **result);
-char	*ft_str_add_char_with_free(char *s1, char c);
+int		ft_sprintf(char *out, const char *format, ...);
+
+int		ft_print_int(char **out, char **format, va_list ap);
+int		ft_print_char(char **out, char **format, va_list ap);
+
+void	ft_putchar_out(char **out, char c);
+void	ft_putstr_out(char **out, char *s);
 
 #endif
