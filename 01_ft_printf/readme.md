@@ -38,14 +38,17 @@
 
 ### ✅ ToDo List
 
->  Printf 사용법  `%[flags][width][.precision]type`
+#### Infomation
 
-- [ ] flags
-  - [ ] `-` : 왼쪽 정렬
-  - [ ] `0` : 공백 대신 0으로 padding처리
-  - [ ] `공백` : 양수라면 ` ` 공백 출력 음수라면 `-` 출력
-  - [ ] `+` : 양수라면 `+` 출력 음수라면 `-` 출력
-  - [ ] `#` : 진법에 맞춰 8진수라면 `0` 앞에 추가 16진수라면 `0x` , `0X` 출력 
+>  Printf 사용법  `%[flags][width][.precision][extend_type]type`
+
+| flags                         | extend_type          | type             |
+| ----------------------------- | -------------------- | ---------------- |
+| `-`, `0`, `+`, `<SPACE>`, `#` | `h`, `hh`, `l`, `ll` | `cspdiuxXnfgeo%` |
+
+위에서 설명한  `[flags][width][.precision][extend_type]` 은 순서가 섞여있을 때에도 작동을 해야 함.
+
+- [ ] 각 `[flags][width][.precision][extend_type]`의 정보를 담을 수 있는 구조체 작성
 
 - [ ] Format specifiers 정리!
 

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 19:27:15 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/15 16:21:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 typedef struct	s_format_specifier
 {
-	int		isleft;
+	int		is_left;
 	int		is_zeropad;
+	int		is_blank;
+	int		is_Plus;
+	int		is_hash;
 	int		width;
 	int		precision;
+	int		h_count;
+	int		l_count;
 }				t_format_specifier;
 
 #endif

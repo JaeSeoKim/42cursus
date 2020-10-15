@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 20:08:38 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/15 22:44:53 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 
 	// c1 = ft_printf("%dSeoul %c", 42, '!');
 	// printf("\n[ft_printf - count] : %d\n", c1);
-	c2 = printf("%ll안녕");
+	c2 = printf("% d", 5);
 	printf("$\n[printf - count] : %d\n", c2);
 
 	printf("%d\n", c1);
