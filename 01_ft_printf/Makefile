@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/14 23:30:56 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/15 15:16:38 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,13 +56,11 @@ fclean : $(LIBFT)_fclean clean
 
 re : fclean all 
 
-$(OBJ_DIR) :
+$(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-
-$(OBJ_DIR)/%.o : %.c $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 
-$(NAME) : $(LIBFT) $(OBJS)
+$(NAME) : $(LIBFT_FILE) $(OBJS)
 	$(AR) $(ARFLAGS) $@ $(OBJS)
 	@ranlib $(NAME)
 
@@ -79,7 +77,7 @@ $(LIBFT)_clean :
 $(LIBFT)_fclean :
 	make -C $(LIBFT_DIR) fclean
 
-# test
+# Test Code
 
 TEST_FILE = test.c
 
@@ -89,4 +87,7 @@ test : $(NAME) $(TEST_FILE)
 	@./$(TEST_FILE:.c=.out)
 	@rm $(TEST_FILE:.c=.out)
 
-.PHONY: all clean fclean re $(LIBFT)_clean $(LIBFT)_fclean $(LIBFT)_re test
+.PHONY : \
+	all clean fclean re \
+	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean $(LIBFT)_re \
+	test
