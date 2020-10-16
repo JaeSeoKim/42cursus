@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_flag.c                                    :+:      :+:    :+:   */
+/*   ft_parse_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 18:47:21 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 18:05:58 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/16 17:59:38 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/16 18:35:23 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_parse_flag(
+int		ft_parse_check(
 		char **out,
 		char **format,
 		va_list ap,
 		t_format_specifier *pformat)
 {
-	if (**format == '-')
-		pformat->is_left = 1;
-	if (**format == '0')
-		pformat->is_zeropad = 1;
-	if (**format == ' ')
-		pformat->is_blank = 1;
-	if (**format == '+')
-		pformat->is_plus = 1;
-	if (**format == '#')
-		pformat->is_hash = 1;
+	if (ft_strchr("-0+# ", **format))
+		return (ft_parse_flag(out, format, ap, pformat));
+	if (ft_strchr("123456789*", **format))
+		return (ft_parse_width(out, format, ap, pformat));
+	if (ft_strchr(".", **format))
+		return (ft_parse_precision(out, format, ap, pformat));
+	if (ft_strchr("lh", **format))
+		return (ft_parse_extend_type(out, format, ap, pformat));
+	if (ft_strchr("cspdiuxXnfgeo%", **format))
+		return (ft_parse_type(out, format, ap, pformat));
 
-	++(*format);
-	return (ft_parse_check(out, format, ap, pformat));
+	free(pformat);
+	return (-1);
 }

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/15 22:44:53 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/16 18:37:57 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 int main(void)
 {
 	int c1;
-	int c2;
+	// int c2;
 	// char buf1[100000] = {0, };
 	// char buf2[100000] = {0, };
 
-	// c1 = ft_printf("%dSeoul %c", 42, '!');
-	// printf("\n[ft_printf - count] : %d\n", c1);
-	c2 = printf("% d", 5);
-	printf("$\n[printf - count] : %d\n", c2);
+	c1 = ft_printf("%90.85llllc", 10);
+	printf("\n[ft_printf - count] : %d\n", c1);
+	// c2 = printf("%dSeoul %c", 42, '!');
+	// printf("\n[printf - count] : %d\n", c2);
 
-	printf("%d\n", c1);
 	// printf("-----------------\n");
 
 	// c1 = ft_sprintf(buf1,"%dSeoul %c", 42, '!');

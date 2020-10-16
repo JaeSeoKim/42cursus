@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/15 15:16:38 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/16 18:27:43 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 all : $(NAME)
 
 clean : $(LIBFT)_clean
-	$(RM) $(RMFLAGS) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(RMFLAGS) $(OBJS)
 
 fclean : $(LIBFT)_fclean clean
 	$(RM) $(RMFLAGS) $(NAME)
@@ -70,6 +70,7 @@ $(LIBFT) : $(LIBFT_FILE)
 
 $(LIBFT_FILE) :
 	make -C $(LIBFT_DIR)
+	@cp $(LIBFT_FILE) $(NAME)
 
 $(LIBFT)_clean :
 	make -C $(LIBFT_DIR) clean
@@ -89,5 +90,5 @@ test : $(NAME) $(TEST_FILE)
 
 .PHONY : \
 	all clean fclean re \
-	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean $(LIBFT)_re \
+	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean \
 	test

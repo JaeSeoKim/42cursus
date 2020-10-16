@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_sturct.h                                 :+:      :+:    :+:   */
+/*   ft_parse_extend_type.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 17:36:41 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/16 18:13:44 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/16 18:14:58 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_STRUCT_H
-# define FT_PRINTF_STRUCT_H
+#include "ft_printf.h"
 
-typedef struct	s_format_specifier
+int		ft_parse_extend_type(
+		char **out,
+		char **format,
+		va_list ap,
+		t_format_specifier *pformat)
 {
-	char	is_left;
-	char	is_zeropad;
-	char	is_blank;
-	char	is_plus;
-	char	is_hash;
-	int		width;
-	int		precision;
-	int		h_count;
-	int		l_count;
-}				t_format_specifier;
+	if (**format == 'h')
+		pformat->h_count += 1;
+	if (**format == 'l')
+		pformat->l_count += 1;
 
-#endif
+	++(*format);
+	return (ft_parse_check(out, format, ap, pformat));
+}
