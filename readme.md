@@ -2,14 +2,8 @@
 
 ![42logo](image/readme/42.png)
 
-> # INFO 👷
->
-> **Place : Seoul**
->
-> **Intra_id : jaeskim**
->
-> **begin date : 28/sep/2020 🎉**
-
+# INFO 👷
+[![jaeskim's 42 stats](https://42-readme-stats.vercel.app/api/stats/jaeskim)](https://github.com/JaeSeoKim/42-readme-stats)
 
 
 ## Project List
