@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_print.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/11 16:13:40 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 18:31:40 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/18 17:31:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINT_H
+# define FT_PRINT_H
 
-int	ft_print_int(char **out, char **format, va_list ap)
-{
-	int		count;
-	char	*num;
+# include <stdarg.h>
+# include "ft_printf_sturct.h"
 
-	++(*format);
-	num = ft_itoa(va_arg(ap, int));
-	count = ft_strlen(num);
-	ft_putstr_out(out, num);
-	return (count);
-}
+int		ft_print_number(
+		char **out,
+		char **format,
+		va_list ap,
+		t_format_specifier *pformat);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/14 18:45:46 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/18 22:23:46 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,11 @@ void				ft_putchar_out(char **out, char c);
 void				ft_putstr_out(char **out, char *s);
 
 t_format_specifier	*ft_init_format_specifier(void);
+
+char				*ft_ullitoa(unsigned long long int n);
+
+void				ft_test_print_sturct(
+					char **format,
+					t_format_specifier *pformat);
 
 #endif

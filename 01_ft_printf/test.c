@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 18:37:57 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/18 22:21:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@
 int main(void)
 {
 	int c1;
-	// int c2;
+	int c2;
 	// char buf1[100000] = {0, };
 	// char buf2[100000] = {0, };
 
-	c1 = ft_printf("%90.85llllc", 10);
-	printf("\n[ft_printf - count] : %d\n", c1);
-	// c2 = printf("%dSeoul %c", 42, '!');
-	// printf("\n[printf - count] : %d\n", c2);
+	const char *format = "%0100d";
+
+	c1 = ft_printf(format, -10);
+	printf("$\n[ft_printf - count] : %d\n", c1);
+	c2 = printf(format, -10);
+	printf("$\n[printf - count] : %d\n", c2);
 
 	// printf("-----------------\n");
 
