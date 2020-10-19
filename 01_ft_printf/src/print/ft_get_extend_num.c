@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 22:07:13 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:21:09 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:51:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 long long int	ft_get_extend_id(va_list ap, t_format *pf)
 {
-	signed char tmp;
+	signed char	tmp;
+
 	if (pf->l_count == 1)
 		return (va_arg(ap, long int));
 	if (pf->l_count >= 2)
