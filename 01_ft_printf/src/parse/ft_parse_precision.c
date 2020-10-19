@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:11:38 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:39:24 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:41:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		ft_parse_precision(va_list ap, t_format *pf)
 
 	format = pf->ptr;
 	tmp_precision = 0;
+	pf->visit_precision = 1;
 	++(*format);
 	if (**format == '*')
 	{

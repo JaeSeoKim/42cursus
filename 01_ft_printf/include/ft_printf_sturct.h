@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:37:48 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:42:25 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ typedef struct	s_flag
 typedef struct	s_format
 {
 	t_flag	flag;
+	char	visit_width;
 	int		width;
+	char	visit_precision;
 	int		precision;
 	int		h_count;
 	int		l_count;

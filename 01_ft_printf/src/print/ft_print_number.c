@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:14:34 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:35:57 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int			ft_print_number(va_list ap, t_format *pf)
 
 	++(*pf->ptr);
 	n = ft_get_extend_id(ap, pf);
-	n_str = ft_ullitoa(n < 0 ? -(long long int)n : n);
+	n_str = ft_ullitoa(n < 0 ? -(long long int)n : n, pf);
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;
 	cnt = pf->precision > cnt ? pf->precision : cnt;

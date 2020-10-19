@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 21:02:14 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/18 21:55:38 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:42:06 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,15 @@ static void		ft_write_nbrber(char *dest, unsigned long long int n)
 	}
 }
 
-char			*ft_ullitoa(unsigned long long int n)
+char			*ft_ullitoa(
+	unsigned long long int n,
+	t_format *pf)
 {
 	char					*result;
 	size_t					len;
 
+	if (n == 0 && pf->precision == 0 && pf->visit_precision == 1)
+		return (ft_strdup(""));
 	if (n == 0)
 		return (ft_strdup("0"));
 	else

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:08:34 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:42:50 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ t_format	*ft_init_format(char **out, char **foramt)
 	if (!(result = malloc(sizeof(t_format))))
 		return (0);
 	ft_init_flag(&result->flag);
+	result->visit_width = 0;
 	result->width = 0;
+	result->visit_precision = 0;
 	result->precision = 0;
 	result->h_count = 0;
 	result->l_count = 0;

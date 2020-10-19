@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 16:01:26 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:04:35 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 22:43:24 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		ft_parse_width(va_list ap, t_format *pf)
 
 	format = pf->ptr;
 	tmp_width = 0;
+	pf->visit_width = 0;
 	if (**format == '*')
 	{
 		pf->width = va_arg(ap, int);

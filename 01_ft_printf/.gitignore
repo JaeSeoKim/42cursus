@@ -1,4 +1,4 @@
 # ignore libft
 lib/libft/.vscode
 lib/libft/.editorconfig
-lib/libft/readme.md
+lib/libft/readme.mdpft/
