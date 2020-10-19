@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:16:54 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 18:15:16 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:45:36 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 #include <stdio.h>
 
-int		ft_parse_type(
-		char **out,
-		char **format,
-		va_list ap,
-		t_format_specifier *pformat)
+int		ft_parse_type(va_list ap, t_format *pf)
 {
-	ft_test_print_sturct(format, pformat);
-	if (**format == 'd')
-		return (ft_print_number(out, format, ap, pformat));
-	free(pformat);
+	char	**format;
+
+	format = pf->ptr;
+	ft_test_print_sturct(pf);
+	if (**format == 'd' || **format == 'i')
+		return (ft_print_number(ap, pf));
+	free(pf);
 	return (-1);
 }

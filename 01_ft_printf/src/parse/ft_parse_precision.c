@@ -6,25 +6,23 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:11:38 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/18 22:22:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:39:24 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_parse_precision(
-		char **out,
-		char **format,
-		va_list ap,
-		t_format_specifier *pformat)
+int		ft_parse_precision(va_list ap, t_format *pf)
 {
-	int tmp_precision;
+	char	**format;
+	int		tmp_precision;
 
+	format = pf->ptr;
 	tmp_precision = 0;
 	++(*format);
 	if (**format == '*')
 	{
-		pformat->precision = va_arg(ap, int);
+		pf->precision = va_arg(ap, int);
 		++(*format);
 	}
 	else
@@ -35,7 +33,7 @@ int		ft_parse_precision(
 			tmp_precision += **format - '0';
 			++(*format);
 		}
-		pformat->precision = tmp_precision;
+		pf->precision = tmp_precision;
 	}
-	return (ft_parse_check(out, format, ap, pformat));
+	return (ft_parse_check(ap, pf));
 }

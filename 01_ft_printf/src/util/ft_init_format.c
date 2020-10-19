@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_format_specifier.c                         :+:      :+:    :+:   */
+/*   ft_init_format.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 15:59:26 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:08:34 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_util.h"
 
-t_format_specifier	*ft_init_format_specifier(void)
+static void	ft_init_flag(t_flag *flag)
 {
-	t_format_specifier *result;
+	flag->dash = 0;
+	flag->zero = 0;
+	flag->blank = 0;
+	flag->plus = 0;
+	flag->hash = 0;
+}
 
-	if (!(result = malloc(sizeof(t_format_specifier))))
+t_format	*ft_init_format(char **out, char **foramt)
+{
+	t_format *result;
+
+	if (!(result = malloc(sizeof(t_format))))
 		return (0);
-	result->is_left = 0;
-	result->is_zeropad = 0;
-	result->is_blank = 0;
-	result->is_plus = 0;
-	result->is_hash = 0;
+	ft_init_flag(&result->flag);
 	result->width = 0;
 	result->precision = 0;
 	result->h_count = 0;
 	result->l_count = 0;
+	result->out = out;
+	result->ptr = foramt;
 	return (result);
 }

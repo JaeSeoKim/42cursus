@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/18 17:31:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:42:26 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@
 # include <stdarg.h>
 # include "ft_printf_sturct.h"
 
-int		ft_print_number(
-		char **out,
-		char **format,
-		va_list ap,
-		t_format_specifier *pformat);
+int			ft_print_number(va_list ap, t_format *pf);
 
 #endif

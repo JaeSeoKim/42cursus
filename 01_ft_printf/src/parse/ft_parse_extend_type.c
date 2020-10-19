@@ -6,23 +6,22 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:13:44 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 18:14:58 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:40:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_parse_extend_type(
-		char **out,
-		char **format,
-		va_list ap,
-		t_format_specifier *pformat)
+int		ft_parse_extend_type(va_list ap, t_format *pf)
 {
+	char	**format;
+
+	format = pf->ptr;
 	if (**format == 'h')
-		pformat->h_count += 1;
+		pf->h_count += 1;
 	if (**format == 'l')
-		pformat->l_count += 1;
+		pf->l_count += 1;
 
 	++(*format);
-	return (ft_parse_check(out, format, ap, pformat));
+	return (ft_parse_check(ap, pf));
 }

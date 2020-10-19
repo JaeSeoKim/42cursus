@@ -6,25 +6,23 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:56:55 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/18 22:22:25 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/19 20:44:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	ft_test_print_sturct(
-		char **format,
-		t_format_specifier *pformat)
+void	ft_test_print_sturct(t_format *pformat)
 {
-	printf("is_left		: %d\n", pformat->is_left);
-	printf("is_zeropad	: %d\n", pformat->is_zeropad);
-	printf("is_blank	: %d\n", pformat->is_blank);
-	printf("is_plus		: %d\n", pformat->is_plus);
-	printf("is_hash		: %d\n", pformat->is_hash);
+	printf("dash		: %d\n", pformat->flag.dash);
+	printf("zero		: %d\n", pformat->flag.zero);
+	printf("blank		: %d\n", pformat->flag.blank);
+	printf("plus		: %d\n", pformat->flag.plus);
+	printf("hash		: %d\n", pformat->flag.hash);
 	printf("width		: %d\n", pformat->width);
 	printf("precision	: %d\n", pformat->precision);
 	printf("h_count		: %d\n", pformat->h_count);
 	printf("l_count		: %d\n", pformat->l_count);
-	printf("type		: %c\n", **format);
+	printf("type		: %c\n", **pformat->ptr);
 }
