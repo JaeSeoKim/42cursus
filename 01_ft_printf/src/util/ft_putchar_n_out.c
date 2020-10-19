@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_type.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_n_out.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 18:16:54 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 18:15:16 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/19 17:18:36 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/19 18:01:48 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_util.h"
 
-#include <stdio.h>
-
-int		ft_parse_type(
-		char **out,
-		char **format,
-		va_list ap,
-		t_format_specifier *pformat)
+void	ft_putchar_n_out(char **out, size_t n, char c)
 {
-	ft_test_print_sturct(format, pformat);
-	if (**format == 'd')
-		return (ft_print_number(out, format, ap, pformat));
-	free(pformat);
-	return (-1);
+	while (n-- > 0)
+		ft_putchar_out(out, c);
 }
