@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:47:21 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:23:58 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/20 23:38:21 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_parse_flag(va_list ap, t_format *pf)
 		pf->flag.plus = 1;
 	if (**format == '#')
 		pf->flag.hash = 1;
-
 	++(*format);
 	return (ft_parse_check(ap, pf));
 }

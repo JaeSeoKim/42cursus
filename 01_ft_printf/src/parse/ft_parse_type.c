@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:16:54 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:28:39 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/20 23:25:41 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		ft_parse_type(va_list ap, t_format *pf)
 	// ft_test_print_sturct(pf);
 	if (**format == 'd' || **format == 'i')
 		return (ft_print_number(ap, pf));
+	if (**format == 'u')
+		return (ft_print_unsigned_number(ap, pf));
 	free(pf);
 	return (-1);
 }

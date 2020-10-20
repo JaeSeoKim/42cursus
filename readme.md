@@ -3,6 +3,9 @@
 ![42logo](image/readme/42.png)
 
 # INFO 👷
+
+**begin date : 28/sep/2020 🎉**
+
 [![jaeskim's 42 stats](https://badge42.herokuapp.com/api/stats/jaeskim)](https://github.com/JaeSeoKim/badge42)
 
 

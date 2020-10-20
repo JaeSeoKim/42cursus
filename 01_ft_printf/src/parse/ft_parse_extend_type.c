@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:13:44 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:40:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/20 23:38:43 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int		ft_parse_extend_type(va_list ap, t_format *pf)
 		pf->h_count += 1;
 	if (**format == 'l')
 		pf->l_count += 1;
-
 	++(*format);
 	return (ft_parse_check(ap, pf));
 }

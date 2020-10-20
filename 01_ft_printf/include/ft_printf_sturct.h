@@ -6,14 +6,15 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:42:25 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/20 23:39:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_STRUCT_H
 # define FT_PRINTF_STRUCT_H
 
-# include "stdarg.h"
+# include <stdarg.h>
+
 typedef struct	s_flag
 {
 	char	dash;
