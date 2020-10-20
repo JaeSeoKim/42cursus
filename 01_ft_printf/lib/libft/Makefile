@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/20 23:01:37 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/20 23:08:58 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	@printf "$(LF)🚀 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
 $(NAME) : $(OBJS)
+	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$(NAME)'s Object files $(FG_TEXT)!"
 	@printf "$(CRLF)📚 $(FG_TEXT)Archiving! $(FG_TEXT_PRIMARY)$@"
 	@$(AR) $(ARFLAGS) $@ $^
 	@printf "$(LF)🎉 $(FG_TEXT)Successfully Archived $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)!\n"
