@@ -6,14 +6,13 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/20 23:25:19 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/21 00:08:25 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static int	ft_calc_width(
-	unsigned long long int n,
 	int n_len,
 	t_format *pf)
 {
@@ -45,26 +44,25 @@ static void	ft_print_precision_num(
 static void	ft_print_format_with_num(
 	int cnt,
 	t_format *pf,
-	char *n_str,
-	unsigned long long int n)
+	char *n_str)
 {
 	if (pf->flag.zero && !pf->flag.dash && !pf->precision)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(n, ft_strlen(n_str), pf), '0');
+			ft_calc_width(ft_strlen(n_str), pf), '0');
 		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
 	}
 	else if (!pf->flag.dash)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(n, ft_strlen(n_str), pf), ' ');
+			ft_calc_width(ft_strlen(n_str), pf), ' ');
 		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
 	}
 	else
 	{
 		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(n, ft_strlen(n_str), pf), ' ');
+			ft_calc_width(ft_strlen(n_str), pf), ' ');
 	}
 }
 
@@ -81,7 +79,7 @@ int			ft_print_unsigned_number(va_list ap, t_format *pf)
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;
 	cnt = pf->precision > cnt ? pf->precision : cnt;
-	ft_print_format_with_num(cnt, pf, n_str, n);
+	ft_print_format_with_num(cnt, pf, n_str);
 	free(n_str);
 	return (cnt);
 }

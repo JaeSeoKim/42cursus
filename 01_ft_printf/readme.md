@@ -48,7 +48,9 @@
 
 위에서 설명한  `[flags][width][.precision][extend_type]` 은 순서가 섞여있을 때에도 작동을 해야 함.
 
-- [ ] 각 `[flags][width][.precision][extend_type]`의 정보를 담을 수 있는 구조체 작성
+- [x] `%d %i` : 부호가 있는 10진수 정수
+
+- [x] `%u` : 부호 없는 10진 정수
 
 - [ ] Format specifiers 정리!
 
