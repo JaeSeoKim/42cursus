@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_n_out.c                                 :+:      :+:    :+:   */
+/*   ft_putwstr_out.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 17:18:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 14:21:03 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/14 18:15:21 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/21 18:06:41 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_util.h"
 
-void	ft_putchar_n_out(char **out, size_t n, int c)
+void	ft_putwstr_out(char **out, int *s)
 {
-	while (n-- > 0)
-		ft_putchar_out(out, c);
+	if (out)
+	{
+		while (*s)
+		{
+			**out = *s;
+			++s;
+			++(*out);
+		}
+	}
+	else
+	{
+		while (*s)
+		{
+			ft_putchar_fd(*s, 1);
+			++s;
+		}
+	}
 }

@@ -52,6 +52,8 @@
 
 - [x] `%u` : 부호 없는 10진 정수
 
+- [ ] `%c` : char - 하나의 문자
+
 - [ ] Format specifiers 정리!
 
   [참고 링크](https://dojang.io/mod/page/view.php?id=736)

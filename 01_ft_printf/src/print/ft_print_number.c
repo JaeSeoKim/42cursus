@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:35:57 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/21 15:19:28 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_calc_width(
 	return (result);
 }
 
-static void	ft_print_precision_num(
+static void	ft_print_precision_with_num(
 	int n_len,
 	t_format *pf,
 	char *n_str)
@@ -54,7 +54,7 @@ static void	ft_print_precision_num(
 	ft_putstr_out(pf->out, n_str);
 }
 
-static void	ft_print_format_with_num(
+static void	ft_print_format(
 	int cnt,
 	t_format *pf,
 	char *n_str,
@@ -65,19 +65,19 @@ static void	ft_print_format_with_num(
 		ft_print_flag(n, pf);
 		ft_putchar_n_out(pf->out, cnt - \
 			ft_calc_width(n, ft_strlen(n_str), pf), '0');
-		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
+		ft_print_precision_with_num(ft_strlen(n_str), pf, n_str);
 	}
 	else if (!pf->flag.dash)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
 			ft_calc_width(n, ft_strlen(n_str), pf), ' ');
 		ft_print_flag(n, pf);
-		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
+		ft_print_precision_with_num(ft_strlen(n_str), pf, n_str);
 	}
 	else
 	{
 		ft_print_flag(n, pf);
-		ft_print_precision_num(ft_strlen(n_str), pf, n_str);
+		ft_print_precision_with_num(ft_strlen(n_str), pf, n_str);
 		ft_putchar_n_out(pf->out, cnt - \
 			ft_calc_width(n, ft_strlen(n_str), pf), ' ');
 	}
@@ -99,7 +99,7 @@ int			ft_print_number(va_list ap, t_format *pf)
 	if ((cnt == pf->precision || cnt == n_len) &&
 		(n < 0 || pf->flag.plus || pf->flag.blank))
 		++cnt;
-	ft_print_format_with_num(cnt, pf, n_str, n);
+	ft_print_format(cnt, pf, n_str, n);
 	free(n_str);
 	return (cnt);
 }

@@ -1,85 +1,85 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned_number.c                         :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 13:54:01 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/21 18:50:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static int	ft_calc_width(
-	int n_len,
+	int len,
 	t_format *pf)
 {
 	int result;
 
-	result = (pf->precision > n_len ? pf->precision : n_len);
+	result = (pf->visit_precision && len > pf->precision ? pf->precision : len);
 	return (result);
 }
 
 static void	ft_print_precision(
-	int n_len,
+	int len,
 	t_format *pf,
-	char *n_str)
+	char *str)
 {
 	int i;
 
 	i = 0;
-	if (n_len < pf->precision)
+	if (len > pf->precision && pf->visit_precision)
 	{
-		while (i < pf->precision - n_len)
+		while (i < pf->precision)
 		{
-			ft_putchar_out(pf->out, '0');
+			ft_putchar_out(pf->out, str[i]);
 			++i;
 		}
 	}
-	ft_putstr_out(pf->out, n_str);
+	else
+		ft_putstr_out(pf->out, str);
 }
 
 static void	ft_print_format(
 	int cnt,
 	t_format *pf,
-	char *n_str)
+	char *str,
+	int len)
 {
 	if (pf->flag.zero && !pf->flag.dash && !pf->precision)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(ft_strlen(n_str), pf), '0');
-		ft_print_precision(ft_strlen(n_str), pf, n_str);
+			ft_calc_width(len, pf), '0');
+		ft_print_precision(len, pf, str);
 	}
 	else if (!pf->flag.dash)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(ft_strlen(n_str), pf), ' ');
-		ft_print_precision(ft_strlen(n_str), pf, n_str);
+			ft_calc_width(len, pf), ' ');
+		ft_print_precision(len, pf, str);
 	}
 	else
 	{
-		ft_print_precision(ft_strlen(n_str), pf, n_str);
+		ft_print_precision(len, pf, str);
 		ft_putchar_n_out(pf->out, cnt - \
-			ft_calc_width(ft_strlen(n_str), pf), ' ');
+			ft_calc_width(len, pf), ' ');
 	}
 }
 
-int			ft_print_unsigned_number(va_list ap, t_format *pf)
+int			ft_print_string(va_list ap, t_format *pf)
 {
-	unsigned long long int	n;
-	int						cnt;
-	char					*n_str;
-	int						n_len;
+	char	*str;
+	int		cnt;
+	int		len;
 
 	++(*pf->ptr);
-	n = ft_get_extend_u(ap, pf);
-	n_str = ft_ullitoa(n, pf);
-	n_len = ft_strlen(n_str);
-	cnt = pf->width > n_len ? pf->width : n_len;
-	cnt = pf->precision > cnt ? pf->precision : cnt;
-	ft_print_format(cnt, pf, n_str);
-	free(n_str);
+	if (!(str = va_arg(ap, char *)))
+		str = "(null)";
+	len = ft_strlen(str);
+	cnt = pf->visit_precision && len > pf->precision ? pf->precision : len;
+	cnt = pf->width > cnt ? pf->width : cnt;
+	ft_print_format(cnt, pf, str, len);
 	return (cnt);
 }

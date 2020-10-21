@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/20 23:39:33 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/21 13:41:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFTPRINTF_H
 
 # include <stdarg.h>
+# include <wchar.h>
 # include "libft.h"
 # include "ft_printf_util.h"
 # include "ft_printf_sturct.h"
