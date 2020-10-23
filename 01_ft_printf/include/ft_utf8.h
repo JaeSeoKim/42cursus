@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_utf8.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/23 21:15:39 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/23 17:41:33 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/23 21:26:58 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_UTF8_H
+# define FT_UTF8_H
 
-# include <stdarg.h>
-# include <wchar.h>
-# include "libft.h"
-# include "ft_printf_util.h"
-# include "ft_printf_sturct.h"
-# include "ft_printf_parse.h"
-# include "ft_print.h"
-# include "ft_utf8.h"
+# include <stdio.h>
+# include "ft_printf.h"
 
-int		ft_printf(const char *format, ...);
-int		ft_sprintf(char *out, const char *format, ...);
+# ifndef  UTF8_1
+#  define UTF8_1 0x7F
+# endif
 
-int		ft_print(char **out, const char *format, va_list ap);
+# ifndef  UTF8_2
+#  define UTF8_2 0x7FF
+# endif
+
+# ifndef  UTF8_3
+#  define UTF8_3 0xFFFF
+# endif
+
+# ifndef UTF8_4
+#  define UTF8_4 0x1FFFFF
+# endif
+
+void	ft_putwchar_fd(int unicode, int fd);
+void	ft_putwchar_out(char **out, int unicode);
+size_t	ft_wchar_len(int unicode);
 
 #endif

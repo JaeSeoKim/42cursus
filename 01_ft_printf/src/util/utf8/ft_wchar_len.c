@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_out.c                                   :+:      :+:    :+:   */
+/*   ft_wchar_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 18:14:49 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/22 23:00:14 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/23 21:19:57 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/23 21:25:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_util.h"
-#include <stdio.h>
+#include "ft_utf8.h"
 
-void	ft_putchar_out(char **out, int c)
+size_t	ft_wchar_len(int unicode)
 {
-	if (out)
-	{
-		**out = c;
-		++(*out);
-	}
-	else
-		ft_putchar_fd(c, 1);
+	if ((unicode | UTF8_1) == UTF8_1)
+		return (1);
+	else if ((unicode | UTF8_2) == UTF8_2)
+		return (2);
+	else if ((unicode | UTF8_3) == UTF8_3)
+		return (3);
+	else if ((unicode | UTF8_4) == UTF8_4)
+		return (4);
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/21 00:07:35 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/23 17:47:44 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ INC_DIR = ./include
 
 SRC_DIR = ./src
 SRC_UTIL_DIR = $(SRC_DIR)/util
+SRC_UTIL_UTF8_DIR = $(SRC_UTIL_DIR)/utf8
 SRC_PARSE_DIR = $(SRC_DIR)/parse
 SRC_PRINT_DIR = $(SRC_DIR)/print
 
@@ -38,12 +39,14 @@ OBJ_DIR = ./obj
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
 	$(subst ./, , $(SRC_UTIL_DIR))	\
+	$(subst ./, , $(SRC_UTIL_UTF8_DIR))	\
 	$(subst ./, , $(SRC_PARSE_DIR))	\
 	$(subst ./, , $(SRC_PRINT_DIR))
 
 SRCS = \
 	$(wildcard $(SRC_DIR)/*.c)	\
 	$(wildcard $(SRC_UTIL_DIR)/*.c)	\
+	$(wildcard $(SRC_UTIL_UTF8_DIR)/*.c)	\
 	$(wildcard $(SRC_PARSE_DIR)/*.c)	\
 	$(wildcard $(SRC_PRINT_DIR)/*.c)
 
