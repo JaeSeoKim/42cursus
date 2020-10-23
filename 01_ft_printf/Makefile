@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/23 17:47:44 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/23 21:47:56 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,8 @@ LF = \e[1K\r$(NO_COLOR)
 CRLF= \n$(LF)
 
 all : $(NAME)
+
+bonus : $(NAME)
 
 clean : $(LIBFT)_clean
 	@$(RM) $(RMFLAGS) $(OBJS)

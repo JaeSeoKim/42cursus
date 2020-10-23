@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 18:50:15 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/23 22:36:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ int			ft_print_string(va_list ap, t_format *pf)
 	int		len;
 
 	++(*pf->ptr);
-	if (!(str = va_arg(ap, char *)))
-		str = "(null)";
+	str = ft_get_extend_s(ap, pf);
 	len = ft_strlen(str);
 	cnt = pf->visit_precision && len > pf->precision ? pf->precision : len;
 	cnt = pf->width > cnt ? pf->width : cnt;
 	ft_print_format(cnt, pf, str, len);
+	free(str);
 	return (cnt);
 }
