@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:16:54 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 20:56:59 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 19:41:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		ft_parse_type(va_list ap, t_format *pf)
 		return (ft_print_octal(ap, pf));
 	if (**pf->ptr == 'x' || **pf->ptr == 'X')
 		return (ft_print_hex(ap, pf));
+	if (**pf->ptr == 'p')
+		return (ft_print_pointer(ap, pf));
 	free(pf);
 	return (-1);
 }

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 19:56:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 20:56:35 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 19:49:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char			*ft_convert_base(
 	if (!(result = malloc(sizeof(char) * (len + 1))))
 		return (0);
 	result[len] = 0;
-	while (len && !(len == 1 && num < 0))
+	while (len)
 	{
 		result[--len] = base_set[num % base];
 		num = num / base;
