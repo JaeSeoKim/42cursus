@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 22:07:13 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/23 22:37:28 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 20:00:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ wint_t	ft_get_extend_c(va_list ap, t_format *pf)
 {
 	if (pf->l_count == 1)
 		return (wint_t)(va_arg(ap, int));
-	return (va_arg(ap, int));
+	return (char)(va_arg(ap, int));
 }
 
 char	*ft_get_extend_s(va_list ap, t_format *pf)
