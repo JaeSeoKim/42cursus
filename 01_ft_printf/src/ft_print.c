@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/16 18:35:12 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 16:52:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_print(char **out, const char *format, va_list ap)
 		if (*format_ptr == '%')
 		{
 			format_ptr++;
-			if ((ctmp = ft_init_parsing(out, &format_ptr, ap)) == -1)
+			if ((ctmp = ft_init_parsing(out, &format_ptr, ap, &cnt)) == -1)
 				return (-1);
 			cnt += ctmp;
 		}

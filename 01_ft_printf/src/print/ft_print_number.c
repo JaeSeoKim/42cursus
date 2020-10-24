@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 15:19:28 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 17:23:33 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ int			ft_print_number(va_list ap, t_format *pf)
 		++cnt;
 	ft_print_format(cnt, pf, n_str, n);
 	free(n_str);
+	free(pf);
 	return (cnt);
 }

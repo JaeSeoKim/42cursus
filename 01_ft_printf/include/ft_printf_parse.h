@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:31:47 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 20:37:46 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 16:56:22 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "ft_printf_sturct.h"
 
-int		ft_init_parsing(char **out, char **format, va_list ap);
+int		ft_init_parsing(char **out, char **format, va_list ap, int *cnt);
 int		ft_parse_check(va_list ap, t_format *pf);
 int		ft_parse_flag(va_list ap, t_format *pf);
 int		ft_parse_width(va_list ap, t_format *pf);

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 13:54:01 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 17:23:38 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int			ft_print_unsigned_number(va_list ap, t_format *pf)
 	cnt = pf->precision > cnt ? pf->precision : cnt;
 	ft_print_format(cnt, pf, n_str);
 	free(n_str);
+	free(pf);
 	return (cnt);
 }

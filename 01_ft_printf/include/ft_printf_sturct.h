@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/20 23:39:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 16:52:50 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_format
 	int		l_count;
 	char	**out;
 	char	**ptr;
+	int		*cnt;
 }				t_format;
 
 #endif
