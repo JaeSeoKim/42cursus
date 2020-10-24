@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwstr_out.c                                   :+:      :+:    :+:   */
+/*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/14 18:15:21 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/21 18:06:41 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/24 18:35:42 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/24 18:37:21 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "ft_printf_util.h"
 
-void	ft_putwstr_out(char **out, int *s)
+void	ft_frees(int cnt, ...)
 {
-	if (out)
+	va_list ap;
+
+	va_start(ap, cnt);
+	while (cnt)
 	{
-		while (*s)
-		{
-			**out = *s;
-			++s;
-			++(*out);
-		}
+		free(va_arg(ap, void *));
+		--cnt;
 	}
-	else
-	{
-		while (*s)
-		{
-			ft_putchar_fd(*s, 1);
-			++s;
-		}
-	}
+	va_end(ap);
 }

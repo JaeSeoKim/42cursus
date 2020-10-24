@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 16:56:32 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 18:37:53 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 void				ft_putchar_out(char **out, int c);
 void				ft_putstr_out(char **out, char *s);
-void				ft_putwstr_out(char **out, int *s);
+void				ft_frees(int cnt, ...);
 void				ft_putchar_n_out(char **out, size_t n, int c);
 
 t_format			*ft_init_format(char **out, char **foramt, int *cnt);
