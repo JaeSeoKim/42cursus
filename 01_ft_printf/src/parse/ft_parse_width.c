@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 16:01:26 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/19 22:43:24 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 18:56:01 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 int		ft_parse_width(va_list ap, t_format *pf)
 {
-	char	**format;
 	int		tmp_width;
 
-	format = pf->ptr;
 	tmp_width = 0;
 	pf->visit_width = 0;
-	if (**format == '*')
+	if (**(pf->ptr) == '*')
 	{
-		pf->width = va_arg(ap, int);
-		++(*format);
+		if ((pf->width = va_arg(ap, int)) < 0)
+		{
+			pf->width = -pf->width;
+			pf->flag.dash = 1;
+		}
+		++(*pf->ptr);
 	}
 	else
 	{
-		while (ft_isdigit(**format))
+		while (ft_isdigit(**(pf->ptr)))
 		{
 			tmp_width *= 10;
-			tmp_width += **format - '0';
-			++(*format);
+			tmp_width += (**pf->ptr) - '0';
+			++(*pf->ptr);
 		}
 		pf->width = tmp_width;
 	}
