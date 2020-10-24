@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 18:37:53 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 20:56:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ t_format			*ft_init_format(char **out, char **foramt, int *cnt);
 
 char				*ft_ullitoa(
 					unsigned long long int n,
+					t_format *pf);
+char				*ft_convert_base(
+					unsigned long long int num,
+					const char *base_set,
+					int base,
 					t_format *pf);
 void				ft_test_print_sturct(t_format *pf);
 
