@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 18:16:54 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 18:47:54 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 19:11:40 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,18 @@
 
 int		ft_parse_type(va_list ap, t_format *pf)
 {
-	char	**format;
-
-	format = pf->ptr;
-	if (**format == 'd' || **format == 'i')
+	if (**pf->ptr == 'd' || **pf->ptr == 'i')
 		return (ft_print_number(ap, pf));
-	if (**format == 'u')
+	if (**pf->ptr == 'u')
 		return (ft_print_unsigned_number(ap, pf));
-	if (**format == 'c')
+	if (**pf->ptr == 'c')
 		return (ft_print_char(ap, pf));
-	if (**format == 's')
+	if (**pf->ptr == 's')
 		return (ft_print_string(ap, pf));
-	if (**format == 'n')
+	if (**pf->ptr == 'n')
 		return (ft_write_cnt(ap, pf));
+	if (**pf->ptr == '%')
+		return (ft_print_percent(pf));
 	free(pf);
 	return (-1);
 }

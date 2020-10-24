@@ -48,13 +48,20 @@
 
 위에서 설명한  `[flags][width][.precision][extend_type]` 은 순서가 섞여있을 때에도 작동을 해야 함.
 
-- [x] `%d %i` : 부호가 있는 10진수 정수
-
-- [x] `%u` : 부호 없는 10진 정수
-
-- [ ] `%c` : char - 하나의 문자
-
-- [ ] Format specifiers 정리!
+- [x] `c`
+- [x] `s`
+- [ ] `p`
+- [x] `d`
+- [x] `i`
+- [x] `u`
+- [ ] `x`
+- [ ] `x`
+- [x] `n`
+- [ ] `f`
+- [ ] `g`
+- [ ] `e`
+- [ ] `o`
+- [x] `%`
 
   [참고 링크](https://dojang.io/mod/page/view.php?id=736)
 
