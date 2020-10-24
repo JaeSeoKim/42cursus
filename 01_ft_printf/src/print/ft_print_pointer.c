@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 19:49:26 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/24 20:07:02 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,8 @@ int			ft_print_pointer(va_list ap, t_format *pf)
 	n = (long long)va_arg(ap, void *);
 	n_str = ft_convert_base(n, "0123456789abcdef", 16, pf);
 	n_len = ft_strlen(n_str);
-	cnt = pf->width > n_len ? pf->width : n_len;
+	cnt = pf->width > n_len + 2 ? pf->width : n_len + 2;
 	cnt = pf->precision > cnt ? pf->precision : cnt;
-	if ((pf->precision > n_len ? pf->precision : n_len) + 2 > cnt)
-		cnt += 2;
 	ft_print_format(cnt, pf, n_str);
 	ft_frees(2, n_str, pf);
 	++(*pf->ptr);
