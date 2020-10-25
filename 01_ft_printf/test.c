@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 20:16:23 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/25 17:00:39 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ int main(void)
 	char buf1[100000] = {0, };
 	char buf2[100000] = {0, };
 
-	const char *format = "%.5p";
+	const char *format = "%0*.*d";
 
-	c1 = ft_printf(format, NULL);
+	c1 = ft_printf(format, 1, 0, 0);
 	printf("$\n[ft_printf - count] : %d\n", c1);
-	c2 = printf(format, NULL);
+	c2 = printf(format, 1, 0, 0);
 	printf("$\n[printf - count] : %d\n", c2);
 
 	printf("-----------------\n");
 
-	c1 = ft_sprintf(buf1,format, NULL);
+	c1 = ft_sprintf(buf1,format, 1, 0, 0);
 	printf("%s$\n[ft_sprintf - count] : %d\n", buf1, c1);
-	c2 = sprintf(buf2, format, NULL);
+	c2 = sprintf(buf2, format, 1, 0, 0);
 	printf("%s$\n[sprintf - count] : %d\n", buf2, c2);
 	return (0);
 }

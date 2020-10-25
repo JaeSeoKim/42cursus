@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 18:47:55 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/25 17:01:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	ft_print_format(
 	char *str,
 	int len)
 {
-	if (pf->flag.zero && !pf->flag.dash && !pf->precision)
+	if (pf->flag.zero && !pf->flag.dash && !pf->visit_precision)
 	{
 		ft_putchar_n_out(pf->out, cnt - \
 			ft_calc_width(len, pf), '0');
