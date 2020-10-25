@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 17:01:17 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/25 18:06:04 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ static void	ft_print_format(
 
 int			ft_print_octal(va_list ap, t_format *pf)
 {
-	long long int	n;
-	int				cnt;
-	char			*n_str;
-	int				n_len;
+	unsigned long long int	n;
+	int						cnt;
+	char					*n_str;
+	int						n_len;
 
 	++(*pf->ptr);
 	n = ft_get_extend_u(ap, pf);
-	n_str = ft_convert_base(n < 0 ? -(long long int)n : n, "012345678", 8, pf);
+	n_str = ft_convert_base(n, "012345678", 8, pf);
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;
 	cnt = pf->precision > cnt ? pf->precision : cnt;

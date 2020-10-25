@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 17:07:58 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/25 18:05:56 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,13 @@ static void	ft_print_format(
 
 int			ft_print_hex(va_list ap, t_format *pf)
 {
-	long long int	n;
-	int				cnt;
-	char			*n_str;
-	int				n_len;
+	unsigned long long int	n;
+	int						cnt;
+	char					*n_str;
+	int						n_len;
 
 	n = ft_get_extend_u(ap, pf);
-	n_str = ft_convert_base(n < 0 ? -(long long int)n : n,\
+	n_str = ft_convert_base(n,\
 		(**pf->ptr) == 'x' ? "0123456789abcdef" : "0123456789ABCDEF", 16, pf);
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;
@@ -93,7 +93,7 @@ int			ft_print_hex(va_list ap, t_format *pf)
 	if ((cnt == pf->precision || cnt == n_len) && pf->flag.hash)
 		cnt += 2;
 	ft_print_format(cnt, pf, n_str);
-	ft_frees(2, n_str, pf);
 	++(*pf->ptr);
+	ft_frees(2, n_str, pf);
 	return (cnt);
 }
