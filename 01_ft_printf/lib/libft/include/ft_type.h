@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 23:36:53 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/09/30 19:45:27 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/26 00:47:17 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/26 00:50:04 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_TYPE_H
+# define FT_TYPE_H
 
-/*
-** ft_lstadd_front - Adds the element 'new' at the beginning of the list.
-*/
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
-}
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+
+#endif
