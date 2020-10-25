@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 17:00:39 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/25 17:07:31 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
 	char buf1[100000] = {0, };
 	char buf2[100000] = {0, };
 
-	const char *format = "%0*.*d";
+	const char *format = "%0*.*x";
 
 	c1 = ft_printf(format, 1, 0, 0);
 	printf("$\n[ft_printf - count] : %d\n", c1);
