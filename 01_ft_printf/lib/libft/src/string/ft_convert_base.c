@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 19:56:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 03:26:42 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:33:48 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_convert_base(
 {
 	char	*tmp;
 	char	*result;
-	size_t	len;
 
 	if (num < 0)
 	{

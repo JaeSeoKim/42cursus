@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/26 16:08:53 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/26 16:33:26 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC_MEMORY = $(addprefix $(SRC_MEMORY_DIR)/, \
 	ft_memcpy.c	\
 	ft_memmove.c	\
 	ft_memset.c	\
+	ft_frees.c	\
 )
 
 SRC_STRING_DIR = $(SRC_DIR)/string
@@ -68,6 +69,8 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_strrchr.c	\
 	ft_strtrim.c	\
 	ft_substr.c	\
+	ft_convert_base_unsigned.c	\
+	ft_convert_base.c	\
 )
 
 SRC_TYPE_DIR = $(SRC_DIR)/type
@@ -81,20 +84,19 @@ SRC_TYPE = $(addprefix $(SRC_TYPE_DIR)/, \
 	ft_toupper.c	\
 )
 
+SRC_UTF8_DIR = $(SRC_DIR)/utf8
+SRC_UTF8 = $(addprefix $(SRC_UTF8_DIR)/, \
+	ft_encoding_utf8.c	\
+	ft_putwchar_fd.c	\
+	ft_wchar_len.c	\
+)
+
 SRC_WRITE_DIR = $(SRC_DIR)/write
 SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 	ft_putchar_fd.c	\
 	ft_putendl_fd.c	\
 	ft_putnbr_fd.c	\
 	ft_putstr_fd.c	\
-)
-
-
-SRC_UTF8_DIR = $(SRC_DIR)/utf8
-SRC_UTF8 = $(addprefix $(SRC_UTF8_DIR)/, \
-ft_encoding_utf8.c	\
-ft_putwchar_fd.c	\
-ft_wchar_len.c	\
 )
 
 SRCS = \
