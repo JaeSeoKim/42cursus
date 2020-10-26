@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/26 16:33:26 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/26 20:36:50 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,12 @@ SRC_LST = $(addprefix $(SRC_LST_DIR)/, \
 	ft_lstnew.c	\
 	ft_lstsize.c	\
 )
+
+SRC_MATH_DIR = $(SRC_DIR)/math
+SRC_MATH = $(addprefix $(SRC_MATH_DIR)/, \
+	ft_pow.c	\
+)
+
 
 SRC_MEMORY_DIR = $(SRC_DIR)/memory
 SRC_MEMORY = $(addprefix $(SRC_MEMORY_DIR)/, \
@@ -71,6 +77,7 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_substr.c	\
 	ft_convert_base_unsigned.c	\
 	ft_convert_base.c	\
+	ft_dtoa.c	\
 )
 
 SRC_TYPE_DIR = $(SRC_DIR)/type
@@ -101,15 +108,17 @@ SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 
 SRCS = \
 	$(SRC_LST)	\
+	$(SRC_MATH)	\
 	$(SRC_MEMORY)	\
 	$(SRC_STRING)	\
 	$(SRC_TYPE)	\
-	$(SRC_WRITE)	\
-	$(SRC_UTF8)
+	$(SRC_UTF8)	\
+	$(SRC_WRITE)
 
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
 	$(subst ./, , $(SRC_LST_DIR))	\
+	$(subst ./, , $(SRC_MATH_DIR))	\
 	$(subst ./, , $(SRC_MEMORY_DIR))	\
 	$(subst ./, , $(SRC_STRING_DIR))	\
 	$(subst ./, , $(SRC_TYPE_DIR))	\

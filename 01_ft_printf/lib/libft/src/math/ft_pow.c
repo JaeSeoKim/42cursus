@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 20:03:09 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/26 19:59:36 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/26 20:04:10 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+double	ft_pow(double a, double n)
+{
+	double result;
 
-# include "ft_lst_struct.h"
-# include "ft_lst.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "ft_type.h"
-# include "ft_utf8.h"
-# include "ft_write.h"
-
-#endif
+	result = a;
+	while (n-- > 1)
+		result *= a;
+	return (result);	
+}

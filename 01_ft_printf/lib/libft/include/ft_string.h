@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 16:18:34 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 20:39:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_convert_base_unsigned(unsigned long long int num, const char *base_set, int base);
 char	*ft_convert_base(long long int num, const char *base_set, int base);
-
+char	*ft_dtoa(long double n, int precsion);
 #endif
