@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:31:47 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 16:56:22 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 15:58:52 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINT_PARSE_H
 
 # include <stdarg.h>
+# include "libft.h"
 # include "ft_printf_sturct.h"
 
 int		ft_init_parsing(char **out, char **format, va_list ap, int *cnt);

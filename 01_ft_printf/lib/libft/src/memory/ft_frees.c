@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 16:06:18 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/10/24 18:35:42 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/10/26 03:19:45 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libft.h"
 
-# include "libft.h"
-# include "ft_printf_util.h"
-# include "ft_printf_sturct.h"
-# include "ft_printf_parse.h"
-# include "ft_print.h"
+void	ft_frees(int cnt, ...)
+{
+	va_list ap;
 
-int		ft_printf(const char *format, ...);
-int		ft_sprintf(char *out, const char *format, ...);
-
-int		ft_print(char **out, const char *format, va_list ap);
-
-#endif
+	va_start(ap, cnt);
+	while (cnt)
+	{
+		free(va_arg(ap, void *));
+		--cnt;
+	}
+	va_end(ap);
+}

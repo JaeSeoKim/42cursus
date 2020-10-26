@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 19:49:27 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:17:53 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include "ft_printf_sturct.h"
+# include "libft.h"
 
 int						ft_print_number(va_list ap, t_format *pf);
 int						ft_print_unsigned_number(va_list ap, t_format *pf);

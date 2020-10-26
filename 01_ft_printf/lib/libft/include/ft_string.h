@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 00:45:10 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:18:34 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+# include "libft.h"
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
@@ -33,5 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_convert_base_unsigned(unsigned long long int num, const char *base_set, int base);
+char	*ft_convert_base(long long int num, const char *base_set, int base);
 
 #endif

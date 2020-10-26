@@ -6,10 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 17:01:00 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 15:57:42 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
 
 static int	ft_calc_width(

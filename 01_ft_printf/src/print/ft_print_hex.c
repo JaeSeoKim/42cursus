@@ -6,10 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 18:05:56 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 15:57:39 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
 
 static void	ft_print_flag(t_format *pf)
@@ -85,7 +86,7 @@ int			ft_print_hex(va_list ap, t_format *pf)
 	int						n_len;
 
 	n = ft_get_extend_u(ap, pf);
-	n_str = ft_convert_base(n,\
+	n_str = ft_convert_base_custom(n,\
 		(**pf->ptr) == 'x' ? "0123456789abcdef" : "0123456789ABCDEF", 16, pf);
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;

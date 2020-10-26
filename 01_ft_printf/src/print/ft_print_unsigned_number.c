@@ -6,10 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/25 17:00:48 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 15:57:30 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
 
 static int	ft_calc_width(
@@ -75,7 +76,7 @@ int			ft_print_unsigned_number(va_list ap, t_format *pf)
 
 	++(*pf->ptr);
 	n = ft_get_extend_u(ap, pf);
-	n_str = ft_ullitoa(n, pf);
+	n_str = ft_convert_base_custom(n, "0123456789", 10, pf);
 	n_len = ft_strlen(n_str);
 	cnt = pf->width > n_len ? pf->width : n_len;
 	cnt = pf->precision > cnt ? pf->precision : cnt;

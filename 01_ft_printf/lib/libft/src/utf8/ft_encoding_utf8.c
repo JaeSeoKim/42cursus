@@ -6,11 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 22:21:12 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 18:38:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 03:45:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utf8.h"
+#include "libft.h"
 
 static char	*ft_utf_4(int unicode)
 {

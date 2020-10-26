@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/25 18:06:32 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/26 16:23:40 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,7 +113,7 @@ $(LIBFT)_fclean :
 TEST_FILE = test.c
 
 test : $(NAME) $(TEST_FILE)
-	@$(CC) -g -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
+	@$(CC) -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
 	@printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
 	@./$(TEST_FILE:.c=.out)
 	@rm $(TEST_FILE:.c=.out)

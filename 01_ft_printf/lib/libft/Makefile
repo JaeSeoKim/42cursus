@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/26 01:12:27 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/26 16:08:53 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,12 +89,21 @@ SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 	ft_putstr_fd.c	\
 )
 
+
+SRC_UTF8_DIR = $(SRC_DIR)/utf8
+SRC_UTF8 = $(addprefix $(SRC_UTF8_DIR)/, \
+ft_encoding_utf8.c	\
+ft_putwchar_fd.c	\
+ft_wchar_len.c	\
+)
+
 SRCS = \
 	$(SRC_LST)	\
 	$(SRC_MEMORY)	\
 	$(SRC_STRING)	\
 	$(SRC_TYPE)	\
-	$(SRC_WRITE)
+	$(SRC_WRITE)	\
+	$(SRC_UTF8)
 
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
@@ -102,8 +111,9 @@ vpath %.c \
 	$(subst ./, , $(SRC_MEMORY_DIR))	\
 	$(subst ./, , $(SRC_STRING_DIR))	\
 	$(subst ./, , $(SRC_TYPE_DIR))	\
-	$(subst ./, , $(SRC_WRITE_DIR))
-		
+	$(subst ./, , $(SRC_WRITE_DIR))	\
+	$(subst ./, , $(SRC_UTF8_DIR))
+
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 # Color

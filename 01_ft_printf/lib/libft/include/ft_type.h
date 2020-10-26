@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:47:17 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 00:50:04 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:18:45 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+# include "libft.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

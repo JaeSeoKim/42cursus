@@ -6,16 +6,20 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:41:33 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/23 22:34:49 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:18:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_UTF8_H
 # define FT_UTF8_H
 
-# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <limits.h>
 # include <wchar.h>
-# include "ft_printf.h"
+
+# include "libft.h"
 
 # ifndef  UTF8_1
 #  define UTF8_1 0x7F
@@ -34,7 +38,6 @@
 # endif
 
 void	ft_putwchar_fd(int unicode, int fd);
-void	ft_putwchar_out(char **out, int unicode);
 size_t	ft_wchar_len(int unicode);
 char	*ft_encoding_utf8(wchar_t *unicode);
 

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:35:01 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 00:46:42 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/26 16:18:20 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 
+# include "libft.h"
 # include "ft_lst_struct.h"
 
 t_list	*ft_lstnew(void *content);
