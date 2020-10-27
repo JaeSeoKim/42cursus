@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 22:54:59 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/27 18:46:09 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,10 @@ int			ft_print_hex(va_list ap, t_format *pf)
 	n_str = ft_convert_base_custom(n,\
 		(**pf->ptr) == 'x' ? "0123456789abcdef" : "0123456789ABCDEF", 16, pf);
 	n_len = ft_strlen(n_str);
-	if (n == 0)
-		cnt = pf->width > n_len ? pf->width : n_len;
-	else
+	if (n != 0 && pf->flag.hash)
 		cnt = pf->width > n_len + 2 ? pf->width : n_len;
+	else
+		cnt = pf->width > n_len ? pf->width : n_len;
 	cnt = pf->precision > cnt ? pf->precision : cnt;
 	if ((cnt == pf->precision || cnt == n_len) && pf->flag.hash && n != 0)
 		cnt += 2;

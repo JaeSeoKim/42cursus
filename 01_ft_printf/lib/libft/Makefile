@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/26 20:36:50 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/27 18:06:43 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_convert_base_unsigned.c	\
 	ft_convert_base.c	\
 	ft_dtoa.c	\
+	ft_strjoin_with_frees.c	\
 )
 
 SRC_TYPE_DIR = $(SRC_DIR)/type
