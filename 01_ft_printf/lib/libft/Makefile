@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/27 18:06:43 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/10/28 05:39:33 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ SRC_TYPE = $(addprefix $(SRC_TYPE_DIR)/, \
 
 SRC_UTF8_DIR = $(SRC_DIR)/utf8
 SRC_UTF8 = $(addprefix $(SRC_UTF8_DIR)/, \
+	ft_encoding_utf8_char.c	\
 	ft_encoding_utf8.c	\
 	ft_putwchar_fd.c	\
 	ft_wchar_len.c	\

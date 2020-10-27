@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 22:26:36 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/28 02:51:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char		*ft_convert_base_custom(
 			const char *base_set,
 			int base,
 			t_format *pf);
+char		*ft_n_encoding_utf8(wchar_t *unicode, int n);
 void		ft_test_print_sturct(t_format *pf);
 
 #endif

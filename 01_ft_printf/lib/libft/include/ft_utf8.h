@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:41:33 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 16:18:49 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/28 05:40:52 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@
 void	ft_putwchar_fd(int unicode, int fd);
 size_t	ft_wchar_len(int unicode);
 char	*ft_encoding_utf8(wchar_t *unicode);
+char	*ft_encoding_utf8_char(wchar_t unicode);
 
 #endif
