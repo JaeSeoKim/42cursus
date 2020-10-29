@@ -6,20 +6,19 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:46:06 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/28 04:05:03 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/29 22:31:35 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static char	*ft_custom_itoa(long double n, long exponent)
+static char	*ft_custom_itoa(long exponent, int sign)
 {
 	char			*tmp;
 	char			*result;
-	union u_dtoa	num;
 
-	num.ld = n;
-	if ((num.c[9] & 128) != 128)
+	if (!sign)
 		return (ft_convert_base_unsigned(exponent, "0123456789", 10));
 	tmp = ft_convert_base_unsigned(exponent, "0123456789", 10);
 	result = ft_strjoin("-", tmp);
@@ -27,58 +26,97 @@ static char	*ft_custom_itoa(long double n, long exponent)
 	return (result);
 }
 
-static char	*ft_round_with_precision(long n, int precision, long *exponent)
+static char	*ft_round_char(
+	char round_flag,
+	int precision,
+	char *result,
+	long *exponent)
 {
-	char	tmp;
-	char	round_flag;
-	char	*result;
-
-	if (!(result = malloc(sizeof(char) * (precision + 1))))
-		return (0);
-	round_flag = (n % 10) >= 5 ? 1 : 0;
-	n = n / 10;
-	result[precision--] = 0;
-	while (precision >= 0)
+	while (--precision >= 0)
 	{
-		if ((tmp = ((n % 10) + round_flag)) >= 10)
+		if (result[precision] + round_flag > '9')
+		{
 			round_flag = 1;
+			result[precision] = '0';
+		}
 		else
+		{
+			result[precision] += round_flag;
 			round_flag = 0;
-		result[precision--] = tmp >= 10 ? '0' : tmp + '0';
-		n = n / 10;
+		}
 	}
-	if (precision >= 0 && round_flag)
-		result[precision--] = '1';
-	else if (round_flag)
+	if (round_flag)
 		++(*exponent);
-	while (precision >= 0)
-		result[precision--] = '0';
 	return (result);
 }
 
-char		*ft_dtoa(long double n, int precsion)
+static char	*ft_round_with_precision(
+	double mantissa,
+	int precision,
+	long *exponent)
 {
-	char		*tmp;
-	char		*tmp2;
-	char		*result;
-	long		exponent;
-	long double	mantissa;
+	int		i;
+	long	tmp;
+	char	*result;
+	char	round_flag;
 
-	exponent = (long)n;
-	mantissa = n - (long double)exponent;
-	mantissa = mantissa < 0 ? -mantissa : mantissa;
-	if (exponent < 0)
-		exponent = -exponent;
-	if (precsion == 0 && (exponent % 2 == 0 ? \
+	if (!(result = malloc(sizeof(char) * (precision + 1))))
+		return (0);
+	i = 0;
+	while (i < precision)
+	{
+		mantissa *= 10;
+		tmp = (long)mantissa;
+		result[i++] = tmp + '0';
+		mantissa -= tmp;
+	}
+	result[precision] = 0;
+	round_flag = 0;
+	mantissa *= 10;
+	tmp = (long)(mantissa);
+	if ((precision % 2 == 0 ? \
 		(long)(mantissa * 10) > 5 : (long)(mantissa * 10) >= 5))
-		++exponent;
-	if (precsion == 0)
-		return (ft_custom_itoa(n, exponent));
-	tmp = ft_round_with_precision(\
-		mantissa * ft_pow(10, precsion + 1), precsion, &exponent);
-	tmp2 = ft_custom_itoa(n, exponent);
+		++tmp;
+	return (ft_round_char(tmp >= 5 ? 1 : 0, \
+		precision, result, exponent));
+}
+
+static char	*ft_make_float_string(
+	long exponent,
+	double mantissa,
+	int precision,
+	union u_double n)
+{
+	char			*tmp;
+	char			*tmp2;
+	char			*result;
+
+	tmp = ft_round_with_precision(mantissa, precision, &exponent);
+	tmp2 = ft_custom_itoa(exponent, n.sign);
 	result = ft_strjoin(tmp2, ".");
 	free(tmp2);
 	result = ft_strjoin_with_frees(result, tmp);
 	return (result);
+}
+
+char		*ft_dtoa(double n, int precision)
+{
+	union u_double	num;
+	long			exponent;
+	double			mantissa;
+
+	num.d = n;
+	exponent = (long)n;
+	mantissa = n - (double)exponent;
+	if (exponent < 0)
+		exponent = -exponent;
+	mantissa = mantissa < 0 ? -mantissa : mantissa;
+	if (precision == 0)
+	{
+		if ((exponent % 2 == 0 ? \
+			(long)(mantissa * 10) > 5 : (long)(mantissa * 10) >= 5))
+			++exponent;
+		return (ft_custom_itoa(exponent, num.sign));
+	}
+	return (ft_make_float_string(exponent, mantissa, precision, num));
 }

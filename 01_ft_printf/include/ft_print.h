@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/27 18:38:01 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/10/29 20:14:17 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ long long int			ft_get_extend_id(va_list ap, t_format *pf);
 unsigned long long int	ft_get_extend_u(va_list ap, t_format *pf);
 wint_t					ft_get_extend_c(va_list ap, t_format *pf);
 char					*ft_get_extend_s(va_list ap, t_format *pf);
-long double				ft_get_extend_f(va_list ap, t_format *pf);
 
 #endif
