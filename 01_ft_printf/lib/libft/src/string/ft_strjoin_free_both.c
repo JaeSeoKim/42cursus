@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtoa.h                                          :+:      :+:    :+:   */
+/*   ft_strjoin_free_both.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 11:29:46 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/09/26 21:53:15 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/03 12:20:26 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_DTOA_H
-# define FT_DTOA_H
+#include "libft.h"
 
-# include "ft_dtoa_type.h"
+char	*ft_strjoin_free_both(char const *s1, char const *s2)
+{
+	size_t	len1;
+	size_t	len2;
+	char	*result;
 
-char	*ft_dtoa(double n, int precision, char spec);
-
-#endif
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (!(result = (char *)malloc(sizeof(char) + (len1 + len2 + 1))))
+		return (0);
+	ft_memcpy(result, s1, len1);
+	ft_memcpy(result + len1, s2, len2);
+	result[len1 + len2] = '\0';
+	ft_frees(2, s1, s2);
+	return (result);
+}

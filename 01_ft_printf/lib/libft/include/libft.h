@@ -6,12 +6,15 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/02 21:23:50 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 14:33:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+typedef unsigned long long	t_ull;
+typedef long long	t_ll;
 
 # include <stdlib.h>
 # include <unistd.h>

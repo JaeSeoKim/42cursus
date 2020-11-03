@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 11:23:35 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 18:33:09 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,25 @@ int main(void)
 	// char buf1[100000] = {0, };
 	// char buf2[100000] = {0, };
 
-	// const char *format = "%.100f";
+	// const char *format = "%.10e\;
 	// c1 = ft_printf(format, 0.00087650894255);
 	// printf("$\n[ft_printf - count] : %d\n", c1);
 	// c2 = printf(format, 0.00087650894255);
 	// printf("$\n[printf - count] : %d\n", c2);
 
-	n.d = 0.0;
-	n.sign = 1;
-	n.exponent = FT_DBL_EXP_NAN;
-	n.mantissa = 123;
+	n.d = 0.99999999999999990;
 
-	printf("pf\t%f\n", n.d);
-	ft_printf("ft\t%f\n", n.d);
+	// n.d = 0;
+	// n.exponent = FT_DBL_EXP_NAN;
+	// n.mantissa ^= ~n.mantissa;
+	printf("pf\t%.10e\n", n.d);
+	ft_printf("ft\t%.10e\n", n.d);
 	printf("sign\t\t:%d\n", n.sign);
 	printf("exponent\t:%ld\n", (n.exponent - (unsigned long)FT_DBL_BIAS));
-	printf("mantissa\t:%lu\n", n.mantissa);
-
+	printf("mantissa\t:");
+	for (int i = 0; i < 52; i++)
+		printf("%d", ((n.mantissa >> (51 - i)) & 1) == 1);
+	printf("\n");
 	// printf("-----------------\n");
 
 	// c1 = ft_sprintf(buf1,format, 0.87650894255);

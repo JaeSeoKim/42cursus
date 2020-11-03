@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/02 21:31:16 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/03 12:22:05 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ AR = ar
 ARFLAGS = crs
 
 CC = gcc
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm
 RMFLAGS = -f
@@ -78,7 +78,9 @@ SRC_STRING = $(addprefix $(SRC_STRING_DIR)/, \
 	ft_convert_base_unsigned.c	\
 	ft_convert_base.c	\
 	ft_dtoa.c	\
-	ft_strjoin_with_frees.c	\
+	ft_strjoin_free_both.c	\
+	ft_strjoin_free_first.c	\
+	ft_strjoin_free_second.c	\
 )
 
 SRC_TYPE_DIR = $(SRC_DIR)/type
@@ -90,6 +92,7 @@ SRC_TYPE = $(addprefix $(SRC_TYPE_DIR)/, \
 	ft_isprint.c	\
 	ft_tolower.c	\
 	ft_toupper.c	\
+	ft_iseven.c		\
 )
 
 SRC_UTF8_DIR = $(SRC_DIR)/utf8
@@ -111,6 +114,8 @@ SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 SRC_DTOA_DIR = $(SRC_DIR)/dtoa
 SRC_DTOA = $(addprefix $(SRC_DTOA_DIR)/, \
 	ft_dtoa.c	\
+	ft_dtoa_f.c	\
+	ft_dtoa_util.c	\
 )
 
 SRCS = \

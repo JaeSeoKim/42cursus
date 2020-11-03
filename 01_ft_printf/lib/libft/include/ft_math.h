@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:56:02 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/27 18:42:55 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 13:26:17 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <stdarg.h>
 # include <limits.h>
 
-double	ft_pow(double a, double n);
+long double	ft_pow(long double a, long double n);
 
 #endif

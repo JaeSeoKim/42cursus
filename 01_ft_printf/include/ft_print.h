@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 20:14:17 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 18:12:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int						ft_print_octal(va_list ap, t_format *pf);
 int						ft_print_hex(va_list ap, t_format *pf);
 int						ft_print_pointer(va_list ap, t_format *pf);
 int						ft_print_float(va_list ap, t_format *pf);
+int						ft_print_float_nan(char *n_str, t_double n, t_format *pf);
 
 long long int			ft_get_extend_id(va_list ap, t_format *pf);
 unsigned long long int	ft_get_extend_u(va_list ap, t_format *pf);

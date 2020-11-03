@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtoa.h                                          :+:      :+:    :+:   */
+/*   ft_iseven.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 11:29:46 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/03 11:40:13 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/03 11:41:19 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_DTOA_H
-# define FT_DTOA_H
+#include "libft.h"
 
-# include "ft_dtoa_type.h"
-
-char	*ft_dtoa(double n, int precision, char spec);
-
-#endif
+int		ft_isenven(int c)
+{
+	if (c % 2 == 0)
+		return (1);
+	return (0);
+}

@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtoa.c                                          :+:      :+:    :+:   */
+/*   ft_dtoa_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 15:41:20 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 15:39:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_dtoa_util.h"
 
-char	*ft_dtoa(double n, int precision, char spec)
+char	*ft_dtoa_ut_itoa(long integer, int sign)
 {
-	t_double	num;
+	char			*tmp;
+	char			*result;
 
-	num.d = n;
-	if (num.exponent == FT_DBL_EXP_NAN)
+	if (!sign)
+		return (ft_convert_base_unsigned(integer, "0123456789", 10));
+	tmp = ft_convert_base_unsigned(integer, "0123456789", 10);
+	result = ft_strjoin("-", tmp);
+	free(tmp);
+	return (result);
+}
+
+int		ft_dtoa_ut_check_round(t_double n, int c, long integer, int precision)
+{
+	if (precision > 16)
+		return (0);
+	if ((n.mantissa << \
+		((precision + 1 + (n.exponent - FT_DBL_BIAS))) << 12) == 0)
 	{
-		if (num.mantissa == 0)
-			return (ft_strdup(num.sign ? "-inf" : "inf"));
-		return (ft_strdup("nan"));
+		if (integer % 2 == 0)
+			return (c > 5);
 	}
-	if (spec == 'f')
-		return (ft_dtoa_f(num, precision));
-	if (spec == 'g')
-		return (ft_dtoa_f(num, precision));
-	if (spec == 'e')
-		return (ft_dtoa_f(num, precision));
-	return (0);
+	return (c >= 5);
 }

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/28 02:51:51 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 17:23:02 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void		ft_putchar_out(char **out, int c);
 void		ft_putwchar_out(char **out, int unicode);
 void		ft_putchar_n_out(char **out, int n, int c);
 void		ft_putstr_out(char **out, char *s);
+int			ft_putstr_out_free(char **out, char *s);
 
 char		*ft_convert_base_custom(
 			unsigned long long int num,

@@ -6,15 +6,15 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:59:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 20:19:30 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/03 13:26:20 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_pow(double a, double n)
+long double	ft_pow(long double a, long double n)
 {
-	double result;
+	long double result;
 
 	result = a;
 	while (n-- > 1)
