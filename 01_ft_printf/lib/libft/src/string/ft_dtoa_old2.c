@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtoa.c                                          :+:      :+:    :+:   */
+/*   ft_dtoa_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:46:06 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 22:31:35 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:10:21 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ static char	*ft_round_with_precision(
 	int		i;
 	long	tmp;
 	char	*result;
-	char	round_flag;
 
 	if (!(result = malloc(sizeof(char) * (precision + 1))))
 		return (0);
@@ -71,12 +70,7 @@ static char	*ft_round_with_precision(
 		mantissa -= tmp;
 	}
 	result[precision] = 0;
-	round_flag = 0;
-	mantissa *= 10;
-	tmp = (long)(mantissa);
-	if ((precision % 2 == 0 ? \
-		(long)(mantissa * 10) > 5 : (long)(mantissa * 10) >= 5))
-		++tmp;
+	tmp = (long)(((float)mantissa) * 10);
 	return (ft_round_char(tmp >= 5 ? 1 : 0, \
 		precision, result, exponent));
 }

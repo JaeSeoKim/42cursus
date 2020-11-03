@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/10/28 05:39:33 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/02 21:31:16 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ AR = ar
 ARFLAGS = crs
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 RM = rm
 RMFLAGS = -f
@@ -108,6 +108,11 @@ SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 	ft_putstr_fd.c	\
 )
 
+SRC_DTOA_DIR = $(SRC_DIR)/dtoa
+SRC_DTOA = $(addprefix $(SRC_DTOA_DIR)/, \
+	ft_dtoa.c	\
+)
+
 SRCS = \
 	$(SRC_LST)	\
 	$(SRC_MATH)	\
@@ -115,7 +120,8 @@ SRCS = \
 	$(SRC_STRING)	\
 	$(SRC_TYPE)	\
 	$(SRC_UTF8)	\
-	$(SRC_WRITE)
+	$(SRC_WRITE)	\
+	$(SRC_DTOA)
 
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
@@ -125,7 +131,8 @@ vpath %.c \
 	$(subst ./, , $(SRC_STRING_DIR))	\
 	$(subst ./, , $(SRC_TYPE_DIR))	\
 	$(subst ./, , $(SRC_WRITE_DIR))	\
-	$(subst ./, , $(SRC_UTF8_DIR))
+	$(subst ./, , $(SRC_UTF8_DIR))	\
+	$(subst ./, , $(SRC_DTOA_DIR))
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 

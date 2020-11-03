@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 19:28:33 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:29:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <limits.h>
 
-# include "ft_string_type.h"
 # include "libft.h"
 
 size_t	ft_strlen(const char *s);
@@ -38,7 +37,6 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_convert_base_unsigned(unsigned long long int num, const char *base_set, int base);
 char	*ft_convert_base(long long int num, const char *base_set, int base);
-char	*ft_dtoa(double n, int precsion);
 char	*ft_strjoin_with_frees(char const *s1, char const *s2);
 
 #endif

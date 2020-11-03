@@ -6,19 +6,19 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 20:14:22 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:32:37 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static char	*ft_custom_dtoa(long double n, t_format *pf)
+static char	*ft_custom_dtoa(long double n, t_format *pf, char spec)
 {
 	char	*tmp;
 	char	*n_str;
 
-	n_str = ft_dtoa(n, pf->visit_precision ? pf->precision : 6);
+	n_str = ft_dtoa(n, pf->visit_precision ? pf->precision : 6, spec);
 	if (pf->visit_precision && pf->precision == 0 && pf->flag.hash)
 	{
 		tmp = ft_strjoin(n_str, ".");
@@ -29,7 +29,7 @@ static char	*ft_custom_dtoa(long double n, t_format *pf)
 }
 
 static int	ft_calc_width(
-	union u_double n,
+	t_double n,
 	int n_len,
 	t_format *pf)
 {
@@ -42,7 +42,7 @@ static int	ft_calc_width(
 	return (result);
 }
 
-static void	ft_print_flag(union u_double n, t_format *pf)
+static void	ft_print_flag(t_double n, t_format *pf)
 {
 	if (n.sign)
 		ft_putchar_out(pf->out, '-');
@@ -53,7 +53,7 @@ static void	ft_print_flag(union u_double n, t_format *pf)
 }
 
 static void	ft_print_format(
-	union u_double n,
+	t_double n,
 	int cnt,
 	t_format *pf,
 	char *n_str)
@@ -83,15 +83,15 @@ static void	ft_print_format(
 
 int			ft_print_float(va_list ap, t_format *pf)
 {
-	union u_double	n;
+	t_double	n;
 	int				cnt;
 	char			*tmp;
 	char			*n_str;
 	int				n_len;
 
-	++(*pf->ptr);
 	n.d = va_arg(ap, double);
-	n_str = ft_custom_dtoa(n.d, pf);
+	n_str = ft_custom_dtoa(n.d, pf, **pf->ptr);
+	++(*pf->ptr);
 	if (n.sign)
 	{
 		tmp = ft_strdup(n_str + 1);

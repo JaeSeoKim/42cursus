@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_dtoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/02 21:23:50 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/03 11:19:08 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <limits.h>
+char	*ft_dtoa(double n, int precision, char spec)
+{
+	t_double	num;
 
-# include "ft_lst_type.h"
-# include "ft_lst.h"
-# include "ft_math.h"
-# include "ft_memory.h"
-# include "ft_string.h"
-# include "ft_type.h"
-# include "ft_utf8.h"
-# include "ft_write.h"
-# include "ft_dtoa.h"
-# include "ft_dtoa_type.h"
+	num.d = n;
 
-#endif
+	if (num.exponent == FT_DBL_EXP_NAN)
+	{
+		if (num.mantissa == 0)
+			return (ft_strdup(num.sign ? "-inf" : "inf"));
+		return (ft_strdup(num.sign ? "-nan" : "nan"));
+	}
+	return (0);
+}

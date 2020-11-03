@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtoa.c                                          :+:      :+:    :+:   */
+/*   ft_dtoa_old.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 19:46:06 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/29 19:33:22 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/02 21:14:31 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*ft_custom_itoa(long exponent, int sign)
 	char			*tmp;
 	char			*result;
 
-	if (sign)
+	if (!sign)
 		return (ft_convert_base_unsigned(exponent, "0123456789", 10));
 	tmp = ft_convert_base_unsigned(exponent, "0123456789", 10);
 	result = ft_strjoin("-", tmp);
@@ -56,7 +56,9 @@ static char	*ft_round_with_precision(long n, int precision, long *exponent)
 
 char		*ft_dtoa(double n, int precsion)
 {
-	char		*result;
+	char		*result;\
+	char		*tmp;
+	char		*tmp2;
 	long		exponent;
 	double		mantissa;
 
@@ -71,7 +73,7 @@ char		*ft_dtoa(double n, int precsion)
 	if (precsion == 0)
 		return (ft_custom_itoa(n, exponent));
 	tmp = ft_round_with_precision(\
-		mantissa * ft_pow(10, precsion + 1), precsion, &exponent);
+		mantissa * 1e+52, precsion, &exponent);
 	tmp2 = ft_custom_itoa(n, exponent);
 	result = ft_strjoin(tmp2, ".");
 	free(tmp2);
