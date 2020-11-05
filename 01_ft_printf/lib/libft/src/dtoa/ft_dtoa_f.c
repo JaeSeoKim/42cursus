@@ -6,19 +6,39 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 15:38:28 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/05 20:17:36 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_dtoa_util.h"
 
+static void	ft_round_flag(
+	int *precision,
+	t_ll mantissa,
+	char **result,
+	int *round_flag)
+{
+	char	tmp;
+
+	while (*precision >= 0)
+	{
+		if ((tmp = ((mantissa % 10) + *round_flag)) >= 10)
+			*round_flag = 1;
+		else
+			*round_flag = 0;
+		(*result)[(*precision)--] = tmp >= 10 ? '0' : tmp + '0';
+		mantissa = mantissa / 10;
+	}
+	if (precision >= 0 && *round_flag)
+		(*result)[(*precision)--] = '1';
+}
+
 static char	*ft_round_with_precision(
 	t_double decimal,
 	int precision,
 	long *integer)
 {
-	char	tmp;
 	t_ll	mantissa;
 	char	*result;
 	int		round_flag;
@@ -33,15 +53,7 @@ static char	*ft_round_with_precision(
 	result[precision--] = 0;
 	while (precision >= 16)
 		result[precision--] = '0';
-	while (precision >= 0)
-	{
-		if ((tmp = ((mantissa % 10) + round_flag)) >= 10)
-			round_flag = 1;
-		else
-			round_flag = 0;
-		result[precision--] = tmp >= 10 ? '0' : tmp + '0';
-		mantissa = mantissa / 10;
-	}
+	ft_round_flag(&precision, mantissa, &result, &round_flag);
 	if (precision >= 0 && round_flag)
 		result[precision--] = '1';
 	else if (round_flag)
