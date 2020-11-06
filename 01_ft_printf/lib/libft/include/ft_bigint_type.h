@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_bigint_type.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 19:59:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 12:55:59 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/06 12:33:04 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/06 19:51:14 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_BIGINT_TYPE_H
+# define FT_BIGINT_TYPE_H
 
-long double	ft_pow(long double a, long double n)
+typedef struct	s_bigint
 {
-	long double result;
+	char		*num;
+	int			sign;
+	int			len;
+}				t_bigint;
 
-	result = a;
-	while (n-- > 1)
-		result *= a;
-	return (result);
-}
+#endif

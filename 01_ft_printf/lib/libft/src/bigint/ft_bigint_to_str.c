@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_bigint_to_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 19:59:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 12:55:59 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/06 15:06:16 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/06 19:36:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long double	ft_pow(long double a, long double n)
+char	*ft_bigint_to_str(t_bigint *bigint)
 {
-	long double result;
+	int		i;
+	char	*result;
 
-	result = a;
-	while (n-- > 1)
-		result *= a;
+	if (!(result = malloc(sizeof(char) * (bigint->len + 1))))
+		return (0);
+	i = 0;
+	while (i < bigint->len)
+	{
+		result[i] = bigint->num[bigint->len - 1 - i] + '0';
+		++i;
+	}
+	result[bigint->len] = 0;
 	return (result);
 }

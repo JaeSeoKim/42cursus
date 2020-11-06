@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/05 21:51:09 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/06 20:28:06 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int main(void)
 {
-	int c1;
-	int c2;
-	long long int lli;
+	// int c1;
+	// int c2;
+	// long long int lli;
 	// char buf1[100000] = {0, };
 	// char buf2[100000] = {0, };
 
@@ -33,28 +33,59 @@ int main(void)
 	t_double n;
 	long sum;
 	long test;
+	long tmp;
 	sum = 0;
-	n.d = 0.1;
+	n.d = 0.464655646546;
 
-	// test = 0;
-	// test |= 1;
-	// test <<= 52;
-	// test |= n.mantissa;
+	test = 0;
+	test |= 1;
+	test <<= 64 + (n.exponent - (unsigned long)FT_DBL_BIAS);
+	
+	tmp = 0;
+	tmp |= n.mantissa;
+	tmp <<= 12 + (n.exponent - (unsigned long)FT_DBL_BIAS);
+	tmp |= test;
 
-	// test >>= 52 - (n.exponent - (unsigned long)FT_DBL_BIAS);
-	// for (int i = 0; i < 52; i++)
-	// 	printf("%d", ((test >> (51 - i)) & 1) == 1);
+	// for (int i = 0; i < 64; i++)
+	// 	printf("%d", ((tmp >> (63 - i)) & 1) == 1);
+
+	t_bigint *result;
+	t_bigint *tmp_bigint;
+	t_bigint *tmp_bigint2;
+
+	result = ft_bigint_new(0);
+	for (int i = 0; i < 64; i++)
+	{
+		tmp_bigint = ft_bigint_multiply(result, 10);
+		result = tmp_bigint;
+		printf("\nmulty10: %s\n", ft_bigint_to_str(result));
+		if (((tmp >> (63 - i)) & 1) == 1)
+		{
+			tmp_bigint = ft_bigint_new(5);
+			for (int j = 0; j < i; j++)
+			{
+				tmp_bigint2 = ft_bigint_multiply(tmp_bigint, 5);
+				tmp_bigint = tmp_bigint2;
+			}
+			printf("\n????: %s\n", ft_bigint_to_str(tmp_bigint));
+			tmp_bigint2 = ft_bigint_add(result, tmp_bigint);
+			result = tmp_bigint2;
+		}
+		printf("\nADD: %s\n", ft_bigint_to_str(result));
+	}
+	printf("\nBITTTTT: %s\n", ft_bigint_to_str(result));
+	printf("%.64f\n", n.d);
+	printf("exp : %d\n", (n.exponent - (unsigned long)FT_DBL_BIAS));
 
 	// printf("\n%ld\n", test);
-	printf("pf\t%e\n", n.d);
-	ft_printf("ft\t%e\n", n.d);
-	printf("sign\t\t:%d\n", n.sign);
-	printf("exponent\t:%ld\n", (n.exponent - (long)FT_DBL_BIAS));
-	printf("mantissa\t:");
-	for (int i = 0; i < 52; i++)
-		printf("%d", ((n.mantissa >> (51 - i)) & 1) == 1);
-	printf("\n");
-	printf("-----------------\n");
+	// printf("pf\t%.50f\n", n.d);
+	// printf("sign\t\t:%d\n", n.sign);
+	// printf("exponent\t:%ld\n", (n.exponent - (long)FT_DBL_BIAS));
+	// printf("mantissa\t:");
+	// for (int i = 0; i < 52; i++)
+	// 	printf("%d", ((n.mantissa >> (51 - i)) & 1) == 1);
+	// printf("\n");
+	// printf("-----------------\n");
 
 	// c1 = ft_sprintf(buf1,format, 0.87650894255);
 	// printf("%s$\n[ft_sprintf - count] : %d\n", buf1, c1);

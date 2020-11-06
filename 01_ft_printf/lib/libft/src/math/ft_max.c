@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 19:59:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 12:55:59 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/06 13:17:06 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/06 13:17:41 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long double	ft_pow(long double a, long double n)
+int		ft_max(int a, int b)
 {
-	long double result;
-
-	result = a;
-	while (n-- > 1)
-		result *= a;
-	return (result);
+	return (a > b ? a : b);
 }

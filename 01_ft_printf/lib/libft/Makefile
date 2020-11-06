@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/03 12:22:05 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/06 19:52:45 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_LST = $(addprefix $(SRC_LST_DIR)/, \
 SRC_MATH_DIR = $(SRC_DIR)/math
 SRC_MATH = $(addprefix $(SRC_MATH_DIR)/, \
 	ft_pow.c	\
+	ft_max.c	\
 )
 
 
@@ -118,6 +119,15 @@ SRC_DTOA = $(addprefix $(SRC_DTOA_DIR)/, \
 	ft_dtoa_util.c	\
 )
 
+SRC_BIGINT_DIR = $(SRC_DIR)/bigint
+SRC_BIGINT = $(addprefix $(SRC_BIGINT_DIR)/, \
+	ft_bigint_new.c	\
+	ft_bigint_del.c	\
+	ft_bigint_add.c	\
+	ft_bigint_to_str.c \
+	ft_bigint_multiply.c	\
+)
+
 SRCS = \
 	$(SRC_LST)	\
 	$(SRC_MATH)	\
@@ -126,7 +136,8 @@ SRCS = \
 	$(SRC_TYPE)	\
 	$(SRC_UTF8)	\
 	$(SRC_WRITE)	\
-	$(SRC_DTOA)
+	$(SRC_DTOA)		\
+	$(SRC_BIGINT)
 
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
@@ -137,7 +148,8 @@ vpath %.c \
 	$(subst ./, , $(SRC_TYPE_DIR))	\
 	$(subst ./, , $(SRC_WRITE_DIR))	\
 	$(subst ./, , $(SRC_UTF8_DIR))	\
-	$(subst ./, , $(SRC_DTOA_DIR))
+	$(subst ./, , $(SRC_DTOA_DIR))	\
+	$(subst ./, , $(SRC_BIGINT_DIR))
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
