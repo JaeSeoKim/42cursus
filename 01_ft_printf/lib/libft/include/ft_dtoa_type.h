@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 11:25:48 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/08 22:45:38 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 
 #ifndef FT_DBL_EXP_NAN
 # define FT_DBL_EXP_NAN 2047
+#endif
+
+#ifndef FT_DBL_MAX_ARR
+# define FT_DBL_MAX_ARR 1074
 #endif
 
 typedef struct	s_double

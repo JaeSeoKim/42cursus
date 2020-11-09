@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 13:09:47 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 19:30:08 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/07 18:23:40 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_bigint	*ft_bigint_add(t_bigint *a, t_bigint *b)
 	ft_swap(&a, &b);
 	if (!(result = malloc(sizeof(t_bigint))))
 		return (0);
-	if (!(result->num = malloc(sizeof(char) * (max_len + 1))))
+	if (!(result->num = malloc(sizeof(int) * (max_len + 1))))
 	{
 		free(result);
 		return (0);

@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bigint_to_str.c                                 :+:      :+:    :+:   */
+/*   ft_dtoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 15:06:16 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/07 18:19:21 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/03 15:41:20 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_dtoa_util.h"
 
-char	*ft_bigint_to_str(t_bigint *bigint)
+char	*ft_dtoa(double n, int precision, char spec)
 {
-	int		i;
-	char	*result;
+	t_double	num;
 
-	if (!(result = malloc(sizeof(char) * (bigint->len + 1))))
-		return (0);
-	i = 0;
-	while (i < bigint->len)
+	num.d = n;
+	if (num.exponent == FT_DBL_EXP_NAN)
 	{
-		result[i] = bigint->num[bigint->len - 1 - i] + '0';
-		++i;
+		if (num.mantissa == 0)
+			return (ft_strdup(num.sign ? "-inf" : "inf"));
+		return (ft_strdup("nan"));
 	}
-	result[bigint->len] = 0;
-	return (result);
+	if (spec == 'f')
+		return (ft_dtoa_f(num, precision));
+	if (spec == 'g')
+		return (ft_dtoa_f(num, precision));
+	if (spec == 'e')
+		return (ft_dtoa_f(num, precision));
+	return (0);
 }

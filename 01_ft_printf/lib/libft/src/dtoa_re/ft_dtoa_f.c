@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bigint_type.h                                   :+:      :+:    :+:   */
+/*   ft_dtoa_f.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 12:33:04 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/07 18:25:13 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
+/*   Updated: 2020/11/09 21:47:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BIGINT_TYPE_H
-# define FT_BIGINT_TYPE_H
+#include "libft.h"
+#include "ft_dtoa_util.h"
 
-typedef struct	s_bigint
+char		*ft_dtoa_f(t_double n, int precision)
 {
-	int			*num;
-	int			sign;
-	int			len;
-}				t_bigint;
-
-#endif
+	char	decimal[FT_DBL_MAX_ARR];
+	char	integer[FT_DBL_MAX_ARR];
+	
+	
+}

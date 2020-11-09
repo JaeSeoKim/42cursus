@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 16:39:08 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 20:28:11 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/07 18:22:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	t_bigint_multiply2(t_bigint *a, int num, t_bigint *result)
 	}
 	while (round)
 	{
+
 		result->num[i] = round % 10;
 		round = (round / 10);
 		++i;
@@ -54,12 +55,14 @@ t_bigint	*ft_bigint_multiply(t_bigint *a, int num)
 
 	if (!(result = malloc(sizeof(t_bigint))))
 		return (0);
-	if (!(result->num = malloc(sizeof(char) * \
+	if (!(result->num = malloc(sizeof(int) * \
 		(a->len + ft_count_digist(num)))))
 	{
 		free(result);
 		return (0);
 	}
 	t_bigint_multiply2(a, num, result);
+	if (num < 0)
+		result->sign = a->sign ? 0 : 1;
 	return (result);
 }

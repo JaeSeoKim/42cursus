@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 13:03:23 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/08 18:11:07 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 typedef unsigned long long	t_ull;
 typedef long long	t_ll;
+typedef unsigned long t_ul;
+typedef long t_l;
 
 # include <stdlib.h>
 # include <unistd.h>

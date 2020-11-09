@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:21:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 20:28:12 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/07 18:24:27 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_bigint	*ft_bigint_new(t_ll num)
 		return (0);
 	}
 	result->len = ft_strlen(tmp);
-	if (!(result->num = malloc(sizeof(char) * result->len)))
+	if (!(result->num = malloc(sizeof(int) * result->len)))
 	{
 		ft_frees(2, result, tmp);
 		return (0);
