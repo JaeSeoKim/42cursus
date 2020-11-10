@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/06 19:52:45 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/10 18:03:00 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ AR = ar
 ARFLAGS = crs
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 RM = rm
 RMFLAGS = -f
@@ -115,8 +115,9 @@ SRC_WRITE = $(addprefix $(SRC_WRITE_DIR)/, \
 SRC_DTOA_DIR = $(SRC_DIR)/dtoa
 SRC_DTOA = $(addprefix $(SRC_DTOA_DIR)/, \
 	ft_dtoa.c	\
-	ft_dtoa_f.c	\
 	ft_dtoa_util.c	\
+	ft_dtoa_setup_decimal.c	\
+	ft_dtoa_setup_integer.c	\
 )
 
 SRC_BIGINT_DIR = $(SRC_DIR)/bigint

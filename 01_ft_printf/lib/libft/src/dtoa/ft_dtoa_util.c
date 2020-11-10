@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 15:39:47 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:56:28 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_dtoa_ut_check_round(t_double n, int c, long integer, int precision)
 {
 	if (precision > 16)
 		return (0);
-	if ((n.mantissa << \
+	if ((n.significand << \
 		((precision + 1 + (n.exponent - FT_DBL_BIAS))) << 12) == 0)
 	{
 		if (integer % 2 == 0)

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/08 22:45:38 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/10 17:49:37 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@
 # define FT_DBL_MAX_ARR 1074
 #endif
 
+#ifndef FT_DBL_INT_MAX_ARR
+# define FT_DBL_INT_MAX_ARR 308
+#endif
+
 typedef struct	s_double
 {
 	union
 	{
 		struct
 		{
-			unsigned long	mantissa	:52;
+			unsigned long	significand	:52;
 			unsigned long	exponent	:11;
 			unsigned long	sign		:1;
 		};

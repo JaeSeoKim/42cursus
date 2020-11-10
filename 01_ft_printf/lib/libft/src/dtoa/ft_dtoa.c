@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 15:41:20 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/10 14:54:39 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_dtoa(double n, int precision, char spec)
 	num.d = n;
 	if (num.exponent == FT_DBL_EXP_NAN)
 	{
-		if (num.mantissa == 0)
+		if (num.significand == 0)
 			return (ft_strdup(num.sign ? "-inf" : "inf"));
 		return (ft_strdup("nan"));
 	}
