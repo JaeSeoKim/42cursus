@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 22:47:17 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/10 19:42:06 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/11 22:43:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ void		ft_dtoa_setup_decimal(t_double n, char *decimal)
 	ft_memset(decimal, 0, sizeof(char) * FT_DBL_MAX_ARR);
 	exp = n.exponent - (long)FT_DBL_BIAS;
 	significand = exp > 0 ? n.significand << exp : n.significand;
+	if (exp > 52)
+		return ;
 	ft_dtoa_setup_decimal2(n, decimal, significand, exp);
 }

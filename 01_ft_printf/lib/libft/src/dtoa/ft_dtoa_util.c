@@ -6,34 +6,38 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/10 14:56:28 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/11 22:43:19 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_dtoa_ut_itoa(long integer, int sign)
+void	ft_dta_ut_int_reverse(char *a, int a_len)
 {
-	char			*tmp;
-	char			*result;
+	char	result[FT_DBL_INT_MAX_ARR];
+	int		i;
 
-	if (!sign)
-		return (ft_convert_base_unsigned(integer, "0123456789", 10));
-	tmp = ft_convert_base_unsigned(integer, "0123456789", 10);
-	result = ft_strjoin("-", tmp);
-	free(tmp);
-	return (result);
+	ft_memset(result, 0, sizeof(char) * FT_DBL_INT_MAX_ARR);
+	i = a_len;
+	while (i-- > 0)
+		result[a_len - 1 - i] = a[i];
+	ft_memmove(a, result, FT_DBL_INT_MAX_ARR);
 }
 
-int		ft_dtoa_ut_check_round(t_double n, int c, long integer, int precision)
+int		ft_dtoa_ut_check_round(int c, char *decimal, int precision)
 {
-	if (precision > 16)
-		return (0);
-	if ((n.significand << \
-		((precision + 1 + (n.exponent - FT_DBL_BIAS))) << 12) == 0)
+	int		i;
+
+	i = precision + 1;
+	while (i < FT_DBL_MAX_ARR)
 	{
-		if (integer % 2 == 0)
-			return (c > 5);
+		if (decimal[i++] != 0)
+			break ;
 	}
-	return (c >= 5);
+	if (i == FT_DBL_MAX_ARR)
+	{
+		if (c % 2 == 0)
+			return ((decimal[precision] > 5) ? 1 : 0);
+	}
+	return ((decimal[precision] >= 5) ? 1 : 0);
 }

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/11 17:50:21 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/11 21:25:17 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@
 # define FT_DBL_MAX_ARR 1074
 #endif
 
+#ifndef FT_DBL_BIT_INT_MAX_ARR
+# define FT_DBL_BIT_INT_MAX_ARR 1024
+#endif
+
 #ifndef FT_DBL_INT_MAX_ARR
 # define FT_DBL_INT_MAX_ARR 309
-// # define FT_DBL_INT_MAX_ARR 358
 #endif
 
 typedef struct	s_double
