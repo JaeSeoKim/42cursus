@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/10 18:50:25 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/11 18:37:58 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <wchar.h>
 #include <locale.h>
+#include <limits.h>
 
 // static void	ft_dtoa_revers(int *a, int n)
 // {
@@ -140,13 +141,16 @@ int main(void)
 	char	integer[FT_DBL_INT_MAX_ARR];
 	t_double n;
 
-	n.d = 312.123123122331;
+	n.d = 0.626;
 	// exp =  n.exponent - (int)FT_DBL_BIAS;
-	printf("%d\n", exp);
-	ft_dtoa_setup_integer(n, integer);
-	// ft_dtoa_setup_decimal(n, decimal);
-	// i = 0;
-	// while (i < FT_DBL_MAX_ARR)
-	// 	printf("%d", decimal[i++]);
-	// printf("\n%.*f\n", FT_DBL_MAX_ARR, n.d);
+	// for (int i = 0; i < 52; i++)
+	// 	printf("%d", (n.significand >> (51 - i++)) & 1 ? 1 : 0);
+	// printf("\n%d\n", exp);
+	// ft_dtoa_setup_integer(n, integer);
+	// printf("\n%f\n", n.d);
+	ft_dtoa_setup_decimal(n, decimal);
+	i = 0;
+	while (i < FT_DBL_MAX_ARR)
+		printf("%d", decimal[i++]);
+	printf("\n%.*f\n", FT_DBL_MAX_ARR, n.d);
 }
