@@ -8,10 +8,13 @@
         "-C",
         "${workspaceFolder}",
         "fclean",
-        "test",
+        "debug_make",
       ],
       "options": {
-        "cwd": "/usr/bin"
+        "cwd": "/usr/bin",
+        "env": {
+          "DEBUG" : "-g"
+        }
       },
       "group": {
         "kind": "build",

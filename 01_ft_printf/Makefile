@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/12 18:05:13 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/12 19:24:22 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,6 @@ ARFLAGS = crs
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-
-ifeq ($(ENV),)
-  $(error ENV is not set)
-endif
 
 RM = rm
 RMFLAGS = -f
@@ -116,13 +112,19 @@ $(LIBFT)_fclean :
 
 TEST_FILE = test.c
 
+debug_make : $(NAME) $(TEST_FILE)
+	$(CC) -g -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
+
 test : $(NAME) $(TEST_FILE)
 	@$(CC) -g -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
-# @printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
-# @./$(TEST_FILE:.c=.out)
-# @rm $(TEST_FILE:.c=.out)
+	@printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
+	@./$(TEST_FILE:.c=.out)
+	@rm $(TEST_FILE:.c=.out)
+
+test2 :
+	@printf "$(PWD)" 
 
 .PHONY : \
 	all clean fclean re \
 	$(LIBFT) $(LIBFT)_clean $(LIBFT)_fclean \
-	test
+	test debug_make
