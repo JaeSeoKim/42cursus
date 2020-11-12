@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/12 17:12:05 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/12 18:05:13 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ ARFLAGS = crs
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
+ifeq ($(ENV),)
+  $(error ENV is not set)
+endif
 
 RM = rm
 RMFLAGS = -f
@@ -85,7 +89,7 @@ re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
+	@$(CC) $(DEBUG) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
 $(NAME) : $(LIBFT_FILE) $(OBJS)
@@ -113,10 +117,10 @@ $(LIBFT)_fclean :
 TEST_FILE = test.c
 
 test : $(NAME) $(TEST_FILE)
-	@$(CC) -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
-	@printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
-	@./$(TEST_FILE:.c=.out)
-	@rm $(TEST_FILE:.c=.out)
+	@$(CC) -g -I $(INC_DIR) -I $(LIBFT_INC_DIR) $(TEST_FILE) -o $(TEST_FILE:.c=.out) -L. -lftprintf
+# @printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
+# @./$(TEST_FILE:.c=.out)
+# @rm $(TEST_FILE:.c=.out)
 
 .PHONY : \
 	all clean fclean re \

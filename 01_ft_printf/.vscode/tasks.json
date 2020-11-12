@@ -1,0 +1,23 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Build ft_printf_test",
+      "command": "/usr/bin/make",
+      "args": [
+        "-C",
+        "${workspaceFolder}",
+        "fclean",
+        "test",
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 17:02:33 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/12 19:02:01 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int main(void)
 	char buf1[100000] = {0, };
 	char buf2[100000] = {0, };
 
-	const char *format = "%.5000f";
+	const char *format = "%.2000e";
 	c1 = ft_printf(format, __DBL_MIN__);
-	// printf("$\n[ft_printf - count] : %d\n", c1);
-	// c2 = printf(format, __DBL_MIN__);
-	// printf("$\n[printf - count] : %d\n", c2);
+	printf("$\n[ft_printf - count] : %d\n", c1);
+	c2 = printf(format, __DBL_MIN__);
+	printf("$\n[printf - count] : %d\n", c2);
 
 	// printf("-----------------\n");
 
