@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/03 18:16:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/12 16:41:48 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,15 @@ static void	ft_print_format(
 	}
 }
 
-int			ft_print_float_nan(char *n_str, t_double n, t_format *pf)
+int			ft_print_float_nan(t_double n, t_format *pf)
 {
-	int				cnt;
-	int				n_len;
+	int		cnt;
+	char	*n_str;
+	int		n_len;
 
+	if (!(n_str = ft_dtoa(n.d, pf->precision, **pf->ptr)))
+		return (-1);
+	++(*pf->ptr);
 	if (!ft_strncmp(n_str, "nan", 3))
 		n.sign = 1;
 	n_len = ft_calc_width(n, ft_strlen(n_str), pf);

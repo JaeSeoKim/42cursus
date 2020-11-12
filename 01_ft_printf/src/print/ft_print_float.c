@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/11 23:04:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/12 16:45:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ static char	*ft_custom_dtoa(long double n, t_format *pf, char spec)
 	char	*n_str;
 
 	n_str = ft_dtoa(n, pf->visit_precision ? pf->precision : 6, spec);
-	if (!ft_strncmp(n_str, "nan", 3) || \
-		!ft_strncmp(n_str, "inf", 3) || !ft_strncmp(n_str, "-inf", 4))
-		return (n_str);
 	if (pf->visit_precision && pf->flag.hash && !pf->precision)
 	{
 		tmp = ft_strjoin(n_str, ".");
@@ -90,11 +87,10 @@ int			ft_print_float(va_list ap, t_format *pf)
 	int				n_len;
 
 	n.d = va_arg(ap, double);
+	if (n.exponent == FT_DBL_EXP_NAN)
+		return (ft_print_float_nan(n, pf));
 	n_str = ft_custom_dtoa(n.d, pf, **pf->ptr);
 	++(*pf->ptr);
-	if (!ft_strncmp(n_str, "nan", 3) || \
-		!ft_strncmp(n_str, "inf", 3) || !ft_strncmp(n_str, "-inf", 4))
-		return (ft_print_float_nan(n_str, n, pf));
 	if (n.sign)
 	{
 		tmp = ft_strdup(n_str + 1);
