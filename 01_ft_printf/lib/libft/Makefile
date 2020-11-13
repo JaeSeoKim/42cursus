@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/13 20:08:14 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/14 01:23:55 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ ARFLAGS = crs
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
+ifeq ($(DEBUG),true)
+	CDEBUG = -g
+endif
 
 RM = rm
 RMFLAGS = -f
@@ -187,7 +191,7 @@ re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(DEBUG) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@$(CC) $(CDEBUG) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
 $(NAME) : $(OBJS)

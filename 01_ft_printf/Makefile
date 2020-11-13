@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/13 18:31:55 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/14 01:26:39 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ ARFLAGS = crs
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
+ifeq ($(DEBUG),true)
+	CDEBUG = -g
+endif
 
 RM = rm
 RMFLAGS = -f
@@ -85,10 +89,10 @@ re : fclean all
 
 $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(DEBUG) $(CFLAGS) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) $(CDEBUG) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
-$(NAME) : $(LIBFT_FILE) $(OBJS)
+$(NAME) : $(LIBFT) $(OBJS)
 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$(NAME)'s Object files $(FG_TEXT)!"
 	@printf "$(CRLF)📚 $(FG_TEXT)Archiving! $(FG_TEXT_PRIMARY)$@"
 	@$(AR) $(ARFLAGS) $@ $(OBJS)
@@ -96,9 +100,7 @@ $(NAME) : $(LIBFT_FILE) $(OBJS)
 
 # Libft
 
-$(LIBFT) : $(LIBFT_FILE)
-
-$(LIBFT_FILE) :
+$(LIBFT) :
 	@make --no-print-directory -C $(LIBFT_DIR)
 	@cp $(LIBFT_FILE) $(NAME)
 
@@ -120,9 +122,6 @@ test : $(NAME) $(TEST_FILE)
 	@printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
 	@./$(TEST_FILE:.c=.out)
 	@rm $(TEST_FILE:.c=.out)
-
-test2 :
-	@printf "$(PWD)" 
 
 .PHONY : \
 	all clean fclean re \

@@ -7,13 +7,12 @@
       "args": [
         "-C",
         "${workspaceFolder}",
-        "fclean",
         "debug_make"
       ],
       "options": {
         "cwd": "/usr/bin",
         "env": {
-          "DEBUG" : "-g"
+          "DEBUG" : "true"
         }
       },
       "group": {

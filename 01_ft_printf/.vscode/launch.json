@@ -5,16 +5,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Build ft_printf_test",
+      "name": "debug ft_printf_test",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/test.out",
       "args": [],
-      "stopAtEntry": false,
+      "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
-      "MIMode": "lldb",
+      "osx": {
+        "MIMode": "lldb"
+      },
+      "linux": {
+        "MIMode": "gdb"
+      },
       "preLaunchTask": "Build ft_printf_test"
     }
   ]
