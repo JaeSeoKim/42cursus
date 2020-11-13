@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/14 01:26:39 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/14 01:58:10 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,7 @@ $(OBJ_DIR)/%.o : %.c
 	@$(CC) $(CFLAGS) $(CDEBUG) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
-$(NAME) : $(LIBFT) $(OBJS)
+$(NAME) : $(LIBFT_FILE) $(OBJS)
 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$(NAME)'s Object files $(FG_TEXT)!"
 	@printf "$(CRLF)📚 $(FG_TEXT)Archiving! $(FG_TEXT_PRIMARY)$@"
 	@$(AR) $(ARFLAGS) $@ $(OBJS)
@@ -100,7 +100,9 @@ $(NAME) : $(LIBFT) $(OBJS)
 
 # Libft
 
-$(LIBFT) :
+$(LIBFT) : $(LIBFT_FILE)
+
+$(LIBFT_FILE) :
 	@make --no-print-directory -C $(LIBFT_DIR)
 	@cp $(LIBFT_FILE) $(NAME)
 
