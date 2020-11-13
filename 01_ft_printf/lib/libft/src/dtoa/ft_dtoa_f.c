@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 17:12:48 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/13 22:40:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_dtoa_rounding2(
 
 	ft_dta_ut_int_reverse(integer, *integer_len);
 	i = 0;
-	while (i < *integer_len)
+	while (round_flag && i < *integer_len)
 	{
 		if ((tmp = integer[i] + round_flag) >= 10)
 			round_flag = 1;
@@ -52,13 +52,11 @@ static void	ft_dtoa_rounding(
 	round_flag = ft_dtoa_ut_check_round((precision == 0 ? \
 		integer[*integer_len - 1] : decimal[precision - 1]), \
 		decimal, precision);
-	if (round_flag && (precision != 0 || precision > FT_DBL_MAX_ARR))
+	if (round_flag && (precision != 0 || precision < FT_DBL_MAX_ARR))
 	{
-		while (precision-- > 0)
+		while (round_flag && precision-- > 0)
 		{
-			if ((tmp = decimal[precision] + round_flag) >= 10)
-				round_flag = 1;
-			else
+			if (!((tmp = decimal[precision] + round_flag) >= 10))
 				round_flag = 0;
 			decimal[precision] = tmp >= 10 ? 0 : tmp;
 		}

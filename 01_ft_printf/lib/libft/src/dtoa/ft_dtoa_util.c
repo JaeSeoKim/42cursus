@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 16:58:14 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/13 20:58:33 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int		ft_dtoa_ut_check_round(int c, char *decimal, int precision)
 {
 	int		i;
 
+	if (precision >= FT_DBL_MAX_ARR || precision < 0)
+		return (0);
 	i = precision + 1;
 	while (i < FT_DBL_MAX_ARR)
 	{

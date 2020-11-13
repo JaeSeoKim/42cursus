@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/11 22:52:49 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/13 20:08:39 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ char	*ft_dtoa(double n, int precision, char spec)
 			return (ft_strdup(num.sign ? "-inf" : "inf"));
 		return (ft_strdup("nan"));
 	}
-	if (spec == 'f')
-		return (ft_dtoa_f(num, precision));
 	if (spec == 'g')
 		return (ft_dtoa_f(num, precision));
 	if (spec == 'e')
-		return (ft_dtoa_f(num, precision));
-	return (0);
+		return (ft_dtoa_e(num, precision));
+	return (ft_dtoa_f(num, precision));
 }

@@ -8,7 +8,7 @@
         "-C",
         "${workspaceFolder}",
         "fclean",
-        "debug_make",
+        "debug_make"
       ],
       "options": {
         "cwd": "/usr/bin",

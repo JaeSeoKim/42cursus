@@ -8,7 +8,7 @@
       "name": "Build ft_printf_test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/test.out",
+      "program": "${workspaceFolder}/test.out",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",

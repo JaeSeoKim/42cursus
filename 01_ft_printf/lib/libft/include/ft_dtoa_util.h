@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/11 22:07:11 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/13 20:07:50 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ft_dtoa_type.h"
 
 char	*ft_dtoa_f(t_double n, int precision);
+char	*ft_dtoa_e(t_double n, int precision);
 
 int		ft_dtoa_ut_check_round(int c, char *decimal, int precision);
 void	ft_dta_ut_int_reverse(char *a, int a_len);
