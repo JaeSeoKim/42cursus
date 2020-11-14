@@ -6,12 +6,12 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:31:47 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 15:58:52 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/14 22:11:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_PARSE_H
-# define FT_PRINT_PARSE_H
+#ifndef FT_PRINTF_PARSE_H
+# define FT_PRINTF_PARSE_H
 
 # include <stdarg.h>
 # include "libft.h"

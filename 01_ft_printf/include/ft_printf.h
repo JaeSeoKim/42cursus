@@ -6,12 +6,12 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 01:49:19 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/26 16:06:18 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/14 22:09:54 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include "libft.h"
 # include "ft_printf_util.h"
