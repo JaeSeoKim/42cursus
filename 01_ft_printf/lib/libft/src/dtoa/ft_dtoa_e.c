@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 20:05:49 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 21:50:14 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/14 22:05:34 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char		*ft_dtoa_e_to_str2(
 	if (exp >= 0 || exp == -1023 || -exp < i || \
 		(precision == 0 && (decimal[i] == 9)) || i == 0)
 	{
-		result = ft_strdup(integer_len < 10 ? "+0" : "+");
+		result = ft_strdup((integer_len - 1) < 10 ? "+0" : "+");
 		result = ft_strjoin_free_both(result, \
 			ft_itoa(exp == -1023 ? 0 : integer_len - 1));
 	}
