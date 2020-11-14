@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 01:12:11 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/14 20:07:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,27 @@
 
 static char	*ft_custom_dtoa(long double n, t_format *pf, char spec)
 {
-	char	*tmp;
-	char	*n_str;
+	t_double	num;
+	char		*tmp;
+	char		*n_str;
 
+	num.d = n;
 	n_str = ft_dtoa(n, pf->visit_precision ? pf->precision : 6, spec);
 	if (pf->visit_precision && pf->flag.hash && !pf->precision)
 	{
-		tmp = ft_strjoin(n_str, ".");
-		free(n_str);
-		n_str = tmp;
+		if (spec == 'f')
+		{
+			tmp = ft_strjoin_free_first(n_str, ".");
+			n_str = tmp;
+		}
+		else
+		{
+			tmp = ft_strndup(n_str, num.sign ? 2 : 1);
+			tmp = ft_strjoin_free_first(tmp, ".");
+			n_str = ft_strjoin_free_both(tmp, \
+				ft_strndup(n_str + (num.sign ? 2 : 1), \
+				ft_strlen(n_str) - (num.sign ? 2 : 1)));
+		}
 	}
 	return (n_str);
 }

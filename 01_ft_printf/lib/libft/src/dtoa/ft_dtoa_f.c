@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 01:26:40 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/14 18:16:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	ft_dtoa_rounding(
 
 	round_flag = ft_dtoa_ut_check_round((precision == 0 ? \
 		integer[*integer_len - 1] : decimal[precision - 1]), \
-		decimal, precision);
+		decimal, precision, 0);
 	if (round_flag && (precision != 0 || precision < FT_DBL_MAX_ARR))
 	{
 		while (round_flag && precision-- > 0)
