@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 16:39:08 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/10 14:48:37 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:31:13 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ static void	t_bigint_multiply2(t_bigint *a, int num, t_bigint *result)
 	}
 	while (round)
 	{
-
 		result->num[i] = round % 10;
 		round = (round / 10);
 		++i;

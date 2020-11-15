@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 22:11:53 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:21:10 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "ft_dtoa_type.h"
 
-char	*ft_dtoa_f(t_double n, int precision);
-char	*ft_dtoa_e(t_double n, int precision);
+char	*ft_dtoa_f(union u_double n, int precision);
+char	*ft_dtoa_e(union u_double n, int precision);
 
 void	ft_dtoa_e_round(
 			char *integer,
@@ -32,7 +32,7 @@ int		ft_dtoa_ut_check_round(
 void	ft_dta_ut_int_reverse(char *a, int a_len);
 int		ft_dtoa_ut_get_decimal_start(char *decimal);
 
-void	ft_dtoa_setup_decimal(t_double n, char *decimal);
-int		ft_dtoa_setup_integer(t_double n, char *integer);
+void	ft_dtoa_setup_decimal(union u_double n, char *decimal);
+int		ft_dtoa_setup_integer(union u_double n, char *integer);
 
 #endif

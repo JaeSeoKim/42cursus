@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 12:42:28 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/06 19:52:42 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:18:07 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include "ft_bigint_type.h"
 
-t_bigint	*ft_bigint_new(t_ll num);
+t_bigint	*ft_bigint_new(int64_t num);
 void		ft_bigint_del(t_bigint *target);
 char		*ft_bigint_to_str(t_bigint *bigint);
 t_bigint	*ft_bigint_add(t_bigint *a, t_bigint *b);

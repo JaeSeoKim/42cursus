@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 16:41:48 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:27:08 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 #include "ft_printf.h"
 
 static int	ft_calc_width(
-	t_double n,
+	union u_double n,
 	int n_len,
 	t_format *pf)
 {
-	if ((pf->flag.plus || pf->flag.blank) && !n.sign)
+	if ((pf->flag.plus || pf->flag.blank) && !n.bit.sign)
 		++n_len;
 	return (n_len);
 }
 
-static void	ft_print_flag(t_double n, t_format *pf)
+static void	ft_print_flag(union u_double n, t_format *pf)
 {
-	if (pf->flag.plus && !n.sign)
+	if (pf->flag.plus && !n.bit.sign)
 		ft_putchar_out(pf->out, '+');
-	else if (pf->flag.blank && !n.sign)
+	else if (pf->flag.blank && !n.bit.sign)
 		ft_putchar_out(pf->out, ' ');
 }
 
 static void	ft_print_format(
-	t_double n,
+	union u_double n,
 	int cnt,
 	t_format *pf,
 	char *n_str)
@@ -53,7 +53,7 @@ static void	ft_print_format(
 	}
 }
 
-int			ft_print_float_nan(t_double n, t_format *pf)
+int			ft_print_float_nan(union u_double n, t_format *pf)
 {
 	int		cnt;
 	char	*n_str;
@@ -63,7 +63,7 @@ int			ft_print_float_nan(t_double n, t_format *pf)
 		return (-1);
 	++(*pf->ptr);
 	if (!ft_strncmp(n_str, "nan", 3))
-		n.sign = 1;
+		n.bit.sign = 1;
 	n_len = ft_calc_width(n, ft_strlen(n_str), pf);
 	cnt = pf->width > n_len ? pf->width : n_len;
 	ft_print_format(n, cnt, pf, n_str);

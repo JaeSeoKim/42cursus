@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:59:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 16:39:11 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:36:06 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <wchar.h>
-# include "ft_printf_sturct.h"
+# include "ft_printf_type.h"
 # include "libft.h"
 
 int						ft_print_number(va_list ap, t_format *pf);
@@ -29,7 +29,7 @@ int						ft_print_octal(va_list ap, t_format *pf);
 int						ft_print_hex(va_list ap, t_format *pf);
 int						ft_print_pointer(va_list ap, t_format *pf);
 int						ft_print_float(va_list ap, t_format *pf);
-int						ft_print_float_nan(t_double n, t_format *pf);
+int						ft_print_float_nan(union u_double n, t_format *pf);
 
 long long int			ft_get_extend_id(va_list ap, t_format *pf);
 unsigned long long int	ft_get_extend_u(va_list ap, t_format *pf);

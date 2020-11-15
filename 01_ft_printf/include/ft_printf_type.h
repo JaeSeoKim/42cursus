@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_sturct.h                                 :+:      :+:    :+:   */
+/*   ft_printf_type.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:03:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 16:52:50 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:34:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_STRUCT_H
-# define FT_PRINTF_STRUCT_H
+#ifndef FT_PRINTF_TYPE_H
+# define FT_PRINTF_TYPE_H
 
 # include <stdarg.h>
 

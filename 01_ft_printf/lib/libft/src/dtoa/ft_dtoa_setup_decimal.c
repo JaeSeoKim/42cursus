@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 22:47:17 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/12 17:12:46 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:23:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	ft_dtoa_multiply(char *a, int n)
 }
 
 static void	ft_dtoa_setup_decimal2(
-	t_double n,
+	union u_double n,
 	char *decimal,
 	long significand,
 	int exp)
@@ -64,7 +64,7 @@ static void	ft_dtoa_setup_decimal2(
 
 	i = 0;
 	j = exp < 0 ? -exp : 0;
-	if (n.exponent == 0)
+	if (n.bit.exponent == 0)
 		j -= 1;
 	else if (exp < 0)
 		decimal[j - 1] = 1;
@@ -84,14 +84,14 @@ static void	ft_dtoa_setup_decimal2(
 	ft_memmove(decimal, result, sizeof(char) * i);
 }
 
-void		ft_dtoa_setup_decimal(t_double n, char *decimal)
+void		ft_dtoa_setup_decimal(union u_double n, char *decimal)
 {
 	int		exp;
 	long	significand;
 
 	ft_memset(decimal, 0, sizeof(char) * FT_DBL_MAX_ARR);
-	exp = n.exponent - (long)FT_DBL_BIAS;
-	significand = exp > 0 ? n.significand << exp : n.significand;
+	exp = n.bit.exponent - (long)FT_DBL_BIAS;
+	significand = exp > 0 ? n.bit.significand << exp : n.bit.significand;
 	if (exp > 52)
 		return ;
 	ft_dtoa_setup_decimal2(n, decimal, significand, exp);

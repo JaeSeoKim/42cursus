@@ -6,18 +6,18 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 17:03:18 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 20:07:29 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:26:16 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_printf.h"
 
-static char	*ft_custom_dtoa(long double n, t_format *pf, char spec)
+static char	*ft_custom_dtoa(double n, t_format *pf, char spec)
 {
-	t_double	num;
-	char		*tmp;
-	char		*n_str;
+	union u_double	num;
+	char			*tmp;
+	char			*n_str;
 
 	num.d = n;
 	n_str = ft_dtoa(n, pf->visit_precision ? pf->precision : 6, spec);
@@ -30,39 +30,39 @@ static char	*ft_custom_dtoa(long double n, t_format *pf, char spec)
 		}
 		else
 		{
-			tmp = ft_strndup(n_str, num.sign ? 2 : 1);
+			tmp = ft_strndup(n_str, num.bit.sign ? 2 : 1);
 			tmp = ft_strjoin_free_first(tmp, ".");
 			n_str = ft_strjoin_free_both(tmp, \
-				ft_strndup(n_str + (num.sign ? 2 : 1), \
-				ft_strlen(n_str) - (num.sign ? 2 : 1)));
+				ft_strndup(n_str + (num.bit.sign ? 2 : 1), \
+				ft_strlen(n_str) - (num.bit.sign ? 2 : 1)));
 		}
 	}
 	return (n_str);
 }
 
 static int	ft_calc_width(
-	t_double n,
+	union u_double n,
 	int n_len,
 	t_format *pf)
 {
-	if (n.sign || pf->flag.plus || \
-		(pf->flag.blank && !n.sign))
+	if (n.bit.sign || pf->flag.plus || \
+		(pf->flag.blank && !n.bit.sign))
 		++n_len;
 	return (n_len);
 }
 
-static void	ft_print_flag(t_double n, t_format *pf)
+static void	ft_print_flag(union u_double n, t_format *pf)
 {
-	if (n.sign)
+	if (n.bit.sign)
 		ft_putchar_out(pf->out, '-');
 	else if (pf->flag.plus)
 		ft_putchar_out(pf->out, '+');
-	else if (pf->flag.blank && !n.sign)
+	else if (pf->flag.blank && !n.bit.sign)
 		ft_putchar_out(pf->out, ' ');
 }
 
 static void	ft_print_format(
-	t_double n,
+	union u_double n,
 	int cnt,
 	t_format *pf,
 	char *n_str)
@@ -92,18 +92,18 @@ static void	ft_print_format(
 
 int			ft_print_float(va_list ap, t_format *pf)
 {
-	t_double		n;
+	union u_double	n;
 	int				cnt;
 	char			*tmp;
 	char			*n_str;
 	int				n_len;
 
 	n.d = va_arg(ap, double);
-	if (n.exponent == FT_DBL_EXP_NAN)
+	if (n.bit.exponent == FT_DBL_EXP_NAN)
 		return (ft_print_float_nan(n, pf));
 	n_str = ft_custom_dtoa(n.d, pf, **pf->ptr);
 	++(*pf->ptr);
-	if (n.sign)
+	if (n.bit.sign)
 	{
 		tmp = ft_strdup(n_str + 1);
 		free(n_str);

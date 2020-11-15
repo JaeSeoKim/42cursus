@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 15:21:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/07 18:24:27 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:18:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_bigint_new2(t_bigint *result, char *tmp)
 	free(tmp);
 }
 
-t_bigint	*ft_bigint_new(t_ll num)
+t_bigint	*ft_bigint_new(int64_t num)
 {
 	t_bigint	*result;
 	char		*tmp;

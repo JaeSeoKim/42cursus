@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 17:47:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/13 18:17:47 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:23:50 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,17 +112,17 @@ static int	ft_dtoa_setup_integer2(
 	return (ft_dtoa_setup_integer3(bit, integer, 0));
 }
 
-int			ft_dtoa_setup_integer(t_double n, char *integer)
+int			ft_dtoa_setup_integer(union u_double n, char *integer)
 {
 	int		exp;
 	long	significand;
 
 	ft_memset(integer, 0, sizeof(char) * FT_DBL_INT_MAX_ARR);
-	exp = n.exponent - (long)FT_DBL_BIAS;
+	exp = n.bit.exponent - (long)FT_DBL_BIAS;
 	if (exp < 52)
-		significand = n.significand >> (52 - exp);
+		significand = n.bit.significand >> (52 - exp);
 	else
-		significand = n.significand;
+		significand = n.bit.significand;
 	if (exp < 0)
 		return (1);
 	return (ft_dtoa_setup_integer2(integer, significand, exp));

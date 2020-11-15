@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 21:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/14 18:16:47 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/15 16:21:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ static char	*ft_dtoa_decimal_to_str(
 	return (result);
 }
 
-char		*ft_dtoa_f(t_double n, int precision)
+char		*ft_dtoa_f(union u_double n, int precision)
 {
 	char	integer[FT_DBL_INT_MAX_ARR];
 	char	decimal[FT_DBL_MAX_ARR];
@@ -130,8 +130,8 @@ char		*ft_dtoa_f(t_double n, int precision)
 	ft_dtoa_setup_decimal(n, decimal);
 	ft_dtoa_rounding(integer, decimal, &integer_len, precision);
 	result = ft_dtoa_int_to_str(integer, integer_len, \
-		n.exponent - (long)FT_DBL_BIAS);
-	if (n.sign)
+		n.bit.exponent - (long)FT_DBL_BIAS);
+	if (n.bit.sign)
 		result = ft_strjoin_free_second("-", result);
 	if (precision == 0)
 		return (result);
