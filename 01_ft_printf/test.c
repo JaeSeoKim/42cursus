@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:33:50 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/17 06:52:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@ int main(void)
 	char buf1[100000] = {0, };
 	char buf2[100000] = {0, };
 
-	const char *format = "%e";
-	c1 = ft_printf(format, (double)__INT_MAX__);
+	const char *format = "%.1g";
+	union u_double n;
+
+	n.d = -9.9;
+
+	ft_printf("EXP : %d\n", n.bit.exponent - (long)FT_DBL_BIAS);
+
+	c1 = ft_printf(format, n.d);
 	printf("$\n[ft_printf - count] : %d\n", c1);
-	c2 = printf(format, (double)__INT_MAX__);
+	c2 = printf(format, n.d);
 	printf("$\n[printf - count] : %d\n", c2);
 
 	// printf("-----------------\n");

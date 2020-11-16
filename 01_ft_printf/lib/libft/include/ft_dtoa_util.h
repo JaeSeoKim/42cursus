@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 00:42:20 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:21:10 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/17 05:27:36 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 char	*ft_dtoa_f(union u_double n, int precision);
 char	*ft_dtoa_e(union u_double n, int precision);
+char	*ft_dtoa_g(union u_double n, int precision);
 
 void	ft_dtoa_e_round(
 			char *integer,

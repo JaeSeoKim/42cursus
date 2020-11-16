@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/14 17:14:14 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/16 22:22:31 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,6 +121,7 @@ SRC_DTOA = $(addprefix $(SRC_DTOA_DIR)/, \
 	ft_dtoa.c	\
 	ft_dtoa_f.c	\
 	ft_dtoa_e.c	\
+	ft_dtoa_g.c	\
 	ft_dtoa_e_round.c	\
 	ft_dtoa_util.c	\
 	ft_dtoa_setup_decimal.c	\
