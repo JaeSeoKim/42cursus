@@ -48,24 +48,9 @@
 
 위에서 설명한  `[flags][width][.precision][extend_type]` 은 순서가 섞여있을 때에도 작동을 해야 함.
 
-- [x] `c`
-- [x] `s`
-- [x] `p`
-- [x] `d`
-- [x] `i`
-- [x] `u`
-- [x] `x`
-- [x] `x`
-- [x] `n`
-- [ ] `f`
-- [ ] `g`
-- [ ] `e`
-- [x] `o`
-- [x] `%`
-
   [참고 링크](https://dojang.io/mod/page/view.php?id=736)
 
-  - [ ] **Mandatory part**
+  - [x] **Mandatory part**
 
     **Format Specifier**
 
@@ -85,7 +70,7 @@
     - `.` : 정밀도 숫자 서식에 관여
     - `*` : 가변인자로 width, precision의 크기가 들어옴
 
-  - [ ] **Bonus part**
+  - [x] **Bonus part**
 
     **Format Specifier**
 
@@ -107,22 +92,4 @@
     - `+` : 양수 일때에는 + 음수일때에는 - 기호 출력
     - `공백` :  양수일때에는 부호를 출력 하지 않고 음수일때에만 - 기호 출력
     - `#` : 진법에 맞게 숫자 앞에 0, 0x, 0X를 출력
-
-  - [ ] **Additional part**
-
-    **Format Specifier**
-
-    | *length* | `d i`       | `u o x X`      | `f F e E g G a A` | `c`   | `s`     | `p`     | `n`          |
-    | -------- | ----------- | -------------- | ----------------- | ----- | ------- | ------- | ------------ |
-    | *(none)* | `int`       | `unsigned int` | `double`          | `int` | `char*` | `void*` | `int*`       |
-    | `j`      | `intmax_t`  | `uintmax_t`    |                   |       |         |         | `intmax_t*`  |
-    | `z`      | `size_t`    | `size_t`       |                   |       |         |         | `size_t*`    |
-    | `t`      | `ptrdiff_t` | `ptrdiff_t`    |                   |       |         |         | `ptrdiff_t*` |
-    | `L`      |             |                | `long double`     |       |         |         |              |
-
-- [ ] Format Parsing 방법 구상!
-
-  printf에서 return 값은 최종적으로 완성된 문자열의 크기!
-
-  결론적으로 format으로 들어온 값을 출력 하되 `%` 를 만나면 flag를 해석하여 write후 문자열 갯수 리턴이 필요! 
 
