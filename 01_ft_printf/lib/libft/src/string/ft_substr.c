@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 20:17:14 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:30:59 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/16 16:52:06 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ft_substr - A new String containing the extracted characters
 */
 
-char	*ft_substr(char const *s, uint32_t start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *result;
 

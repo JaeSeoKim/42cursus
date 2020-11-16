@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 20:02:24 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:18:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/16 16:49:59 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <limits.h>
 
+# include "ft_libft_type.h"
 # include "ft_lst_type.h"
 # include "ft_lst.h"
 # include "ft_math.h"

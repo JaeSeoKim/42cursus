@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:35:30 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/16 16:52:26 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		ft_putstr_out(char **out, char *s);
 int			ft_putstr_out_free(char **out, char *s);
 
 char		*ft_convert_base_custom(
-			uint64_t num,
+			t_ull num,
 			const char *base_set,
 			int base,
 			t_format *pf);

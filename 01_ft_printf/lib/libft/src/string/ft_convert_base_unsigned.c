@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 19:56:00 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:29:27 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/16 16:50:19 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_count_digist(int64_t n, int base)
 }
 
 char			*ft_convert_base_unsigned(
-	uint64_t num,
+	t_ull num,
 	const char *base_set,
 	int base)
 {
