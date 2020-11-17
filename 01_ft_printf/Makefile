@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/17 16:56:49 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/17 17:58:00 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,9 +90,9 @@ vpath %.c \
 	$(subst ./, , $(SRC_PRINT_DIR))
 
 SRCS = \
-	ft_print.c	\
-	ft_printf.c	\
-	ft_sprintf.c	\
+	$(SRC_DIR)/ft_print.c	\
+	$(SRC_DIR)/ft_printf.c	\
+	$(SRC_DIR)/ft_sprintf.c	\
 	$(SRC_UTIL)	\
 	$(SRC_PARSE)	\
 	$(SRC_PRINT)
