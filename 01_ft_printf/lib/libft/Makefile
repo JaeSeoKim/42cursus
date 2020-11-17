@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/16 22:22:31 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/17 16:57:30 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,24 @@ RMFLAGS = -f
 INC_DIR = ./include
 SRC_DIR = ./src
 OBJ_DIR = ./obj
+
+HEADERS = $(addprefix $(INC_DIR)/, \
+	ft_utf8.h	\
+	libft.h	\
+	ft_lst.h	\
+	ft_dtoa.h	\
+	ft_bigint.h	\
+	ft_lst_type.h	\
+	ft_string.h	\
+	ft_dtoa_type.h	\
+	ft_libft_type.h	\
+	ft_write.h	\
+	ft_math.h	\
+	ft_type.h	\
+	ft_memory.h	\
+	ft_bigint_type.h	\
+	ft_dtoa_util.h	\
+)
 
 SRC_LST_DIR = $(SRC_DIR)/lst
 SRC_LST = $(addprefix $(SRC_LST_DIR)/, \
@@ -196,7 +214,7 @@ $(OBJ_DIR)/%.o : %.c
 	@$(CC) $(CDEBUG) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
-$(NAME) : $(OBJS)
+$(NAME) : $(HEADERS) $(OBJS)
 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$(NAME)'s Object files $(FG_TEXT)!"
 	@printf "$(CRLF)📚 $(FG_TEXT)Archiving! $(FG_TEXT_PRIMARY)$@"
 	@$(AR) $(ARFLAGS) $@ $^

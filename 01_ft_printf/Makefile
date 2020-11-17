@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/14 01:58:10 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/17 16:56:49 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,28 +31,71 @@ LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
 LIBFT_INC_DIR = $(LIBFT_DIR)/include
 
 INC_DIR = ./include
-
 SRC_DIR = ./src
-SRC_UTIL_DIR = $(SRC_DIR)/util
-SRC_UTIL_UTF8_DIR = $(SRC_UTIL_DIR)/utf8
-SRC_PARSE_DIR = $(SRC_DIR)/parse
-SRC_PRINT_DIR = $(SRC_DIR)/print
-
 OBJ_DIR = ./obj
+
+HEADERS = $(addprefix $(INC_DIR)/, \
+	ft_printf_parse.h	\
+	ft_printf_util.h	\
+	ft_printf.h	\
+	ft_print.h	\
+	ft_printf_type.h	\
+	libftprintf.h	\
+)
+
+SRC_UTIL_DIR = $(SRC_DIR)/util
+SRC_UTIL = $(addprefix $(SRC_UTIL_DIR)/, \
+	ft_convert_base_custom.c	\
+	ft_custom_dtoa.c	\
+	ft_putstr_out.c	\
+	ft_putchar_n_out.c	\
+	ft_init_format.c	\
+	ft_n_encoding_utf8.c	\
+	ft_putwchar_out.c	\
+	ft_putchar_out.c	\
+)
+
+SRC_PARSE_DIR = $(SRC_DIR)/parse
+SRC_PARSE = $(addprefix $(SRC_PARSE_DIR)/, \
+	ft_parse_flag.c	\
+	ft_parse_type.c	\
+	ft_parse_width.c	\
+	ft_parse_precision.c	\
+	ft_init_parsing.c	\
+	ft_parse_extend_type.c	\
+	ft_parse_check.c	\
+)
+
+SRC_PRINT_DIR = $(SRC_DIR)/print
+SRC_PRINT = $(addprefix $(SRC_PRINT_DIR)/, \
+	ft_print_char.c	\
+	ft_print_number.c	\
+	ft_write_cnt.c	\
+	ft_print_percent.c	\
+	ft_get_extend_num.c	\
+	ft_print_float.c	\
+	ft_print_unsigned_number.c	\
+	ft_print_octal.c	\
+	ft_print_float_nan.c	\
+	ft_print_hex.c	\
+	ft_print_string.c	\
+	ft_get_extend_string.c	\
+	ft_print_pointer.c	\
+)
 
 vpath %.c \
 	$(subst ./, , $(SRC_DIR))	\
 	$(subst ./, , $(SRC_UTIL_DIR))	\
-	$(subst ./, , $(SRC_UTIL_UTF8_DIR))	\
 	$(subst ./, , $(SRC_PARSE_DIR))	\
 	$(subst ./, , $(SRC_PRINT_DIR))
 
 SRCS = \
-	$(wildcard $(SRC_DIR)/*.c)	\
-	$(wildcard $(SRC_UTIL_DIR)/*.c)	\
-	$(wildcard $(SRC_UTIL_UTF8_DIR)/*.c)	\
-	$(wildcard $(SRC_PARSE_DIR)/*.c)	\
-	$(wildcard $(SRC_PRINT_DIR)/*.c)
+	ft_print.c	\
+	ft_printf.c	\
+	ft_sprintf.c	\
+	$(SRC_UTIL)	\
+	$(SRC_PARSE)	\
+	$(SRC_PRINT)
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
@@ -92,7 +135,7 @@ $(OBJ_DIR)/%.o : %.c
 	@$(CC) $(CFLAGS) $(CDEBUG) -I $(INC_DIR) -I $(LIBFT_INC_DIR) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
-$(NAME) : $(LIBFT_FILE) $(OBJS)
+$(NAME) : $(LIBFT_FILE) $(HEADERS) $(OBJS)
 	@printf "$(LF)🚀 $(FG_TEXT)Successfully Created $(FG_TEXT_PRIMARY)$(NAME)'s Object files $(FG_TEXT)!"
 	@printf "$(CRLF)📚 $(FG_TEXT)Archiving! $(FG_TEXT_PRIMARY)$@"
 	@$(AR) $(ARFLAGS) $@ $(OBJS)
