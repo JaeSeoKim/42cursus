@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:15:58 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/24 16:52:39 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/19 01:35:27 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_init_flag(t_flag *flag)
 	flag->hash = 0;
 }
 
-t_format	*ft_init_format(char **out, char **foramt, int *cnt)
+t_format	*ft_init_format(char **out, char **format, int *cnt)
 {
 	t_format *result;
 
@@ -35,7 +35,7 @@ t_format	*ft_init_format(char **out, char **foramt, int *cnt)
 	result->h_count = 0;
 	result->l_count = 0;
 	result->out = out;
-	result->ptr = foramt;
+	result->ptr = format;
 	result->cnt = cnt;
 	return (result);
 }

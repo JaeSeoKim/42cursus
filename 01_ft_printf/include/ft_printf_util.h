@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 18:05:46 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/17 05:49:26 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/19 01:36:18 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libft.h"
 # include "ft_printf_type.h"
 
-t_format	*ft_init_format(char **out, char **foramt, int *cnt);
+t_format	*ft_init_format(char **out, char **format, int *cnt);
 
 void		ft_putchar_out(char **out, int c);
 void		ft_putwchar_out(char **out, int unicode);
