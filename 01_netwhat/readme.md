@@ -1,4 +1,4 @@
-# Netwhat
+# Netwhat - [![jaeskim's 42 netwhat Score](https://badge42.herokuapp.com/api/project/jaeskim/netwhat)](https://github.com/JaeSeoKim/badge42)
 
 > "This project is an introduction to network problematics"
 >

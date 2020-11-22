@@ -1,4 +1,4 @@
-# Get Next Line
+# Get Next Line - [![jaeskim's 42 get_next_line Score](https://badge42.herokuapp.com/api/project/jaeskim/get_next_line)](https://github.com/JaeSeoKim/badge42)
 
 > "The aim of this project is to make you code a function that returns a line ending with a newline, read from a file descriptor."
 >
