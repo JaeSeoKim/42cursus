@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/17 18:05:32 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/24 17:42:33 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ endif
 RM = rm
 RMFLAGS = -f
 
-INC_DIR = ./include
-SRC_DIR = ./src
-OBJ_DIR = ./obj
+INC_DIR = include
+SRC_DIR = src
+OBJ_DIR = obj
 
 HEADERS = $(addprefix $(INC_DIR)/, \
 	ft_utf8.h	\
@@ -167,16 +167,16 @@ SRCS = \
 	$(SRC_BIGINT)
 
 vpath %.c \
-	$(subst ./, , $(SRC_DIR))	\
-	$(subst ./, , $(SRC_LST_DIR))	\
-	$(subst ./, , $(SRC_MATH_DIR))	\
-	$(subst ./, , $(SRC_MEMORY_DIR))	\
-	$(subst ./, , $(SRC_STRING_DIR))	\
-	$(subst ./, , $(SRC_TYPE_DIR))	\
-	$(subst ./, , $(SRC_WRITE_DIR))	\
-	$(subst ./, , $(SRC_UTF8_DIR))	\
-	$(subst ./, , $(SRC_DTOA_DIR))	\
-	$(subst ./, , $(SRC_BIGINT_DIR))
+	$(SRC_DIR)	\
+	$(SRC_LST_DIR)	\
+	$(SRC_MATH_DIR)	\
+	$(SRC_MEMORY_DIR)	\
+	$(SRC_STRING_DIR)	\
+	$(SRC_TYPE_DIR)	\
+	$(SRC_WRITE_DIR)	\
+	$(SRC_UTF8_DIR)	\
+	$(SRC_DTOA_DIR)	\
+	$(SRC_BIGINT_DIR)
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 

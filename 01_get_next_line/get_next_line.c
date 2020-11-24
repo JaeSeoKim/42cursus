@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:48:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/10/04 15:36:16 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/24 02:16:43 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,15 @@ int			get_next_line(int fd, char **line)
 {
 	static char	*store[OPEN_MAX];
 	ssize_t		read_size;
-	char		*buf;
+	char		buf[BUFFER_SIZE + 1];
 
 	if (fd < 0 || fd >= OPEN_MAX || !line || BUFFER_SIZE <= 0)
 		return (-1);
-	if (!(buf = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
-		return (-1);
 	while ((read_size = read(fd, buf, BUFFER_SIZE)) >= 0)
 	{
-		if (storejoin(&store[fd], buf, read_size) || read_size <= 0)
+		if (storejoin(&store[fd], buf, read_size) || read_size == 0)
 			break ;
 	}
-	free(buf);
 	if (read_size < 0)
 		return (-1);
 	return (ft_check_line(&store[fd], line));

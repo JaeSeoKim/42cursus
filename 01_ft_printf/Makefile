@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2020/11/17 17:58:00 by jaeskim          ###   ########.fr        #
+#    Updated: 2020/11/24 18:04:38 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,9 @@ LIBFT_DIR = ./lib/libft
 LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
 LIBFT_INC_DIR = $(LIBFT_DIR)/include
 
-INC_DIR = ./include
-SRC_DIR = ./src
-OBJ_DIR = ./obj
+INC_DIR = include
+SRC_DIR = src
+OBJ_DIR = obj
 
 HEADERS = $(addprefix $(INC_DIR)/, \
 	ft_printf_parse.h	\
@@ -84,10 +84,10 @@ SRC_PRINT = $(addprefix $(SRC_PRINT_DIR)/, \
 )
 
 vpath %.c \
-	$(subst ./, , $(SRC_DIR))	\
-	$(subst ./, , $(SRC_UTIL_DIR))	\
-	$(subst ./, , $(SRC_PARSE_DIR))	\
-	$(subst ./, , $(SRC_PRINT_DIR))
+	$(SRC_DIR)	\
+	$(SRC_UTIL_DIR)	\
+	$(SRC_PARSE_DIR)	\
+	$(SRC_PRINT_DIR)
 
 SRCS = \
 	$(SRC_DIR)/ft_print.c	\
@@ -167,6 +167,7 @@ test : $(NAME) $(TEST_FILE)
 	@printf "$(FG_TEXT_PRIMARY)$(BG_BLACK)🚧 [TEST RESULT]! 🚧$(CRLF)$(FG_TEXT)"
 	@./$(TEST_FILE:.c=.out)
 	@rm $(TEST_FILE:.c=.out)
+	@rm -rf $(TEST_FILE:.c=.out.dSYM)
 
 .PHONY : \
 	all clean fclean re \
