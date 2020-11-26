@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 05:48:39 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/17 06:27:37 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/11/25 16:06:06 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 static char	*ft_dota_join_dot_e(union u_double num, char *n_str)
 {
+	char	*result;
 	char	*tmp;
 
 	tmp = ft_strndup(n_str, num.bit.sign ? 2 : 1);
 	tmp = ft_strjoin_free_first(tmp, ".");
-	return (ft_strjoin_free_both(tmp, \
+	result = ft_strjoin_free_both(tmp, \
 		ft_strndup(n_str + (num.bit.sign ? 2 : 1), \
-		ft_strlen(n_str) - (num.bit.sign ? 2 : 1))));
+		ft_strlen(n_str) - (num.bit.sign ? 2 : 1)));
+	free(n_str);
+	return (result);
 }
 
 static char	*ft_dota_join_dot_f(char *n_str)
