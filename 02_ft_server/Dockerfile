@@ -13,7 +13,7 @@ RUN apt update -y; apt upgrade -y
 RUN apt install nginx php-fpm mariadb-server php-mysql php-mbstring vim curl -y
 
 # copy src files
-COPY src /
+COPY srcs /
 
 # setup SSL
 RUN openssl genrsa -out ft_server.localhost.key 4096; \
@@ -33,10 +33,9 @@ RUN service mysql start; \
 	CREATE USER '${WP_DB_USER}'@'localhost' IDENTIFIED BY '${WP_DB_PASSWORD}'; \
 	GRANT ALL PRIVILEGES ON ${WP_DB_NAME}.* TO '${WP_DB_USER}'@'localhost' WITH GRANT OPTION; \
 	FLUSH PRIVILEGES;"
-	
+
 # setup Wordpress
-RUN curl -O https://wordpress.org/latest.tar.gz
-RUN tar -xzf latest.tar.gz -C /var/www/html/; \
+RUN tar -xzf wordpress.tar.gz -C /var/www/html/; \
 	mv /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php; \
 	sed -i "s/database_name_here/${WP_DB_NAME}/g" /var/www/html/wordpress/wp-config.php; \
 	sed -i "s/username_here/${WP_DB_USER}/g" /var/www/html/wordpress/wp-config.php; \
@@ -70,5 +69,8 @@ RUN tar -xzf phpMyAdmin-5.0.4-all-languages.tar.gz -C /var/www/html/; \
 
 # chage directory owner
 RUN chown -R www-data:www-data /var/www/html/
+
+# setup nginx running forground
+# RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 ENTRYPOINT ["/bin/bash", "-C", "/server.sh"]
