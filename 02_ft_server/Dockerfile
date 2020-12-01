@@ -32,13 +32,8 @@ RUN service mysql start; \
 	USE ${WP_DB_NAME}; \
 	CREATE USER '${WP_DB_USER}'@'localhost' IDENTIFIED BY '${WP_DB_PASSWORD}'; \
 	GRANT ALL PRIVILEGES ON ${WP_DB_NAME}.* TO '${WP_DB_USER}'@'localhost' WITH GRANT OPTION; \
-	FLUSH PRIVILEGES;"; \
-	mysql -e "CREATE DATABASE ${WP_DB_NAME};\
-	USE ${WP_DB_NAME}; \
-	CREATE USER '${WP_DB_USER}'@'localhost' IDENTIFIED BY '${WP_DB_PASSWORD}'; \
-	GRANT ALL PRIVILEGES ON ${WP_DB_NAME}.* TO '${WP_DB_USER}'@'localhost' WITH GRANT OPTION; \
-	FLUSH PRIVILEGES;"; 
-
+	FLUSH PRIVILEGES;"
+	
 # setup Wordpress
 RUN curl -O https://wordpress.org/latest.tar.gz
 RUN tar -xzf latest.tar.gz -C /var/www/html/; \
