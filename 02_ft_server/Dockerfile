@@ -6,6 +6,9 @@ ARG WP_DB_NAME=wordpress
 ARG WP_DB_USER=jaeskim
 ARG WP_DB_PASSWORD=42seoul
 
+# port setup
+EXPOSE 80/tcp 443/tcp
+
 # init setup
 RUN apt update -y; apt upgrade -y
 
