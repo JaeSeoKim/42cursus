@@ -66,7 +66,7 @@ RUN curl -O https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-l
 RUN tar -xzf phpMyAdmin-5.0.4-all-languages.tar.gz -C /var/www/html/; \
 	mv /var/www/html/phpMyAdmin-5.0.4-all-languages /var/www/html/phpmyadmin; \
 	mv /var/www/html/phpmyadmin/config.sample.inc.php /var/www/html/phpmyadmin/config.inc.php; \
-	blowfish_secret=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!@#\%+=' | fold -w 64 | sed 1q); \
+	blowfish_secret=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9!@#+=' | fold -w 64 | sed 1q); \
 	sed -i "s@''; /\* YOU MUST FILL IN THIS FOR COOKIE AUTH! \*/@'$blowfish_secret';@g" /var/www/html/phpmyadmin/config.inc.php; \
 	unset blowfish_secret;
 
