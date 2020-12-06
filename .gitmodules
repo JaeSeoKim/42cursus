@@ -1,0 +1,3 @@
+[submodule "02_cub3d"]
+	path = 02_cub3d
+	url = https://github.com/JaeSeoKim/cub3D.git
