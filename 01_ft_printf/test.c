@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: jaeskim <jaeskim@student.0seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 02:19:35 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/17 06:52:51 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/12/21 15:40:08 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,11 @@ int main(void)
 	char buf1[100000] = {0, };
 	char buf2[100000] = {0, };
 
-	const char *format = "%.1g";
-	union u_double n;
+	const char *format = "%042.1d";
 
-	n.d = -9.9;
-
-	ft_printf("EXP : %d\n", n.bit.exponent - (long)FT_DBL_BIAS);
-
-	c1 = ft_printf(format, n.d);
+	c1 = ft_printf(format, 42);
 	printf("$\n[ft_printf - count] : %d\n", c1);
-	c2 = printf(format, n.d);
+	c2 = printf(format, 42);
 	printf("$\n[printf - count] : %d\n", c2);
 
 	// printf("-----------------\n");

@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 22:47:17 by jaeskim           #+#    #+#             */
-/*   Updated: 2020/11/15 16:23:29 by jaeskim          ###   ########.fr       */
+/*   Updated: 2020/12/22 15:56:07 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ static void	ft_dtoa_setup_decimal2(
 		decimal[j - 1] = 1;
 	while (i < 52)
 		decimal[j++] = (significand >> (51 - i++)) & 1 ? 1 : 0;
+
 	ft_memset(tmp_mul, 0, sizeof(char) * FT_DBL_MAX_ARR);
 	ft_memset(result, 0, sizeof(char) * FT_DBL_MAX_ARR);
 	i = 0;
