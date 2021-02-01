@@ -1,4 +1,6 @@
-# Netwhat - [![jaeskim's 42 netwhat Score](https://badge42.herokuapp.com/api/project/jaeskim/netwhat)](https://github.com/JaeSeoKim/badge42)
+# Netwhat
+
+[![jaeskim's 42 netwhat Score](https://badge42.herokuapp.com/api/project/jaeskim/netwhat)](https://github.com/JaeSeoKim/badge42)
 
 > "This project is an introduction to network problematics"
 >
@@ -60,7 +62,7 @@ IP 주소는 인터넷에 연결된 기기를 식별하는 유일한 식별자 �
 
 Netmask는 Network Address 부분을 1bit로 치환한 것이 Netmask이다.
 
-**IP**와 **Netmask**를 `and` 연산을 하면 **Network address**를 알 수 있다. 
+**IP**와 **Netmask**를 `and` 연산을 하면 **Network address**를 알 수 있다.
 
 > ex)
 >
@@ -102,7 +104,7 @@ Class는 A, B, C, D, E Class로 구성되어 있다.
 | ` 224.0.0.0 - 239.255.255.255`  |  224.0.0.0/4   |    [멀티캐스트](https://ko.wikipedia.org/wiki/멀티캐스트)    | [RFC 3171](https://tools.ietf.org/html/rfc3171) |   D    |  268,435,456   |
 | ` 240.0.0.0 - 255.255.255.255`  |  240.0.0.0/4   |                            예약됨                            | [RFC 1700](https://tools.ietf.org/html/rfc1700) |   E    |  268,435,456   |
 
-현재는 IP의 급격한 고갈로 인해 효율적인 IP 배정을 위해 `CIDR`로 변경되었다. 
+현재는 IP의 급격한 고갈로 인해 효율적인 IP 배정을 위해 `CIDR`로 변경되었다.
 
 #### What is the subnet of an IP with Netmask
 
@@ -125,7 +127,7 @@ Netmask는 위에서 설명한 Class 개념을 통해 Network를 할당하는 �
 
 #### What is the broadcast address of a subnet
 
-Broadcass Address는 네트워크에서 모든 Host Address에게 전달을 할 때 사용되는 Address이다. 
+Broadcass Address는 네트워크에서 모든 Host Address에게 전달을 할 때 사용되는 Address이다.
 
 Subnet과 함께 사용되는 경우 broadcast주소를 구하는 방법은 Subnet과 xand 연산을 통해 알아낼 수 있다.
 
@@ -150,7 +152,7 @@ Public IP와 Private IP는 기존 Public IP으로만 구성되었을 때의 IP �
 
 Public IP는 말 그대로 공개된 IP 주소이다. ICANN에서 발급되는 IP주소를 이야기 하며 이 주소를 통하여 인터넷이 사용이 가능하다.
 
-Private IP는 특수범위 IP중 사설망에 해당된 범위를 사용한다. 
+Private IP는 특수범위 IP중 사설망에 해당된 범위를 사용한다.
 
 ![image-20201001202448174](image/readme/image-20201001202448174.png)
 
@@ -160,13 +162,13 @@ Private Network는 Public Network와 달리 외부에서 접근이 불가능 하
 
 Private Network에서 Public Network로 요청을 보내게 되면 사설네트워크와 연결된 라우터에서 Public IP로 요청이 보내지고 라우터는 이때 공인 IP로 들어온 응답값과 전송값을 전달해주는 역할을 하게 된다.
 
-이러한 Private Network를 사용하게 되면 무분별하게 기기당 배정되는 IP를 낭비 하지 않을 수 있으며 Port가 Forwarding 되지 않는 이상 내부로 접근 할 수 힘들고 내부의 네트워크 구조를 모르기 때문에 보안에 강력해진다. 
+이러한 Private Network를 사용하게 되면 무분별하게 기기당 배정되는 IP를 낭비 하지 않을 수 있으며 Port가 Forwarding 되지 않는 이상 내부로 접근 할 수 힘들고 내부의 네트워크 구조를 모르기 때문에 보안에 강력해진다.
 
 #### What is TCP
 
 TCP(Transmission Control Protocol)는 전송 프로토콜중 하나로 `3-Way-Handshake` 방식을 사용하여 신뢰도가 높은 점이 특징이다.
 
-##### 3-Way-Handshake 
+##### 3-Way-Handshake
 
 ![image-20201001212248245](image/readme/image-20201001212248245.png)
 
