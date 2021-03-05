@@ -1,4 +1,8 @@
 [submodule "02_cub3d"]
 	path = 02_cub3d
 	url = https://github.com/JaeSeoKim/cub3d.git
-	branch = master
+    branch = master
+[submodule "03_libasm"]
+    path = 03_libasm
+    url = https://github.com/JaeSeoKim/libasm.git
+    branch = master
