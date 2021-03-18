@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:48:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/02/02 01:13:44 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/02/02 10:36:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static t_gnl	*check_gnl(t_gnl **store, int fd)
 static void		gnl_del(t_gnl **store, int fd)
 {
 	t_gnl	*prev;
-	t_gnl	*now;
+	t_gnl	*curr;
 
 	if (!((*store)->next))
 	{
@@ -50,17 +50,19 @@ static void		gnl_del(t_gnl **store, int fd)
 		return ;
 	}
 	prev = 0;
-	now = *store;
-	while (now->next && now->fd != fd)
+	curr = *store;
+	while (curr->next && curr->fd != fd)
 	{
-		prev = now;
-		now = prev->next;
+		prev = curr;
+		curr = prev->next;
 	}
-	if (now->next)
-		prev->next = now->next;
+	if (prev && curr->next)
+		prev->next = curr->next;
+	else if (!prev && curr->next)
+		*store = curr->next;
 	else
 		prev->next = 0;
-	free(now);
+	free(curr);
 }
 
 static int		ft_check_line(t_gnl **store, t_gnl *gnl, char **line)

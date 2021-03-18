@@ -6,3 +6,7 @@
     path = 03_libasm
     url = https://github.com/JaeSeoKim/libasm.git
     branch = master
+[submodule "03_ft_services"]
+    path = 03_ft_services
+    url = https://github.com/JaeSeoKim/ft_services.git
+    branch = master

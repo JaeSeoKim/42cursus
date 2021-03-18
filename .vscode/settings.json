@@ -4,6 +4,8 @@
   "editor.detectIndentation": true,
   "editor.renderWhitespace": "all",
   "files.associations": {
-    "functional": "c"
+    "functional": "c",
+    "get_next_line.h": "c",
+    "iterator": "c"
   }
 }

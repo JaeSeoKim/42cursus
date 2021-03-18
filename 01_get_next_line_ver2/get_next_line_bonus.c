@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:48:48 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/02/02 01:05:03 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/02/02 10:36:01 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void		gnl_del(t_gnl **store, int fd)
 	}
 	if (prev && curr->next)
 		prev->next = curr->next;
-	else if (!prev)
+	else if (!prev && curr->next)
 		*store = curr->next;
 	else
 		prev->next = 0;
