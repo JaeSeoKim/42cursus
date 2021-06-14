@@ -14,3 +14,7 @@
     path = 03_push_swap
     url = https://github.com/JaeSeoKim/push_swap.git
     branch = master
+[submodule "03_minishell"]
+    path = 03_minishell
+    url = https://github.com/gachi-mandoo-shell/kimchi-mandoo-shell.git
+    branch = master
