@@ -1,24 +1,30 @@
 [submodule "02_cub3d"]
-	path = 02_cub3d
-	url = https://github.com/JaeSeoKim/cub3d.git
-    branch = master
+path = 02_cub3d
+url = https://github.com/JaeSeoKim/cub3d.git
+branch = master
 [submodule "03_libasm"]
-    path = 03_libasm
-    url = https://github.com/JaeSeoKim/libasm.git
-    branch = master
+path = 03_libasm
+url = https://github.com/JaeSeoKim/libasm.git
+branch = master
 [submodule "03_ft_services"]
-    path = 03_ft_services
-    url = https://github.com/JaeSeoKim/ft_services.git
-    branch = master
+path = 03_ft_services
+url = https://github.com/JaeSeoKim/ft_services.git
+branch = master
 [submodule "03_push_swap"]
-    path = 03_push_swap
-    url = https://github.com/JaeSeoKim/push_swap.git
-    branch = master
+path = 03_push_swap
+url = https://github.com/JaeSeoKim/push_swap.git
+branch = master
 [submodule "03_minishell"]
-    path = 03_minishell
-    url = https://github.com/gachi-mandoo-shell/kimchi-mandoo-shell.git
-    branch = master
+path = 03_minishell
+url = https://github.com/gachi-mandoo-shell/kimchi-mandoo-shell.git
+branch = master
+
+[submodule "03_philosophers"]
+path = 03_philosophers
+url = https://github.com/JaeSeoKim/philosophers.git
+branch = master
+
 [submodule "42piscine_python_django"]
-	path = 42piscine_python_django
-	url = https://github.com/JaeSeoKim/42piscine_python_django
-    branch = master
+path = 42piscine_python_django
+url = https://github.com/JaeSeoKim/42piscine_python_django
+branch = master
