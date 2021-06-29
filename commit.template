@@ -1,0 +1,45 @@
+# <gitmoji> <type>: <subject>
+##### Maximum length of subject is 50 ####### -> |
+
+# content
+######## Maximum length of content is 72 ########################## -> |
+
+# issue track number (#number)
+
+# --- COMMIT END ---
+# <type> list
+#   feat                  : New feature
+#   fix                   : Fix bug
+#   refactor              : Refactor code
+#   style                 : Change style of code(white space, semicolon etc)
+#   test                  : Add/Change/Delete test case
+#   docs                  : Add/Change/Delete document
+#   build                 : Change in build script
+#   ci                    : Change in ci script
+#   chore                 : etc
+# ------------------
+# <gitmoji> list
+#   :sparkles:            : ✨ feat:
+#   :bug:                 : 🐛 fix:
+#   :recycle:             : ♻️  refactor:
+#   :lipstick:            : 💄 style:
+#   :white_check_mark:    : ✅ test:
+#   :memo:                : 📝 docs:
+#   :hammer:              : 🔨 build:
+#   :construction_worker: : 👷 ci:
+#   :package:             : 📦️ chore:
+# ------------------
+#   Capitalize the subject line
+#     제목줄은 대문자로 시작한다.
+#   Use the imperative mood in the subject line
+#     제목줄은 명령어로 작성한다.
+#   Do not end the subject line with a period
+#     제목줄은 마침표로 끝내지 않는다.
+#   Separate subject from body with a blank line
+#     본문과 제목에는 빈줄을 넣어서 구분한다.
+#   Use the body to explain what and why vs. how
+#     본문에는 "어떻게" 보다는 "왜"와 "무엇을" 설명한다.
+#   Can use multiple lines with "-" for bullet points in body
+#     본문에 목록을 나타낼때는 "-"로 시작한다.
+# ------------------
+
