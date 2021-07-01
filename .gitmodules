@@ -28,5 +28,5 @@
 	branch = master
 [submodule "04_cpp_modules"]
 	path = 04_cpp_modules
-	url = https://github.com/JaeSeoKim/42piscine_python_django.git
+	url = https://github.com/JaeSeoKim/cpp-modules.git
 	branch = master
