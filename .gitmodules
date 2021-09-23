@@ -30,3 +30,7 @@
 	path = 04_cpp_modules
 	url = https://github.com/JaeSeoKim/cpp-modules.git
 	branch = master
+[submodule "05_ft_containers"]
+	path = 05_ft_containers
+	url = https://github.com/JaeSeoKim/ft_containers.git
+	branch = main
